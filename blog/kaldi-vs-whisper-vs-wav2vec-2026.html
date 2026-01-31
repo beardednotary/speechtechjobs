@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaldi vs Whisper vs Wav2Vec: Which ASR Framework to Learn in 2026 | SpeechTechJobs</title>
+    <meta name="description" content="Complete comparison of Kaldi, Whisper, and Wav2Vec 2.0 for speech recognition. Learn which framework to focus on for your career in 2026.">
+    <meta name="keywords" content="kaldi vs whisper, ASR frameworks comparison, wav2vec 2.0, best speech recognition toolkit, kaldi tutorial">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --code-bg: #f5f5f5;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        /* Article */
+        article {
+            background: #fff;
+            margin: 40px 0;
+            padding: 60px 40px;
+            border-radius: 8px;
+        }
+        
+        .article-meta {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            background: var(--border);
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 48px 0 20px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+        }
+        
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        ul, ol {
+            margin: 20px 0 20px 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: var(--fg);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--muted);
+        }
+        
+        code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            min-width: 600px;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .comparison-table th {
+            background: var(--bg);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .comparison-table td {
+            font-size: 14px;
+        }
+        
+        .comparison-table tr:hover {
+            background: var(--bg);
+        }
+        
+        /* Feature boxes */
+        .feature-box {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .feature-box h4 {
+            margin-top: 0;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 24px 0;
+        }
+        
+        .pros-cons h5 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .pros-cons ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .pros {
+            background: #f0fdf4;
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #86efac;
+        }
+        
+        .cons {
+            background: #fef2f2;
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #fca5a5;
+        }
+        
+        /* Info blocks */
+        .info-block {
+            background: var(--bg);
+            border-left: 3px solid var(--accent);
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+        
+        .info-block p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            background: var(--fg);
+            color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 48px 0;
+        }
+        
+        .cta-box h3 {
+            margin: 0 0 16px 0;
+            color: #fff;
+        }
+        
+        .cta-box p {
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #fff;
+            color: var(--fg);
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+        
+        .btn:hover {
+            opacity: 0.85;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            article { padding: 40px 24px; }
+            .featured-image { height: 250px; }
+            .pros-cons { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/#submit">Submit Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article>
+            <div class="article-meta">Last updated: January 15, 2026 • 14 min read</div>
+            
+            <h1>Kaldi vs Whisper vs Wav2Vec: Which ASR Framework Should You Learn in 2026?</h1>
+            
+            <!-- FEATURED IMAGE PLACEHOLDER -->
+            <div class="featured-image">
+                [Featured Image: Comparison of framework logos or architecture diagrams]
+            </div>
+            
+            <p>If you're getting into speech recognition in 2026, you're facing a crucial decision: which framework should you learn first?</p>
+
+            <p>The landscape has shifted dramatically in the past few years. Kaldi, the industry workhorse for over a decade, is now competing with modern deep learning approaches like Whisper and self-supervised models like Wav2Vec 2.0. Each has different strengths, learning curves, and career implications.</p>
+
+            <p>This guide breaks down all three frameworks so you can make an informed decision based on your goals, timeline, and the type of work you want to do.</p>
+
+            <h2>TL;DR: Quick Recommendations</h2>
+
+            <div class="info-block">
+                <p><strong>If you're starting from scratch:</strong> Learn Whisper first (easiest), then add Wav2Vec 2.0 (modern research), optionally learn Kaldi basics (legacy understanding)</p>
+                
+                <p><strong>If you want a research career:</strong> Focus on Wav2Vec 2.0 and related self-supervised methods</p>
+                
+                <p><strong>If you're joining an established company:</strong> Learn Kaldi first—it's still everywhere in production</p>
+                
+                <p><strong>If you want to ship products fast:</strong> Whisper gets you 90% of the way with 10% of the effort</p>
+                
+                <p><strong>If you want maximum employability:</strong> Know all three at a basic level, specialize in one</p>
+            </div>
+
+            <h2>The Landscape in 2026</h2>
+
+            <p>Here's what's happening in the ASR world:</p>
+
+            <ul>
+                <li><strong>Kaldi:</strong> Still the backbone of production systems at many companies. Mature, battle-tested, but showing its age.</li>
+                <li><strong>Whisper:</strong> OpenAI's breakthrough model from 2022, now the go-to for quick prototypes and new products.</li>
+                <li><strong>Wav2Vec 2.0:</strong> Meta's self-supervised approach, especially powerful for low-resource languages and research.</li>
+                <li><strong>Other players:</strong> ESPnet, NeMo, various commercial APIs (Deepgram, AssemblyAI)</li>
+            </ul>
+
+            <p>Let's dive deep into each framework.</p>
+
+            <h2>Kaldi: The Industry Workhorse</h2>
+
+            <h3>What Is Kaldi?</h3>
+
+            <p>Kaldi is a toolkit for speech recognition research, originally released in 2011 by Daniel Povey. It's written in C++ with bash scripting for recipes, and it dominated the ASR landscape for over a decade.</p>
+
+            <p><strong>Philosophy:</strong> Traditional pipeline approach with modular components (feature extraction → acoustic model → language model → decoding).</p>
+
+            <h3>Architecture & Approach</h3>
+
+            <p>Kaldi follows the classic speech recognition pipeline:</p>
+
+            <ol>
+                <li><strong>Feature Extraction:</strong> MFCC, PLP, or filterbank features</li>
+                <li><strong>Acoustic Model:</strong> GMM-HMM (legacy) or DNN-HMM (modern)</li>
+                <li><strong>Pronunciation Lexicon:</strong> Maps words to phoneme sequences</li>
+                <li><strong>Language Model:</strong> N-gram or neural language model</li>
+                <li><strong>Decoding:</strong> WFST-based decoder (Weighted Finite State Transducers)</li>
+            </ol>
+
+            <p>Modern Kaldi recipes use chain models (LF-MMI) with TDNN or CNN-TDNN architectures for acoustic modeling.</p>
+
+            <h3>Learning Curve</h3>
+
+            <p><strong>Time to basic competence:</strong> 2-4 months</p>
+            <p><strong>Time to production-ready:</strong> 6-12 months</p>
+
+            <p>Kaldi is notoriously difficult to learn:</p>
+
+            <ul>
+                <li>Complex bash scripting for recipes</li>
+                <li>C++ codebase (if you need to modify core)</li>
+                <li>WFST concepts are mathematically heavy</li>
+                <li>Steep debugging curve</li>
+                <li>Sparse documentation in places</li>
+            </ul>
+
+            <p><strong>But:</strong> Once you understand Kaldi, you understand speech recognition deeply. It forces you to learn the fundamentals.</p>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h5>✓ Pros</h5>
+                    <ul>
+                        <li>Industry standard (used at Google, Amazon, etc.)</li>
+                        <li>Extremely flexible and modular</li>
+                        <li>Can achieve state-of-the-art with tuning</li>
+                        <li>Huge community and recipes</li>
+                        <li>Production-proven (10+ years)</li>
+                        <li>Low-latency streaming possible</li>
+                        <li>Understanding it makes you valuable</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h5>✗ Cons</h5>
+                    <ul>
+                        <li>Steep learning curve</li>
+                        <li>Requires linguistic knowledge (phonemes, lexicons)</li>
+                        <li>Slow iteration (training takes days)</li>
+                        <li>Old-school tooling (bash scripts)</li>
+                        <li>Not end-to-end (multiple components)</li>
+                        <li>Harder to adapt to new languages</li>
+                        <li>Showing age compared to transformers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>When to Use Kaldi</h3>
+
+            <p><strong>Best for:</strong></p>
+            <ul>
+                <li>Production systems requiring low latency</li>
+                <li>Scenarios where you control the full pipeline</li>
+                <li>Domains requiring heavy customization</li>
+                <li>Companies with existing Kaldi infrastructure</li>
+                <li>Understanding traditional ASR deeply</li>
+            </ul>
+
+            <p><strong>Not ideal for:</strong></p>
+            <ul>
+                <li>Quick prototypes or MVPs</li>
+                <li>Low-resource languages without phonetic resources</li>
+                <li>Research on novel architectures</li>
+                <li>Beginners (unless you have guidance)</li>
+            </ul>
+
+            <h3>Career Implications</h3>
+
+            <p>Kaldi knowledge is still highly valued in 2026:</p>
+
+            <ul>
+                <li>Many companies still run Kaldi in production</li>
+                <li>Understanding it shows deep ASR knowledge</li>
+                <li>Migration from Kaldi to modern approaches is ongoing (need both)</li>
+                <li>Premium for Kaldi experts at established companies</li>
+            </ul>
+
+            <p><strong>Salary impact:</strong> +$10K-20K if you're truly proficient</p>
+
+            <div class="cta-box">
+                <h3>Learning Speech Recognition?</h3>
+                <p>Get matched with companies looking for ASR engineers at all skill levels.</p>
+                <a href="/#submit" class="btn">Submit Your Profile</a>
+            </div>
+
+            <h2>Whisper: The Modern Approach</h2>
+
+            <h3>What Is Whisper?</h3>
+
+            <p>Whisper is OpenAI's speech recognition model, released in September 2022. It's an end-to-end transformer trained on 680,000 hours of weakly-supervised multilingual data from the web.</p>
+
+            <p><strong>Philosophy:</strong> One model for everything. No language models, lexicons, or phonemes needed.</p>
+
+            <h3>Architecture & Approach</h3>
+
+            <p>Whisper uses a simple encoder-decoder transformer architecture:</p>
+
+            <ol>
+                <li><strong>Encoder:</strong> Processes 30-second chunks of log-mel spectrogram audio</li>
+                <li><strong>Decoder:</strong> Autoregressively generates text tokens</li>
+                <li><strong>Special tokens:</strong> Handle language ID, task (transcribe/translate), timestamps, and more</li>
+            </ol>
+
+            <p>Five model sizes: tiny, base, small, medium, large (39M to 1.5B parameters)</p>
+
+            <p><strong>Key innovation:</strong> Trained on messy web data with weak supervision, making it incredibly robust to real-world audio.</p>
+
+            <h3>Learning Curve</h3>
+
+            <p><strong>Time to basic competence:</strong> 1-2 weeks</p>
+            <p><strong>Time to production-ready:</strong> 1-3 months</p>
+
+            <p>Whisper is remarkably easy to learn:</p>
+
+            <ul>
+                <li>Simple Python API (pip install openai-whisper)</li>
+                <li>Works out-of-the-box on any audio</li>
+                <li>No linguistic knowledge required</li>
+                <li>Pre-trained models available immediately</li>
+                <li>Clear documentation and examples</li>
+            </ul>
+
+            <p>You can literally get started in 10 minutes:</p>
+
+            <pre><code>import whisper
+
+model = whisper.load_model("base")
+result = model.transcribe("audio.mp3")
+print(result["text"])</code></pre>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h5>✓ Pros</h5>
+                    <ul>
+                        <li>Incredibly easy to use</li>
+                        <li>Works well out-of-the-box</li>
+                        <li>Multilingual (99 languages)</li>
+                        <li>Robust to noise, accents, domains</li>
+                        <li>Open source and free</li>
+                        <li>Fast iteration</li>
+                        <li>Great for prototyping</li>
+                        <li>Can fine-tune on custom data</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h5>✗ Cons</h5>
+                    <ul>
+                        <li>Higher latency (processes 30s chunks)</li>
+                        <li>Larger models need GPU (expensive)</li>
+                        <li>Not designed for streaming</li>
+                        <li>Hallucinations on silence/music</li>
+                        <li>Less customizable than Kaldi</li>
+                        <li>English-centric despite multilingual claims</li>
+                        <li>Black box (less control)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>When to Use Whisper</h3>
+
+            <p><strong>Best for:</strong></p>
+            <ul>
+                <li>Quick prototypes and MVPs</li>
+                <li>Batch transcription (podcasts, meetings, etc.)</li>
+                <li>Multilingual applications</li>
+                <li>Noisy or varied audio conditions</li>
+                <li>When you need results fast</li>
+                <li>Fine-tuning for specific domains</li>
+            </ul>
+
+            <p><strong>Not ideal for:</strong></p>
+            <ul>
+                <li>Real-time/streaming applications</li>
+                <li>Ultra-low-latency requirements</li>
+                <li>Edge deployment (large models)</li>
+                <li>When you need granular control</li>
+            </ul>
+
+            <h3>Career Implications</h3>
+
+            <p>Whisper expertise is increasingly valuable:</p>
+
+            <ul>
+                <li>Startups are adopting it rapidly</li>
+                <li>Fine-tuning Whisper is a sought-after skill</li>
+                <li>Shows you can work with modern architectures</li>
+                <li>Often paired with LLM work (similar tech stack)</li>
+            </ul>
+
+            <p><strong>Salary impact:</strong> Neutral (it's becoming baseline knowledge)</p>
+
+            <h2>Wav2Vec 2.0: The Research Frontier</h2>
+
+            <h3>What Is Wav2Vec 2.0?</h3>
+
+            <p>Wav2Vec 2.0 is Meta's self-supervised learning framework for speech, released in 2020. It learns representations from raw audio without transcriptions, then fine-tunes on small amounts of labeled data.</p>
+
+            <p><strong>Philosophy:</strong> Learn general speech representations through self-supervision, then specialize with minimal labeled data.</p>
+
+            <h3>Architecture & Approach</h3>
+
+            <p>Wav2Vec 2.0 has two main stages:</p>
+
+            <p><strong>Pre-training (self-supervised):</strong></p>
+            <ol>
+                <li>Encode raw audio with CNN layers</li>
+                <li>Mask parts of the encoded sequence</li>
+                <li>Use transformer to contextualize representations</li>
+                <li>Quantize the masked targets into discrete codes</li>
+                <li>Train via contrastive loss to predict correct quantized codes</li>
+            </ol>
+
+            <p><strong>Fine-tuning (supervised):</strong></p>
+            <ol>
+                <li>Add CTC head on top of pre-trained model</li>
+                <li>Fine-tune on transcribed data (can be very small - even 10 minutes)</li>
+                <li>Optionally add language model for decoding</li>
+            </ol>
+
+            <p><strong>Key innovation:</strong> Achieves strong results with 100x less labeled data than traditional approaches.</p>
+
+            <h3>Learning Curve</h3>
+
+            <p><strong>Time to basic competence:</strong> 2-4 weeks</p>
+            <p><strong>Time to production-ready:</strong> 2-4 months</p>
+
+            <p>Moderate difficulty:</p>
+
+            <ul>
+                <li>Requires understanding of self-supervised learning</li>
+                <li>PyTorch/Hugging Face knowledge needed</li>
+                <li>Pre-training is compute-intensive (usually use pre-trained)</li>
+                <li>Fine-tuning is relatively straightforward</li>
+                <li>Good documentation via Hugging Face</li>
+            </ul>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h5>✓ Pros</h5>
+                    <ul>
+                        <li>Excellent for low-resource languages</li>
+                        <li>State-of-the-art with minimal labels</li>
+                        <li>Pre-trained models available</li>
+                        <li>Active research area (cutting-edge)</li>
+                        <li>Hugging Face integration</li>
+                        <li>Good for research/publications</li>
+                        <li>Scales to large unlabeled data</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h5>✗ Cons</h5>
+                    <ul>
+                        <li>Pre-training requires massive compute</li>
+                        <li>Not as robust as Whisper out-of-box</li>
+                        <li>Smaller model zoo than Whisper</li>
+                        <li>Less production-proven</li>
+                        <li>Requires more ML expertise</li>
+                        <li>Still evolving (less stable)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>When to Use Wav2Vec 2.0</h3>
+
+            <p><strong>Best for:</strong></p>
+            <ul>
+                <li>Low-resource languages</li>
+                <li>Research projects</li>
+                <li>When you have unlabeled audio but little transcription</li>
+                <li>Academic publications</li>
+                <li>Understanding self-supervised learning</li>
+            </ul>
+
+            <p><strong>Not ideal for:</strong></p>
+            <ul>
+                <li>Quick prototypes (use Whisper)</li>
+                <li>Production with tight deadlines</li>
+                <li>When labels are abundant</li>
+            </ul>
+
+            <h3>Career Implications</h3>
+
+            <p>Wav2Vec expertise signals research capability:</p>
+
+            <ul>
+                <li>Valuable at research labs (Meta, OpenAI, DeepMind)</li>
+                <li>Good for PhD/research scientist roles</li>
+                <li>Shows understanding of modern ML</li>
+                <li>Related to other self-supervised methods (good for LLM work too)</li>
+            </ul>
+
+            <p><strong>Salary impact:</strong> +$15K-30K at research-oriented companies</p>
+
+            <h2>Head-to-Head Comparison</h2>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Kaldi</th>
+                            <th>Whisper</th>
+                            <th>Wav2Vec 2.0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Learning Curve</strong></td>
+                            <td>Very Steep (3-6 months)</td>
+                            <td>Easy (1-2 weeks)</td>
+                            <td>Moderate (1-2 months)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Production Ready</strong></td>
+                            <td>✓ Yes (battle-tested)</td>
+                            <td>⚠ Mostly (latency issues)</td>
+                            <td>⚠ Emerging</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Streaming Support</strong></td>
+                            <td>✓ Excellent</td>
+                            <td>✗ No (30s chunks)</td>
+                            <td>⚠ Possible but not native</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multilingual</strong></td>
+                            <td>⚠ With separate models</td>
+                            <td>✓ Single model (99 langs)</td>
+                            <td>✓ Yes (via pre-training)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Low-Resource Languages</strong></td>
+                            <td>✗ Needs phonetic resources</td>
+                            <td>⚠ OK (English-biased)</td>
+                            <td>✓ Excellent</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accuracy (English)</strong></td>
+                            <td>⭐⭐⭐⭐ (with tuning)</td>
+                            <td>⭐⭐⭐⭐⭐ (out-of-box)</td>
+                            <td>⭐⭐⭐⭐ (with fine-tuning)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Customizability</strong></td>
+                            <td>✓ Extremely flexible</td>
+                            <td>⚠ Limited</td>
+                            <td>⚠ Moderate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Training Time</strong></td>
+                            <td>Days to weeks</td>
+                            <td>N/A (use pre-trained)</td>
+                            <td>Hours (fine-tune only)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inference Cost</strong></td>
+                            <td>Low (CPU possible)</td>
+                            <td>High (large models need GPU)</td>
+                            <td>Medium (GPU recommended)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Community Size</strong></td>
+                            <td>Large (10+ years)</td>
+                            <td>Growing rapidly</td>
+                            <td>Active research</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Documentation</strong></td>
+                            <td>⚠ Scattered</td>
+                            <td>✓ Excellent</td>
+                            <td>✓ Good (via HF)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Industry Adoption</strong></td>
+                            <td>✓ Very high</td>
+                            <td>Growing fast</td>
+                            <td>Research/niche</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cta-box">
+                <h3>Ready to Work with These Frameworks?</h3>
+                <p>Companies are hiring ASR engineers with Kaldi, Whisper, and Wav2Vec experience.</p>
+                <a href="/#submit" class="btn">Submit Your Profile →</a>
+            </div>
+
+            <h2>Which Should You Learn First?</h2>
+
+            <p>Here's my opinionated recommendation based on different scenarios:</p>
+
+            <h3>Scenario 1: Complete Beginner</h3>
+
+            <p><strong>Recommended path:</strong></p>
+            <ol>
+                <li><strong>Start with Whisper</strong> (2-4 weeks) - Get wins fast, understand end-to-end ASR</li>
+                <li><strong>Add Wav2Vec 2.0</strong> (1-2 months) - Learn modern architectures and self-supervised learning</li>
+                <li><strong>Learn Kaldi basics</strong> (2-3 months) - Understand traditional pipeline, read recipes</li>
+            </ol>
+
+            <p><strong>Rationale:</strong> Whisper gives you quick wins and builds confidence. Wav2Vec teaches modern ML. Kaldi fills in the fundamentals.</p>
+
+            <h3>Scenario 2: Joining an Established Company</h3>
+
+            <p><strong>Recommended path:</strong></p>
+            <ol>
+                <li><strong>Kaldi first</strong> (3-6 months deep dive)</li>
+                <li><strong>Whisper</strong> (1-2 weeks for comparison)</li>
+                <li><strong>Wav2Vec 2.0</strong> (optional, if relevant to company)</li>
+            </ol>
+
+            <p><strong>Rationale:</strong> Most established companies still run Kaldi. You'll need to maintain/improve existing systems before building new ones.</p>
+
+            <h3>Scenario 3: Startup or Research Lab</h3>
+
+            <p><strong>Recommended path:</strong></p>
+            <ol>
+                <li><strong>Whisper + Wav2Vec 2.0</strong> (parallel learning, 2-3 months)</li>
+                <li><strong>Kaldi overview</strong> (1-2 weeks, just to understand papers)</li>
+            </ol>
+
+            <p><strong>Rationale:</strong> Startups want fast iteration. Research labs want cutting-edge. Kaldi is legacy.</p>
+
+            <h3>Scenario 4: Maximum Employability</h3>
+
+            <p><strong>Recommended path:</strong></p>
+            <ol>
+                <li><strong>Whisper</strong> (1 month) - Competent, can ship products</li>
+                <li><strong>Kaldi</strong> (3 months) - Intermediate level, understand recipes</li>
+                <li><strong>Wav2Vec 2.0</strong> (1 month) - Familiar with research direction</li>
+                <li><strong>Deepening:</strong> Pick one to become expert in based on job market</li>
+            </ol>
+
+            <p><strong>Rationale:</strong> T-shaped knowledge. Breadth across all three, depth in one.</p>
+
+            <h2>Learning Resources</h2>
+
+            <h3>For Kaldi</h3>
+            <ul>
+                <li><strong>Official:</strong> kaldi-asr.org (docs + recipes)</li>
+                <li><strong>Tutorial:</strong> Eleanor Chodroff's Kaldi tutorial (excellent for beginners)</li>
+                <li><strong>Book:</strong> "Kaldi for Dummies" tutorial by Josh Meyer</li>
+                <li><strong>Practice:</strong> Run WSJ recipe end-to-end (2-3 days)</li>
+                <li><strong>Community:</strong> Kaldi mailing list, GitHub discussions</li>
+            </ul>
+
+            <h3>For Whisper</h3>
+            <ul>
+                <li><strong>Official:</strong> OpenAI Whisper GitHub repo + model card</li>
+                <li><strong>Tutorial:</strong> Hugging Face Whisper fine-tuning guide</li>
+                <li><strong>Practice:</strong> Transcribe your own audio, fine-tune on custom dataset</li>
+                <li><strong>Community:</strong> Hugging Face forums, Reddit r/speechrecognition</li>
+            </ul>
+
+            <h3>For Wav2Vec 2.0</h3>
+            <ul>
+                <li><strong>Paper:</strong> wav2vec 2.0 original paper (read it!)</li>
+                <li><strong>Official:</strong> fairseq library from Meta</li>
+                <li><strong>Tutorial:</strong> Hugging Face Wav2Vec 2.0 fine-tuning tutorial</li>
+                <li><strong>Practice:</strong> Fine-tune on TIMIT or LibriSpeech</li>
+                <li><strong>Related:</strong> HuBERT, WavLM, Data2Vec (similar approaches)</li>
+            </ul>
+
+            <h2>Industry Trends (2026 and Beyond)</h2>
+
+            <p>Here's where things are heading:</p>
+
+            <h3>Short-term (2026-2027)</h3>
+            <ul>
+                <li><strong>Kaldi:</strong> Gradual decline but still dominant in production. Migration to modern approaches accelerating.</li>
+                <li><strong>Whisper:</strong> Rapid adoption for new products. Fine-tuning becoming standard practice.</li>
+                <li><strong>Wav2Vec:</strong> Growing in research and low-resource scenarios. More production deployments.</li>
+            </ul>
+
+            <h3>Medium-term (2027-2029)</h3>
+            <ul>
+                <li><strong>Kaldi:</strong> Maintenance mode at most companies. New projects use modern frameworks.</li>
+                <li><strong>Whisper/successors:</strong> Dominant for general-purpose ASR. Likely improved versions from OpenAI and others.</li>
+                <li><strong>Self-supervised methods:</strong> Standard approach for low-resource languages and domain adaptation.</li>
+                <li><strong>Multimodal:</strong> Speech + vision becoming common (already happening with GPT-4V, Gemini)</li>
+            </ul>
+
+            <h3>Long-term (2030+)</h3>
+            <ul>
+                <li>ASR as a "solved" problem for high-resource languages (like image classification today)</li>
+                <li>Focus shifts to understanding (intent, emotion, etc.) rather than just transcription</li>
+                <li>Unified speech-language models (like GPT-4o) become standard</li>
+                <li>Kaldi becomes historical reference (like GMM-HMM today)</li>
+            </ul>
+
+            <h2>The Bottom Line</h2>
+
+            <p>There's no single "right" answer. Your choice depends on:</p>
+
+            <ul>
+                <li><strong>Timeline:</strong> Need results fast? Whisper. Want deep knowledge? Kaldi.</li>
+                <li><strong>Career goals:</strong> Research? Wav2Vec. Production? Kaldi. Startups? Whisper.</li>
+                <li><strong>Job market:</strong> Check postings in your area—see what companies want.</li>
+                <li><strong>Learning style:</strong> Prefer simplicity? Whisper. Enjoy complexity? Kaldi.</li>
+            </ul>
+
+            <p><strong>My personal recommendation for 2026:</strong></p>
+
+            <p>Start with Whisper (1 month), get comfortable shipping products. Then learn enough Kaldi to read papers and understand production systems (2-3 months). Add Wav2Vec 2.0 if you're interested in research or low-resource languages (1-2 months).</p>
+
+            <p>Total time: 4-6 months to be competent in the modern ASR landscape.</p>
+
+            <p>The field is moving toward end-to-end models like Whisper, but Kaldi knowledge makes you more valuable because fewer people have it. Wav2Vec shows you understand cutting-edge techniques.</p>
+
+            <p>Know all three at a basic level. Become expert in one. That's the sweet spot.</p>
+
+            <div class="cta-box">
+                <h3>Learning ASR Frameworks?</h3>
+                <p>Companies are hiring engineers with Kaldi, Whisper, and Wav2Vec experience at all levels.</p>
+                <a href="/#submit" class="btn">Submit Your Profile →</a>
+                <p style="font-size: 13px; margin-top: 16px;">No recruiter spam. Direct applications only. Free for candidates.</p>
+            </div>
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 48px 0;">
+
+            <p style="font-size: 13px; color: var(--muted);"><em>Last updated: January 15, 2026. Framework information based on current state of ASR landscape. Technology evolves rapidly—always check latest releases.</em></p>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/" style="color: var(--muted); margin-left: 16px;">Home</a> <a href="/blog" style="color: var(--muted); margin-left: 16px;">Blog</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 ASR Interview Questions: Master Speech Tech at Meta, Google & OpenAI</title>
+    <meta name="description" content="Master your 2026 ASR Research interview. 30+ real technical questions covering Whisper, Kaldi, and LLM-integration. Includes system design secrets and our private talent network access.">
+    <meta name="keywords" content="speech recognition interview questions, ASR engineer interview, voice AI interview prep, speech tech interview">
+       <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --code-bg: #f5f5f5;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        /* Article */
+        article {
+            background: #fff;
+            margin: 40px 0;
+            padding: 60px 40px;
+            border-radius: 8px;
+        }
+        
+        .article-meta {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            background: var(--border);
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 48px 0 20px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+        }
+        
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        ul, ol {
+            margin: 20px 0 20px 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: var(--fg);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--muted);
+        }
+        
+        code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        pre {
+            background: var(--code-bg);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        /* Question/Answer blocks */
+        .qa-block {
+            background: var(--bg);
+            border-left: 3px solid var(--accent);
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+        
+        .question {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--fg);
+        }
+        
+        .answer {
+            color: var(--fg);
+        }
+        
+        .answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Difficulty badges */
+        .difficulty {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 12px;
+        }
+        
+        .easy { background: #d1fae5; color: #065f46; }
+        .medium { background: #fef3c7; color: #92400e; }
+        .hard { background: #fee2e2; color: #991b1b; }
+        
+        /* Info blocks */
+        .info-block {
+            background: var(--bg);
+            border-left: 3px solid var(--accent);
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+        
+        .info-block p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            background: var(--fg);
+            color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 48px 0;
+        }
+        
+        .cta-box h3 {
+            margin: 0 0 16px 0;
+            color: #fff;
+        }
+        
+        .cta-box p {
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #fff;
+            color: var(--fg);
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+        
+        .btn:hover {
+            opacity: 0.85;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            article { padding: 40px 24px; }
+            .featured-image { height: 250px; }
+            .qa-block { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/#submit">Submit Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article>
+            <div class="article-meta">Last updated: January 15, 2026 • 16 min read</div>
+            
+            <h1>Speech Recognition Engineer Interview Questions: Complete Prep Guide 2026</h1>
+            
+            <!-- FEATURED IMAGE PLACEHOLDER -->
+            <div class="featured-image">
+                [Featured Image: Interview preparation or whiteboard with ASR concepts]
+            </div>
+            
+            <p>So you landed an interview for a speech recognition engineering role. Congrats! Now comes the hard part: actually passing it.</p>
+
+            <p>This guide covers everything you'll face in ASR/speech tech interviews—from technical questions to coding challenges to system design. I've compiled 30+ real questions asked at companies like Google, Amazon, OpenAI, and speech AI startups, with detailed answers and explanations.</p>
+
+            <p>Whether you're interviewing at FAANG or a Series B startup, this guide will help you prepare efficiently and avoid common pitfalls.</p>
+
+            <h2>Interview Process Overview</h2>
+
+            <p>Here's what a typical speech recognition engineer interview looks like:</p>
+
+            <h3>Standard Timeline</h3>
+            <ul>
+                <li><strong>Recruiter Screen (30 min):</strong> Background, salary expectations, logistics</li>
+                <li><strong>Technical Screen (45-60 min):</strong> Coding + concepts, usually over phone/video</li>
+                <li><strong>Take-Home (optional):</strong> Some startups give 2-4 hour projects</li>
+                <li><strong>Onsite/Virtual Onsite (4-6 hours):</strong> Multiple rounds back-to-back</li>
+                <li><strong>Offer/Rejection (1-2 weeks):</strong> Negotiation phase if successful</li>
+            </ul>
+
+            <p><strong>Total timeline:</strong> 3-6 weeks from application to offer</p>
+
+            <h3>Interview Round Breakdown</h3>
+
+            <p><strong>For FAANG companies:</strong></p>
+            <ul>
+                <li>Round 1: Coding (60 min) - LeetCode medium/hard + speech basics</li>
+                <li>Round 2: ML System Design (45-60 min) - Design ASR system</li>
+                <li>Round 3: Technical Deep Dive (60 min) - Your projects + paper discussion</li>
+                <li>Round 4: Behavioral (30-45 min) - Culture fit, past situations</li>
+            </ul>
+
+            <p><strong>For Startups:</strong></p>
+            <ul>
+                <li>Round 1: Technical Screen (60 min) - Projects + live coding</li>
+                <li>Round 2: Take-Home (2-4 hours) - Build small ASR component</li>
+                <li>Round 3: Team Fit (45 min) - Meet potential colleagues</li>
+                <li>Round 4: Founders (30-45 min) - Vision, values, negotiation</li>
+            </ul>
+
+            <div class="cta-box">
+                <h3>Ready to Interview?</h3>
+                <p>Submit your profile and get matched with companies hiring speech recognition engineers.</p>
+                <a href="/#submit" class="btn">Submit Your Profile</a>
+            </div>
+
+            <h2>Technical Concepts: Must-Know Questions</h2>
+
+            <p>These foundational questions come up in almost every speech recognition interview. Master these first.</p>
+
+            <div class="qa-block">
+                <div class="question">1. Explain how CTC (Connectionist Temporal Classification) loss works. <span class="difficulty easy">Easy</span></div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> CTC loss allows training sequence-to-sequence models without requiring frame-level alignments between audio and text. It works by:</p>
+                    <ul>
+                        <li>Introducing a "blank" token that represents no output</li>
+                        <li>Allowing multiple paths through the output sequence that collapse to the same final text</li>
+                        <li>Summing probabilities of all valid paths that produce the target sequence</li>
+                        <li>Using dynamic programming to compute this efficiently</li>
+                    </ul>
+                    <p><strong>Why it matters:</strong> CTC was revolutionary for ASR because you don't need phoneme-level timestamps—just the audio and final transcription.</p>
+                    <p><strong>Follow-up they might ask:</strong> "What are the limitations of CTC?" (Answer: Can't model output dependencies, blank token overhead, assumes conditional independence)</p>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">2. What's the difference between WER (Word Error Rate) and CER (Character Error Rate)? When would you use each? <span class="difficulty easy">Easy</span></div>
+                <div class="answer">
+                    <p><strong>Answer:</strong></p>
+                    <p><strong>WER:</strong> Measures errors at word level. Formula: (Substitutions + Deletions + Insertions) / Total Words</p>
+                    <p><strong>CER:</strong> Measures errors at character level. Same formula but applied to characters.</p>
+                    <p><strong>When to use:</strong></p>
+                    <ul>
+                        <li><strong>WER:</strong> English and other space-separated languages, end-user facing metrics</li>
+                        <li><strong>CER:</strong> Languages without clear word boundaries (Chinese, Japanese), when word tokenization is unclear</li>
+                    </ul>
+                    <p><strong>Pro tip:</strong> Always report which metric you're using—a 5% WER sounds great until you realize the baseline was 2%.</p>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">3. Explain the architecture of an end-to-end ASR model (like Listen, Attend, and Spell). <span class="difficulty medium">Medium</span></div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> End-to-end ASR models typically have three components:</p>
+                    <ol>
+                        <li><strong>Encoder:</strong> Converts audio features (mel-spectrograms) into high-level representations. Usually a stack of CNNs + RNNs or Transformers. Takes variable-length audio input.</li>
+                        <li><strong>Attention Mechanism:</strong> Learns to focus on relevant parts of the encoded audio when predicting each output token. Allows the model to "attend" to different parts of the audio at different times.</li>
+                        <li><strong>Decoder:</strong> Generates output sequence (characters or subwords) autoregressively. Uses previous predictions and attended encoder outputs.</li>
+                    </ol>
+                    <p><strong>Key advantage over traditional pipeline:</strong> Single neural network trained end-to-end, no need for separate acoustic model, pronunciation dictionary, and language model.</p>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">4. How does beam search work in ASR? What's the tradeoff between beam width and performance? <span class="difficulty medium">Medium</span></div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> Beam search is a decoding algorithm that maintains the top K most likely partial hypotheses at each step:</p>
+                    <ol>
+                        <li>Start with K=beam_width empty hypotheses</li>
+                        <li>For each hypothesis, generate all possible next tokens</li>
+                        <li>Score each extension (usually log probability)</li>
+                        <li>Keep only the top K scored complete hypotheses</li>
+                        <li>Repeat until end-of-sequence or max length</li>
+                    </ol>
+                    <p><strong>Tradeoffs:</strong></p>
+                    <ul>
+                        <li><strong>Larger beam (K=10-20):</strong> Better accuracy, slower inference, more memory</li>
+                        <li><strong>Smaller beam (K=1-5):</strong> Faster inference, less memory, might miss optimal path</li>
+                        <li><strong>K=1 (greedy):</strong> Fastest but often suboptimal</li>
+                    </ul>
+                    <p><strong>Production insight:</strong> Most systems use K=5-8 as a sweet spot. Beyond K=10, gains plateau.</p>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">5. What are mel-spectrograms and why do we use them for speech recognition? <span class="difficulty easy">Easy</span></div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> Mel-spectrograms are time-frequency representations of audio that use the mel scale, which better matches human perception of sound.</p>
+                    <p><strong>How they're created:</strong></p>
+                    <ol>
+                        <li>Take raw audio waveform</li>
+                        <li>Apply Short-Time Fourier Transform (STFT) to get spectrogram</li>
+                        <li>Convert frequency axis to mel scale (logarithmic)</li>
+                        <li>Often apply logarithm to amplitudes</li>
+                    </ol>
+                    <p><strong>Why mel scale?</strong> Humans perceive pitch logarithmically—doubling from 100Hz to 200Hz sounds like the same "distance" as 1000Hz to 2000Hz. Mel scale captures this.</p>
+                    <p><strong>Why use them?</strong> Better than raw audio (too high-dimensional) or linear spectrograms (don't match human perception).</p>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">6. Explain the difference between streaming and non-streaming ASR. What are the technical challenges of streaming? <span class="difficulty medium">Medium</span></div>
+                <div class="answer">
+                    <p><strong>Non-streaming (offline):</strong> Process entire audio file at once, can look forward and backward, higher accuracy.</p>
+                    <p><strong>Streaming (online):</strong> Process audio in real-time as it arrives, can only look backward (and limited lookahead), must maintain low latency.</p>
+                    <p><strong>Technical challenges of streaming:</strong></p>
+                    <ul>
+                        <li><strong>Latency:</strong> Must emit results within ~200-500ms for real-time feel</li>
+                        <li><strong>Chunking:</strong> How to split audio while maintaining context?</li>
+                        <li><strong>Look-ahead limitations:</strong> Can't use future context that works well offline</li>
+                        <li><strong>Stability:</strong> Results shouldn't change after being emitted (no "flickering")</li>
+                        <li><strong>State management:</strong> Need to maintain decoder state between chunks</li>
+                    </ul>
+                    <p><strong>Common solutions:</strong> RNN-Transducer architecture, limited lookahead windows, causal attention mechanisms.</p>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">7. What is Wav2Vec 2.0 and how does self-supervised learning work for speech? <span class="difficulty hard">Hard</span></div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> Wav2Vec 2.0 is a self-supervised learning approach for speech that learns representations from raw audio without transcriptions.</p>
+                    <p><strong>How it works:</strong></p>
+                    <ol>
+                        <li><strong>Masking:</strong> Randomly mask portions of the audio input (like BERT does for text)</li>
+                        <li><strong>Quantization:</strong> Discretize the audio into a finite set of representations</li>
+                        <li><strong>Contrastive Learning:</strong> Train the model to predict the correct quantized representation from a set of "distractors"</li>
+                        <li><strong>Fine-tuning:</strong> After pre-training, add a small CTC head and fine-tune on labeled data</li>
+                    </ol>
+                    <p><strong>Why it's important:</strong> Achieves strong results with as little as 10 minutes of labeled data for low-resource languages, vs. thousands of hours needed for traditional approaches.</p>
+                    <p><strong>Related work:</strong> HuBERT, WavLM, Data2Vec (similar ideas with variations)</p>
+                </div>
+            </div>
+
+            <h2>Coding Questions</h2>
+
+            <p>Speech engineer interviews have less leetcode grinding than general SWE, but you still need strong coding fundamentals. Here are common patterns:</p>
+
+            <div class="qa-block">
+                <div class="question">8. Write a function to compute Word Error Rate (WER) between reference and hypothesis. <span class="difficulty easy">Easy</span></div>
+                <div class="answer">
+<pre><code>def compute_wer(reference, hypothesis):
+    """
+    Compute Word Error Rate using Levenshtein distance.
+    
+    Args:
+        reference: Ground truth string
+        hypothesis: Predicted string
+    
+    Returns:
+        WER as a float (0.0 to 1.0+)
+    """
+    ref_words = reference.split()
+    hyp_words = hypothesis.split()
+    
+    # Build edit distance matrix
+    d = [[0] * (len(hyp_words) + 1) for _ in range(len(ref_words) + 1)]
+    
+    # Initialize first row and column
+    for i in range(len(ref_words) + 1):
+        d[i][0] = i
+    for j in range(len(hyp_words) + 1):
+        d[0][j] = j
+    
+    # Fill matrix
+    for i in range(1, len(ref_words) + 1):
+        for j in range(1, len(hyp_words) + 1):
+            if ref_words[i-1] == hyp_words[j-1]:
+                d[i][j] = d[i-1][j-1]  # No error
+            else:
+                substitution = d[i-1][j-1] + 1
+                insertion = d[i][j-1] + 1
+                deletion = d[i-1][j] + 1
+                d[i][j] = min(substitution, insertion, deletion)
+    
+    # WER = edit distance / reference length
+    return d[len(ref_words)][len(hyp_words)] / len(ref_words) if ref_words else 0.0
+
+# Test
+ref = "the quick brown fox"
+hyp = "the qwick brown fox"
+print(f"WER: {compute_wer(ref, hyp):.2f}")  # 0.25 (1 error out of 4 words)
+</code></pre>
+                    <p><strong>Follow-up questions:</strong></p>
+                    <ul>
+                        <li>"How would you optimize this for very long sequences?" (Answer: Use NumPy, only keep two rows)</li>
+                        <li>"What if you need to return the specific errors?" (Answer: Backtrack through the matrix)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">9. Implement greedy CTC decoding from model outputs. <span class="difficulty medium">Medium</span></div>
+                <div class="answer">
+<pre><code>def greedy_ctc_decode(logits, blank_id=0):
+    """
+    Greedy CTC decoding: take argmax at each timestep, collapse repeats and blanks.
+    
+    Args:
+        logits: (T, vocab_size) model outputs before softmax
+        blank_id: ID of blank token (usually 0)
+    
+    Returns:
+        List of predicted token IDs
+    """
+    import numpy as np
+    
+    # Get argmax at each timestep
+    predictions = np.argmax(logits, axis=1)
+    
+    # Collapse: remove consecutive duplicates and blanks
+    output = []
+    previous = None
+    
+    for pred in predictions:
+        # Skip if same as previous (collapse repeats)
+        if pred == previous:
+            continue
+        # Skip blank tokens
+        if pred == blank_id:
+            previous = pred
+            continue
+        # Add to output
+        output.append(pred)
+        previous = pred
+    
+    return output
+
+# Example usage
+# logits shape: (50, 29) for 50 timesteps, 29 tokens (26 letters + 3 special)
+# After greedy decode: might get [8, 5, 12, 12, 15] -> "hello"
+</code></pre>
+                    <p><strong>Extension:</strong> "Now implement beam search CTC decoding" (significantly harder, usually just discuss approach)</p>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">10. Write a function to extract mel-spectrogram features from raw audio. <span class="difficulty medium">Medium</span></div>
+                <div class="answer">
+<pre><code>import librosa
+import numpy as np
+
+def extract_mel_spectrogram(audio_path, sr=16000, n_mels=80, 
+                           n_fft=400, hop_length=160):
+    """
+    Extract mel-spectrogram features from audio file.
+    
+    Args:
+        audio_path: Path to audio file
+        sr: Sample rate
+        n_mels: Number of mel bands
+        n_fft: FFT window size
+        hop_length: Hop length for STFT
+    
+    Returns:
+        Mel-spectrogram (n_mels, time)
+    """
+    # Load audio
+    audio, _ = librosa.load(audio_path, sr=sr)
+    
+    # Compute mel-spectrogram
+    mel_spec = librosa.feature.melspectrogram(
+        y=audio,
+        sr=sr,
+        n_fft=n_fft,
+        hop_length=hop_length,
+        n_mels=n_mels,
+        fmin=0,
+        fmax=sr/2
+    )
+    
+    # Convert to log scale (dB)
+    mel_spec_db = librosa.power_to_db(mel_spec, ref=np.max)
+    
+    return mel_spec_db
+
+# Usage
+features = extract_mel_spectrogram('speech.wav')
+print(f"Feature shape: {features.shape}")  # (80, T)
+</code></pre>
+                    <p><strong>Discussion points:</strong></p>
+                    <ul>
+                        <li>"Why these specific hyperparameters?" (16kHz is standard for speech, 80 mels is common, hop of 10ms)</li>
+                        <li>"What's the time resolution?" (hop_length/sr = 10ms per frame)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Want to Practice More?</h3>
+                <p>Get matched with companies and practice with real interview questions for speech tech roles.</p>
+                <a href="/#submit" class="btn">Submit Your Profile →</a>
+            </div>
+
+            <h2>System Design Questions</h2>
+
+            <p>Senior roles (L5+/Staff) will have a system design round. These are open-ended and test your ability to architect production systems.</p>
+
+            <div class="qa-block">
+                <div class="question">11. Design a real-time voice assistant system (like Alexa) that handles 10M concurrent users. <span class="difficulty hard">Hard</span></div>
+                <div class="answer">
+                    <p><strong>Key components to discuss:</strong></p>
+                    
+                    <p><strong>1. Wake Word Detection (on-device)</strong></p>
+                    <ul>
+                        <li>Tiny neural network (1-5MB) running on device</li>
+                        <li>Always listening, very low power</li>
+                        <li>High recall (catch all wake words), lower precision OK</li>
+                        <li>Sends audio to cloud only after detection</li>
+                    </ul>
+                    
+                    <p><strong>2. ASR Service (cloud)</strong></p>
+                    <ul>
+                        <li>Streaming ASR (RNN-T or similar)</li>
+                        <li>Auto-scaling based on load</li>
+                        <li>Regional deployment (latency)</li>
+                        <li>GPU inference servers</li>
+                        <li>Target latency: <200ms for first word</li>
+                    </ul>
+                    
+                    <p><strong>3. NLU (Intent Classification)</strong></p>
+                    <ul>
+                        <li>Extract intent and entities from transcription</li>
+                        <li>Route to appropriate service (music, weather, etc.)</li>
+                        <li>Fast inference (CPU or small GPU)</li>
+                    </ul>
+                    
+                    <p><strong>4. Response Generation</strong></p>
+                    <ul>
+                        <li>TTS for voice response</li>
+                        <li>Caching common responses</li>
+                        <li>Multiple voice options</li>
+                    </ul>
+                    
+                    <p><strong>Scale considerations:</strong></p>
+                    <ul>
+                        <li><strong>10M concurrent:</strong> Need thousands of inference servers</li>
+                        <li><strong>Load balancing:</strong> Geographic routing, queue management</li>
+                        <li><strong>Cost optimization:</strong> Batch where possible, cache aggressively</li>
+                        <li><strong>Monitoring:</strong> Latency p50/p95/p99, WER, uptime</li>
+                    </ul>
+                    
+                    <p><strong>Tradeoffs to discuss:</strong></p>
+                    <ul>
+                        <li>On-device vs cloud processing (privacy vs accuracy)</li>
+                        <li>Model size vs accuracy (smaller = faster but less accurate)</li>
+                        <li>Streaming vs batch (latency vs throughput)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">12. Design a meeting transcription service (like Otter.ai) that handles 1000 concurrent meetings. <span class="difficulty medium">Medium</span></div>
+                <div class="answer">
+                    <p><strong>Architecture components:</strong></p>
+                    
+                    <p><strong>1. Audio Ingestion</strong></p>
+                    <ul>
+                        <li>WebSocket or WebRTC from client</li>
+                        <li>Audio chunking (1-5 second segments)</li>
+                        <li>Queue system (Kafka/RabbitMQ)</li>
+                    </ul>
+                    
+                    <p><strong>2. ASR Pipeline</strong></p>
+                    <ul>
+                        <li>Streaming ASR (Whisper or similar)</li>
+                        <li>Speaker diarization (who spoke when)</li>
+                        <li>Punctuation restoration</li>
+                        <li>Word-level timestamps</li>
+                    </ul>
+                    
+                    <p><strong>3. Post-Processing</strong></p>
+                    <ul>
+                        <li>Filler word removal (um, uh, like)</li>
+                        <li>Paragraph segmentation</li>
+                        <li>Named entity recognition</li>
+                        <li>Action item extraction (ML model)</li>
+                    </ul>
+                    
+                    <p><strong>4. Storage & Retrieval</strong></p>
+                    <ul>
+                        <li>Audio in S3/cloud storage</li>
+                        <li>Transcripts in database (PostgreSQL)</li>
+                        <li>Full-text search (Elasticsearch)</li>
+                    </ul>
+                    
+                    <p><strong>Scale math:</strong></p>
+                    <ul>
+                        <li>1000 concurrent meetings, 1 hour avg = 1000 audio-hours/hour</li>
+                        <li>Real-time factor (RTF) = 0.2-0.5 (process 1 hour in 12-30 min)</li>
+                        <li>Need ~50-200 GPU instances for ASR</li>
+                        <li>Storage: 1000 meetings/day * 30 days * 100MB audio = 3TB/month</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Behavioral & Culture Fit Questions</h2>
+
+            <p>Don't underestimate these. I've seen strong technical candidates fail here.</p>
+
+            <div class="qa-block">
+                <div class="question">13. Tell me about a time you disagreed with a technical decision. How did you handle it?</div>
+                <div class="answer">
+                    <p><strong>What they're really asking:</strong> Can you advocate for your ideas while staying collaborative?</p>
+                    <p><strong>Good answer structure (STAR method):</strong></p>
+                    <ul>
+                        <li><strong>Situation:</strong> "We were deciding between RNN-T and Transformer for streaming ASR..."</li>
+                        <li><strong>Task:</strong> "I believed RNN-T was better for our latency requirements..."</li>
+                        <li><strong>Action:</strong> "I prepared a doc with benchmark data, presented to the team, and we decided to prototype both..."</li>
+                        <li><strong>Result:</strong> "RNN-T won, but the process helped us align on latency goals..."</li>
+                    </ul>
+                    <p><strong>Red flags to avoid:</strong> Being stubborn, not listening to others, making it personal</p>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">14. Describe a project where you had to learn a new technology quickly.</div>
+                <div class="answer">
+                    <p><strong>Why they ask:</strong> Speech tech moves fast. Can you adapt?</p>
+                    <p><strong>Good example topics:</strong></p>
+                    <ul>
+                        <li>Learning Whisper when it came out and applying it to your use case</li>
+                        <li>Picking up Kaldi despite its steep learning curve</li>
+                        <li>Diving into self-supervised learning papers and implementing Wav2Vec</li>
+                    </ul>
+                    <p><strong>Key points to emphasize:</strong></p>
+                    <ul>
+                        <li>How you approached learning (papers, code, experiments)</li>
+                        <li>Timeline (weeks not months)</li>
+                        <li>Concrete outcome (shipped feature, improved metric)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="qa-block">
+                <div class="question">15. Why do you want to work on speech recognition specifically?</div>
+                <div class="answer">
+                    <p><strong>Bad answer:</strong> "It's a hot field" or "Good salary"</p>
+                    <p><strong>Good answer shows genuine interest:</strong></p>
+                    <ul>
+                        <li>"I'm fascinated by how much context ASR requires—acoustic + linguistic + sometimes visual..."</li>
+                        <li>"Voice is the most natural interface, but we're still far from solving it..."</li>
+                        <li>"I built a project using Whisper and realized how challenging low-resource languages are..."</li>
+                        <li>"The combination of signal processing, deep learning, and linguistics is unique..."</li>
+                    </ul>
+                    <p><strong>Connect to company:</strong> "Your work on [specific product] aligns with my interest in [area]..."</p>
+                </div>
+            </div>
+
+            <h2>Questions to Ask the Interviewer</h2>
+
+            <p>Always have 2-3 questions ready. Shows interest and helps you evaluate the role.</p>
+
+            <h3>About the Role</h3>
+            <ul>
+                <li>"What does a typical day look like for someone in this role?"</li>
+                <li>"What's the balance between research and production engineering?"</li>
+                <li>"How much autonomy do engineers have in choosing projects?"</li>
+                <li>"What's the deployment process for new models?"</li>
+            </ul>
+
+            <h3>About the Team</h3>
+            <ul>
+                <li>"How is the speech team structured? Research vs. engineering?"</li>
+                <li>"What's the team's philosophy on publishing vs. keeping things internal?"</li>
+                <li>"How do you measure success for speech projects?"</li>
+                <li>"What's the biggest technical challenge the team is facing right now?"</li>
+            </ul>
+
+            <h3>About Growth</h3>
+            <ul>
+                <li>"What does career progression look like for speech engineers here?"</li>
+                <li>"Is there a conference/education budget?"</li>
+                <li>"How does the company support learning new techniques as the field evolves?"</li>
+            </ul>
+
+            <h3>Red Flag Questions (ask carefully)</h3>
+            <ul>
+                <li>"What's your attrition rate on the speech team?" (High = problem)</li>
+                <li>"How stable is funding for speech projects?" (Startups especially)</li>
+                <li>"What happened to the last person in this role?" (If it's a backfill)</li>
+            </ul>
+
+            <h2>Interview Preparation Timeline</h2>
+
+            <div class="info-block">
+                <p><strong>2 weeks before:</strong></p>
+                <ul>
+                    <li>Review all projects on your resume—be able to explain every detail</li>
+                    <li>Read 3-5 recent speech papers (Whisper, Conformer, recent improvements)</li>
+                    <li>Practice coding: WER calculation, audio processing, basic ML</li>
+                    <li>List out technical decisions you've made and why</li>
+                </ul>
+                
+                <p><strong>1 week before:</strong></p>
+                <ul>
+                    <li>Mock interview with a friend or mentor</li>
+                    <li>Research the company's speech products deeply</li>
+                    <li>Prepare your "Tell me about yourself" (2-minute version)</li>
+                    <li>Practice whiteboarding system design questions</li>
+                </ul>
+                
+                <p><strong>Day before:</strong></p>
+                <ul>
+                    <li>Review key concepts (CTC, attention, beam search)</li>
+                    <li>Prepare questions to ask interviewers</li>
+                    <li>Get good sleep (seriously)</li>
+                    <li>Test your setup (camera, mic, internet)</li>
+                </ul>
+            </div>
+
+            <h2>Common Mistakes to Avoid</h2>
+
+            <ol>
+                <li><strong>Going too deep too fast</strong> - Start high-level, let them ask for details</li>
+                <li><strong>Not asking clarifying questions</strong> - Ambiguity is intentional, ask!</li>
+                <li><strong>Ignoring tradeoffs</strong> - Everything is a tradeoff (accuracy vs. latency, etc.)</li>
+                <li><strong>Claiming you know something you don't</strong> - "I'm not familiar with X, but here's how I'd approach learning it..."</li>
+                <li><strong>Bad-mouthing previous employers</strong> - Even if justified, looks bad</li>
+                <li><strong>Not practicing out loud</strong> - What sounds clear in your head often isn't</li>
+                <li><strong>Forgetting to mention impact</strong> - "Improved WER by 2%" is better than "Built a model"</li>
+            </ol>
+
+            <h2>Red Flags During Interviews</h2>
+
+            <p>Watch out for these warning signs about the company/role:</p>
+
+            <ul>
+                <li><strong>Interviewers don't know what they're looking for</strong> - Disorganized, contradictory feedback</li>
+                <li><strong>No other speech engineers on team</strong> - You'll be building from scratch (could be good or bad)</li>
+                <li><strong>Unrealistic expectations</strong> - "We want 1% WER" without acknowledging difficulty</li>
+                <li><strong>Vague about data</strong> - ASR needs lots of data. Where will it come from?</li>
+                <li><strong>Poor work-life balance signals</strong> - Interviewers look exhausted, mention working weekends</li>
+                <li><strong>Compensation dodging</strong> - Won't give clear numbers or ranges</li>
+            </ul>
+
+            <div class="cta-box">
+                <h3>Ready to Ace Your Speech Tech Interview?</h3>
+                <p>Submit your profile and get matched with companies hiring speech recognition engineers. We'll help you prepare for interviews with real examples.</p>
+                <a href="/#submit" class="btn">Submit Your Profile →</a>
+                <p style="font-size: 13px; margin-top: 16px;">No recruiter spam. Direct applications only. Free for candidates.</p>
+            </div>
+
+            <h2>The Bottom Line</h2>
+
+            <p>Speech recognition interviews test three things:</p>
+            <ol>
+                <li><strong>Technical depth:</strong> Do you understand the fundamentals?</li>
+                <li><strong>Practical skills:</strong> Can you actually build things?</li>
+                <li><strong>Communication:</strong> Can you explain complex ideas clearly?</li>
+            </ol>
+
+            <p>Focus on:</p>
+            <ul>
+                <li>Mastering core concepts (CTC, attention, metrics)</li>
+                <li>Being able to code audio processing and evaluation scripts</li>
+                <li>Discussing your projects with clarity and confidence</li>
+                <li>Understanding production tradeoffs (latency, accuracy, cost)</li>
+            </ul>
+
+            <p>Most importantly: <strong>Be honest about what you know and don't know.</strong> Interviewers respect "I don't know, but here's how I'd figure it out" far more than confident bullshit.</p>
+
+            <p>Good luck. You've got this.</p>
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 48px 0;">
+
+            <p style="font-size: 13px; color: var(--muted);"><em>Last updated: January 15, 2026. Interview questions compiled from engineers at Google, Meta, Amazon, OpenAI, and speech AI startups. Your actual interview may vary.</em></p>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/" style="color: var(--muted); margin-left: 16px;">Home</a> <a href="/blog" style="color: var(--muted); margin-left: 16px;">Blog</a></p>
+        </div>
+    </footer>
+</body>
+</html>

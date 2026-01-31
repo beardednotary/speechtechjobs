@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Technology Blog | ASR, NLP & Audio ML Guides | SpeechTechJobs</title>
+    <meta name="description" content="Expert guides on speech recognition careers, Whisper AI, Kaldi, speaker diarization, and voice technology. Salary data, interview prep, and technical tutorials.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="SpeechTechJobs Blog" href="/feed.xml">
+    
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 80px 0 40px;
+            background: #fff;
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        
+        .rss-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--fg);
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .rss-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+        /* Articles Grid */
+        .articles-section {
+            padding: 60px 0;
+        }
+        
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+        }
+        
+        .articles-grid {
+            display: grid;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px;
+            text-decoration: none;
+            color: var(--fg);
+            display: block;
+            transition: all 0.2s;
+        }
+        
+        .article-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .article-category {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+        
+        .article-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .article-excerpt {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--fg);
+            color: #fff;
+            padding: 60px 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #fff;
+            color: var(--fg);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: opacity 0.15s;
+        }
+        
+        .cta-btn:hover {
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            background: var(--bg);
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title { font-size: 36px; }
+            .article-title { font-size: 24px; }
+            .article-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/jobs">Jobs</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Speech Technology Blog</h1>
+            <p class="page-subtitle">Career guides, technical tutorials, and industry insights for speech engineers</p>
+            <a href="/feed.xml" class="rss-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 11a9 9 0 0 1 9 9"></path>
+                    <path d="M4 4a16 16 0 0 1 16 16"></path>
+                    <circle cx="5" cy="19" r="1"></circle>
+                </svg>
+                Subscribe via RSS
+            </a>
+        </div>
+    </section>
+
+    <section class="articles-section">
+        <div class="container">
+            <div class="section-label">Latest Articles</div>
+            
+            <div class="articles-grid">
+                <!-- Article 1: Gong vs Chorus -->
+                <a href="/blog/gong-vs-chorus-engineer-comparison-2026.html" class="article-card">
+                    <div class="article-category">Company Comparison</div>
+                    <h2 class="article-title">Gong vs Chorus: Which Pays Better for Speech Engineers?</h2>
+                    <p class="article-excerpt">
+                        Head-to-head comparison of Gong and Chorus compensation, culture, and tech stacks. Real salary data ($200K-$280K), equity analysis, work-life balance, and which company is right for you.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 18, 2026</span>
+                        <span>•</span>
+                        <span>18 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 2: Speech Analytics Interview Questions -->
+                <a href="/blog/speech-analytics-interview-questions-2026.html" class="article-card">
+                    <div class="article-category">Interview Prep</div>
+                    <h2 class="article-title">50+ Speech Analytics Interview Questions & Answers (2026)</h2>
+                    <p class="article-excerpt">
+                        Comprehensive interview prep for speech analytics roles. Technical questions on diarization, sentiment analysis, NLP, system design, and coding. Real answers from Gong, Chorus, and CallMiner engineers.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 18, 2026</span>
+                        <span>•</span>
+                        <span>25 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 3: Top Speech Analytics Companies -->
+                <a href="/blog/top-speech-analytics-companies-hiring-2026.html" class="article-card">
+                    <div class="article-category">Company Guide</div>
+                    <h2 class="article-title">Top 10 Speech Analytics Companies Hiring in 2026</h2>
+                    <p class="article-excerpt">
+                        Inside look at the best speech analytics companies. Compare Gong, Chorus, Otter, CallMiner salaries ($145K-$280K+), engineering culture, tech stacks, and growth opportunities.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 18, 2026</span>
+                        <span>•</span>
+                        <span>20 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 4: Speaker Diarization -->
+                <a href="/blog/speaker-diarization-guide-career-2026.html" class="article-card">
+                    <div class="article-category">Technical Guide</div>
+                    <h2 class="article-title">Speaker Diarization: How It Works + Career Guide (2026)</h2>
+                    <p class="article-excerpt">
+                        Complete guide to speaker diarization technology and careers. Learn how "who spoke when" systems work, required skills, salaries ($150K-$240K), and companies hiring in 2026.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 17, 2026</span>
+                        <span>•</span>
+                        <span>16 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 5: Whisper Jobs -->
+                <a href="/blog/whisper-ai-jobs-salary-guide-2026.html" class="article-card">
+                    <div class="article-category">Career Guide</div>
+                    <h2 class="article-title">Whisper AI Jobs: Salary, Skills & Companies Hiring (2026)</h2>
+                    <p class="article-excerpt">
+                        Complete guide to Whisper AI career opportunities. Discover salaries ($140K-$230K), required skills, companies hiring, and how to land a Whisper specialist role in 2026.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 17, 2026</span>
+                        <span>•</span>
+                        <span>15 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 6: What is Kaldi -->
+                <a href="/blog/what-is-kaldi-complete-guide-2026.html" class="article-card">
+                    <div class="article-category">Technical Guide</div>
+                    <h2 class="article-title">What is Kaldi? Complete Guide for Speech Engineers (2026)</h2>
+                    <p class="article-excerpt">
+                        Complete guide to Kaldi speech recognition toolkit. Learn what Kaldi is, how it works, when to use it vs Whisper, and career opportunities for Kaldi engineers in 2026.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 17, 2026</span>
+                        <span>•</span>
+                        <span>18 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 7: How to Break Into Speech Tech -->
+                <a href="/blog/how-to-break-into-speech-tech-2026.html" class="article-card">
+                    <div class="article-category">Career Guide</div>
+                    <h2 class="article-title">How to Break Into Speech Tech in 2026 (No PhD Required)</h2>
+                    <p class="article-excerpt">
+                        Step-by-step guide to launching a speech tech career without a PhD. Learn the skills, build a portfolio, and land your first ASR job in 2026. Real advice from self-taught engineers.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 15, 2026</span>
+                        <span>•</span>
+                        <span>14 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 8: Kaldi vs Whisper vs Wav2Vec -->
+                <a href="/blog/kaldi-vs-whisper-vs-wav2vec-2026.html" class="article-card">
+                    <div class="article-category">Technical Comparison</div>
+                    <h2 class="article-title">Kaldi vs Whisper vs Wav2Vec 2.0: Which ASR Framework in 2026?</h2>
+                    <p class="article-excerpt">
+                        Technical comparison of the three major ASR frameworks. Learn when to use Kaldi (production), Whisper (general-purpose), or Wav2Vec 2.0 (research/low-resource).
+                    </p>
+                    <div class="article-meta">
+                        <span>January 15, 2026</span>
+                        <span>•</span>
+                        <span>12 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 9: Remote Speech Recognition Jobs -->
+                <a href="/blog/remote-speech-recognition-jobs-2026.html" class="article-card">
+                    <div class="article-category">Career Guide</div>
+                    <h2 class="article-title">Remote Speech Recognition Jobs: Complete Guide (2026)</h2>
+                    <p class="article-excerpt">
+                        Find fully remote ASR roles at top companies. Learn which companies hire remotely, salary expectations ($130K-$240K), time zone requirements, and how to land remote speech tech jobs.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 15, 2026</span>
+                        <span>•</span>
+                        <span>13 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 10: Speech Recognition Engineer Salary -->
+                <a href="/blog/speech-recognition-engineer-salary-2026.html" class="article-card">
+                    <div class="article-category">Salary Guide</div>
+                    <h2 class="article-title">Speech Recognition Engineer Salary Guide (2026)</h2>
+                    <p class="article-excerpt">
+                        Complete salary breakdown for speech recognition engineers. Discover pay ranges by experience level, location, and company type. Base + equity + bonus data for $130K-$280K+ total comp.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 15, 2026</span>
+                        <span>•</span>
+                        <span>11 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 11: Speech Recognition Interview Questions -->
+                <a href="/blog/speech-recognition-interview-questions-2026.html" class="article-card">
+                    <div class="article-category">Interview Prep</div>
+                    <h2 class="article-title">Speech Recognition Interview Questions: Complete Prep Guide (2026)</h2>
+                    <p class="article-excerpt">
+                        Master speech recognition interviews with 40+ real questions. Covers ASR fundamentals, acoustic modeling, language models, system design, and coding challenges at top companies.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 15, 2026</span>
+                        <span>•</span>
+                        <span>22 min read</span>
+                    </div>
+                </a>
+
+                <!-- Article 12: Top Companies Hiring ASR Engineers -->
+                <a href="/blog/top-companies-hiring-asr-engineers-2026.html" class="article-card">
+                    <div class="article-category">Company Guide</div>
+                    <h2 class="article-title">Top 15 Companies Hiring ASR Engineers in 2026</h2>
+                    <p class="article-excerpt">
+                        Comprehensive guide to companies hiring speech recognition engineers. Compare salaries, tech stacks, and culture at OpenAI, Meta, Google, Amazon, and top startups.
+                    </p>
+                    <div class="article-meta">
+                        <span>January 15, 2026</span>
+                        <span>•</span>
+                        <span>17 min read</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Launch Your Speech Tech Career?</h2>
+                <p>Submit your profile to get matched with top companies hiring speech engineers.</p>
+                <a href="/#submit" class="cta-btn">Submit Your Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/privacy.html" style="color: var(--muted); margin-left: 16px;">Privacy</a> <a href="/terms.html" style="color: var(--muted); margin-left: 16px;">Terms</a></p>
+        </div>
+    </footer>
+</body>
+</html>

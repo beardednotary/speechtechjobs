@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Kaldi? Complete Guide for Speech Engineers (2026)</title>
+    <meta name="description" content="Complete guide to Kaldi speech recognition toolkit. Learn what Kaldi is, how it works, when to use it vs Whisper, and career opportunities for Kaldi engineers in 2026.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+    
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "What is Kaldi? Complete Guide for Speech Engineers (2026)",
+      "description": "Complete guide to Kaldi speech recognition toolkit for speech engineers",
+      "image": "https://speechtechjobs.com/images/kaldi-guide.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "SpeechTechJobs"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SpeechTechJobs",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://speechtechjobs.com/logo.png"
+        }
+      },
+      "datePublished": "2026-01-17",
+      "dateModified": "2026-01-17"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --code-bg: #f5f5f5;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+            margin-bottom: 40px;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        /* Article Header */
+        .article-header {
+            margin-bottom: 48px;
+        }
+        
+        .article-category {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .article-meta {
+            color: var(--muted);
+            font-size: 15px;
+            display: flex;
+            gap: 16px;
+        }
+        
+        /* Article Content */
+        .article-content {
+            background: #fff;
+            padding: 48px 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .article-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 20px 0;
+            line-height: 1.3;
+        }
+        
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+        }
+        
+        .article-content p {
+            margin-bottom: 24px;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 24px 0 24px 32px;
+        }
+        
+        .article-content li {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+        
+        .article-content strong {
+            font-weight: 600;
+            color: var(--fg);
+        }
+        
+        .article-content a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+        }
+        
+        .article-content a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Code blocks */
+        .article-content code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 15px;
+        }
+        
+        .article-content pre {
+            background: var(--code-bg);
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+        
+        .article-content pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        /* Callout boxes */
+        .callout {
+            background: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 32px 0;
+            border-radius: 4px;
+        }
+        
+        .callout-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        
+        .callout p {
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+        
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            font-weight: 600;
+            background: var(--bg);
+        }
+        
+        /* Related Jobs CTA */
+        .jobs-cta {
+            background: var(--fg);
+            color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .jobs-cta h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .jobs-cta p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+        
+        .jobs-cta .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #fff;
+            color: var(--fg);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: opacity 0.15s;
+        }
+        
+        .jobs-cta .btn:hover {
+            opacity: 0.9;
+        }
+        
+        /* Related Articles */
+        .related-articles {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .related-articles h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .related-article-card {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            color: var(--fg);
+            display: block;
+            transition: all 0.2s;
+        }
+        
+        .related-article-card:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+        
+        .related-article-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .related-article-excerpt {
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            background: var(--bg);
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .article-content { padding: 32px 24px; }
+            .article-content h2 { font-size: 24px; }
+            .article-content p, .article-content li { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/jobs">Jobs</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article>
+            <div class="article-header">
+                <div class="article-category">Technical Guide</div>
+                <h1>What is Kaldi? Complete Guide for Speech Engineers (2026)</h1>
+                <div class="article-meta">
+                    <span>January 17, 2026</span>
+                    <span>•</span>
+                    <span>18 min read</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <p><strong>Kaldi is an open-source speech recognition toolkit written in C++ and used for research and production ASR systems worldwide.</strong> If you're a speech engineer, ML engineer considering speech tech, or just curious about how voice assistants work under the hood, understanding Kaldi is essential—even in 2026.</p>
+
+                <p>Despite the rise of end-to-end models like Whisper and Wav2Vec, Kaldi remains the backbone of many production ASR systems at companies like Google, Amazon, and Microsoft. In this guide, we'll cover everything you need to know about Kaldi, from its architecture to career opportunities.</p>
+
+                <h2>What is Kaldi?</h2>
+
+                <p>Kaldi is a speech recognition toolkit developed in 2009 by Dan Povey (now at Xiaomi) and a community of contributors. It's designed for researchers and engineers building automatic speech recognition (ASR) systems.</p>
+
+                <p>Unlike end-to-end neural models that treat ASR as a single black-box problem, Kaldi follows a <strong>traditional hybrid approach</strong> that combines:</p>
+
+                <ul>
+                    <li><strong>Acoustic models</strong> (HMM-GMM or HMM-DNN) that map audio to phonemes</li>
+                    <li><strong>Language models</strong> that predict word sequences</li>
+                    <li><strong>Pronunciation dictionaries</strong> that connect words to phonemes</li>
+                    <li><strong>Weighted Finite State Transducers (WFSTs)</strong> for efficient decoding</li>
+                </ul>
+
+                <p>This modular architecture gives engineers fine-grained control over each component—critical for optimizing accuracy, latency, and resource usage in production systems.</p>
+
+                <h2>Why Kaldi Still Matters in 2026</h2>
+
+                <p>You might be thinking: "Why learn Kaldi when Whisper exists?" Great question. Here's why Kaldi is still relevant:</p>
+
+                <h3>1. Production Systems at Scale</h3>
+                <p>Most large-scale production ASR systems (Alexa, Google Assistant, Siri) still use Kaldi or Kaldi-derived architectures. Why? Because:</p>
+                <ul>
+                    <li><strong>Latency control</strong>: You can optimize each stage independently</li>
+                    <li><strong>Memory efficiency</strong>: Lower memory footprint than transformer models</li>
+                    <li><strong>Streaming support</strong>: Native support for real-time streaming ASR</li>
+                    <li><strong>Domain adaptation</strong>: Easy to swap language models for different domains</li>
+                </ul>
+
+                <h3>2. Customization and Control</h3>
+                <p>Need to add custom vocabulary for medical terms? Optimize for a specific accent? Reduce false positives on wake words? Kaldi's modular design makes these tasks straightforward. With end-to-end models, you're often stuck retraining the entire model.</p>
+
+                <h3>3. Resource-Constrained Environments</h3>
+                <p>Kaldi models can run on devices with limited compute (smart speakers, IoT devices, cars). Whisper's smallest model still requires significant resources compared to optimized Kaldi systems.</p>
+
+                <h3>4. Career Opportunities</h3>
+                <p>Companies hiring for production ASR roles almost always require Kaldi experience. Check job postings at Amazon, Google, Apple, Nuance, and enterprise speech vendors—Kaldi knowledge is frequently listed.</p>
+
+                <div class="callout">
+                    <div class="callout-title">💡 Real-World Example</div>
+                    <p>A major call center analytics company uses Kaldi because they need to process thousands of hours of audio daily with sub-100ms latency. Whisper would cost 10x more in GPU compute and couldn't meet their latency requirements.</p>
+                </div>
+
+                <h2>Kaldi vs Whisper vs Wav2Vec: Which to Learn?</h2>
+
+                <p>Let's compare the three most important ASR frameworks for 2026:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Kaldi</th>
+                            <th>Whisper</th>
+                            <th>Wav2Vec 2.0</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Approach</strong></td>
+                            <td>Hybrid HMM-DNN</td>
+                            <td>End-to-end Transformer</td>
+                            <td>Self-supervised + fine-tuning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Best For</strong></td>
+                            <td>Production systems, low-latency</td>
+                            <td>General-purpose transcription</td>
+                            <td>Low-resource languages</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Training Data Needed</strong></td>
+                            <td>High (100+ hours)</td>
+                            <td>None (pre-trained)</td>
+                            <td>Medium (10+ hours labeled)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Customization</strong></td>
+                            <td>Excellent</td>
+                            <td>Limited</td>
+                            <td>Good</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Streaming Support</strong></td>
+                            <td>Native</td>
+                            <td>Requires modification</td>
+                            <td>Possible with effort</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inference Cost</strong></td>
+                            <td>Low</td>
+                            <td>High</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accuracy (General)</strong></td>
+                            <td>Good</td>
+                            <td>Excellent</td>
+                            <td>Excellent</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Learning Curve</strong></td>
+                            <td>Steep</td>
+                            <td>Easy</td>
+                            <td>Medium</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Our Recommendation:</strong></p>
+                <ul>
+                    <li><strong>Learn Kaldi if:</strong> You want production ASR roles at FAANG/enterprise, need low-latency systems, or work with on-device ASR</li>
+                    <li><strong>Learn Whisper if:</strong> You're building transcription services, need quick prototypes, or work with general-purpose ASR</li>
+                    <li><strong>Learn Wav2Vec if:</strong> You work with low-resource languages or need state-of-the-art accuracy with limited labeled data</li>
+                </ul>
+
+                <div class="callout">
+                    <div class="callout-title">🎯 Pro Tip</div>
+                    <p>The best speech engineers know all three. Start with Whisper for quick wins, learn Kaldi for production systems, and explore Wav2Vec for research. This combination makes you incredibly valuable in the job market.</p>
+                </div>
+
+                <h2>How Kaldi Works: Architecture Overview</h2>
+
+                <p>Kaldi follows a traditional ASR pipeline. Here's a simplified explanation:</p>
+
+                <h3>1. Feature Extraction</h3>
+                <p>Raw audio is converted into acoustic features (typically MFCCs or filter banks). Kaldi includes optimized C++ code for this.</p>
+
+                <pre><code># Extract MFCC features
+steps/make_mfcc.sh --nj 4 data/train exp/make_mfcc/train mfcc</code></pre>
+
+                <h3>2. Acoustic Model Training</h3>
+                <p>The acoustic model learns to map acoustic features to phonemes. Kaldi supports:</p>
+                <ul>
+                    <li><strong>GMM-HMM</strong>: Traditional Gaussian Mixture Model approach</li>
+                    <li><strong>DNN-HMM</strong>: Deep neural network acoustic models</li>
+                    <li><strong>Chain models (LF-MMI)</strong>: State-of-the-art lattice-free MMI training</li>
+                </ul>
+
+                <h3>3. Language Model Integration</h3>
+                <p>The language model (typically an n-gram or neural LM) predicts likely word sequences. This is where you can customize vocabulary for specific domains.</p>
+
+                <h3>4. Decoding with WFSTs</h3>
+                <p>Kaldi uses Weighted Finite State Transducers to efficiently search through possible transcriptions. This is the "secret sauce" that makes Kaldi fast and memory-efficient.</p>
+
+                <h3>5. Lattice Rescoring</h3>
+                <p>Generate multiple hypotheses (lattices) and rescore with more powerful models for better accuracy.</p>
+
+                <h2>Getting Started with Kaldi</h2>
+
+                <p>Ready to dive in? Here's your roadmap:</p>
+
+                <h3>Prerequisites</h3>
+                <ul>
+                    <li><strong>Programming:</strong> Solid C++ and Bash scripting skills</li>
+                    <li><strong>Math:</strong> Understanding of probability, linear algebra, and signal processing</li>
+                    <li><strong>ML Basics:</strong> Familiarity with neural networks and optimization</li>
+                    <li><strong>Linux:</strong> Comfortable with command line and shell scripts</li>
+                </ul>
+
+                <h3>Installation</h3>
+                <pre><code># Clone Kaldi
+git clone https://github.com/kaldi-asr/kaldi.git
+cd kaldi/tools
+make -j 4
+
+# Install dependencies and build
+cd ../src
+./configure --shared
+make depend -j 4
+make -j 4</code></pre>
+
+                <h3>Your First Kaldi Recipe</h3>
+                <p>Start with the "yesno" recipe—a simple example that recognizes "yes" and "no":</p>
+
+                <pre><code>cd egs/yesno/s5
+./run.sh</code></pre>
+
+                <p>This will walk you through the entire pipeline in ~5 minutes and give you a feel for how Kaldi recipes work.</p>
+
+                <h3>Learning Resources</h3>
+                <ul>
+                    <li><strong>Official Kaldi Documentation:</strong> <a href="https://kaldi-asr.org/doc/">kaldi-asr.org/doc/</a></li>
+                    <li><strong>Kaldi Tutorial (Eleanor Chodroff):</strong> Excellent YouTube series</li>
+                    <li><strong>Dan Povey's Lectures:</strong> Deep dives into Kaldi internals</li>
+                    <li><strong>Josh Meyer's Blog:</strong> Practical Kaldi tutorials</li>
+                </ul>
+
+                <h2>Kaldi Career Paths & Salaries</h2>
+
+                <p>Kaldi expertise opens doors to some of the highest-paying roles in speech technology:</p>
+
+                <h3>Entry-Level (0-2 years)</h3>
+                <ul>
+                    <li><strong>Speech Engineer:</strong> $100K - $140K</li>
+                    <li><strong>ASR Developer:</strong> $95K - $130K</li>
+                    <li>Focus: Running existing recipes, data preparation, basic model training</li>
+                </ul>
+
+                <h3>Mid-Level (3-5 years)</h3>
+                <ul>
+                    <li><strong>Senior Speech Engineer:</strong> $140K - $180K</li>
+                    <li><strong>ASR Research Engineer:</strong> $150K - $190K</li>
+                    <li>Focus: Custom model development, optimization, deployment to production</li>
+                </ul>
+
+                <h3>Senior (6+ years)</h3>
+                <ul>
+                    <li><strong>Principal Speech Engineer:</strong> $180K - $250K+</li>
+                    <li><strong>ASR Architect:</strong> $200K - $300K+</li>
+                    <li>Focus: System design, team leadership, R&D on novel architectures</li>
+                </ul>
+
+                <div class="callout">
+                    <div class="callout-title">💰 Salary Insight</div>
+                    <p>Engineers with both Kaldi AND modern end-to-end model experience (Whisper, Wav2Vec) command salaries 15-25% higher than those with only one skillset. The market values versatility.</p>
+                </div>
+
+                <h3>Top Companies Hiring Kaldi Engineers</h3>
+                <ul>
+                    <li><strong>FAANG:</strong> Amazon (Alexa), Google (Assistant), Apple (Siri), Meta (Portal)</li>
+                    <li><strong>Enterprise:</strong> Nuance, Verint, Nice, CallMiner</li>
+                    <li><strong>Automotive:</strong> Tesla, Mercedes, BMW, Cerence</li>
+                    <li><strong>Startups:</strong> AssemblyAI, Deepgram, Speechmatics, Rev.ai</li>
+                    <li><strong>Telecom:</strong> AT&T, Verizon, Twilio</li>
+                </ul>
+
+                <h2>Common Kaldi Interview Questions</h2>
+
+                <p>If you're interviewing for Kaldi roles, expect questions like:</p>
+
+                <ol>
+                    <li><strong>Explain the difference between HMM-GMM and HMM-DNN acoustic models.</strong></li>
+                    <li><strong>What are WFSTs and why does Kaldi use them?</strong></li>
+                    <li><strong>How would you adapt a Kaldi model to a new domain with limited data?</strong></li>
+                    <li><strong>Explain chain models (LF-MMI) and their advantages.</strong></li>
+                    <li><strong>How do you optimize Kaldi models for real-time streaming?</strong></li>
+                    <li><strong>What's the role of i-vectors in speaker adaptation?</strong></li>
+                    <li><strong>How would you debug a Kaldi recipe that's failing?</strong></li>
+                </ol>
+
+                <p>We cover these and 30+ more questions in our <a href="/blog/speech-recognition-interview-questions-2026.html">ASR Interview Questions Guide</a>.</p>
+
+                <h2>Kaldi vs Modern Alternatives: When to Choose What</h2>
+
+                <p>Here's a decision framework for 2026:</p>
+
+                <h3>Choose Kaldi When:</h3>
+                <ul>
+                    <li>Building production systems with strict latency requirements (&lt;100ms)</li>
+                    <li>Deploying on resource-constrained devices (edge computing, IoT)</li>
+                    <li>Need fine-grained control over acoustic and language models</li>
+                    <li>Working with streaming ASR (real-time transcription)</li>
+                    <li>Optimizing for cost at scale (millions of audio hours)</li>
+                </ul>
+
+                <h3>Choose Whisper When:</h3>
+                <ul>
+                    <li>Building transcription services without tight latency requirements</li>
+                    <li>Need multilingual support out of the box</li>
+                    <li>Prototyping quickly without training custom models</li>
+                    <li>Working with general-purpose audio (podcasts, meetings, lectures)</li>
+                </ul>
+
+                <h3>Choose Wav2Vec When:</h3>
+                <ul>
+                    <li>Working with low-resource languages (&lt;100 hours of data)</li>
+                    <li>Need state-of-the-art accuracy and have GPU budget</li>
+                    <li>Building research systems or academic projects</li>
+                    <li>Fine-tuning for specific accents or domains</li>
+                </ul>
+
+                <h2>The Future of Kaldi</h2>
+
+                <p>Is Kaldi dying? Absolutely not. Here's what's happening:</p>
+
+                <p><strong>Kaldi 2.0 (k2):</strong> A next-generation version focusing on end-to-end models while keeping Kaldi's WFST efficiency. It bridges traditional and modern approaches.</p>
+
+                <p><strong>Hybrid Systems:</strong> The industry is converging on hybrid architectures that use neural models (like Conformers) with WFST decoding—the best of both worlds.</p>
+
+                <p><strong>Enterprise Adoption:</strong> Large enterprises with existing Kaldi infrastructure aren't switching anytime soon. They're investing in optimization and incremental improvements.</p>
+
+                <div class="callout">
+                    <div class="callout-title">🔮 2026 Prediction</div>
+                    <p>By 2028, most production ASR systems will use hybrid architectures: neural acoustic models (Conformers, Wav2Vec-style) with WFST-based decoding (Kaldi's strength). Engineers who understand both paradigms will be in the highest demand.</p>
+                </div>
+
+                <h2>Key Takeaways</h2>
+
+                <ul>
+                    <li>Kaldi is a mature, production-ready ASR toolkit used by major tech companies worldwide</li>
+                    <li>It excels at low-latency, streaming ASR on resource-constrained devices</li>
+                    <li>Learning Kaldi opens doors to high-paying roles ($140K-$250K+) at FAANG and enterprise</li>
+                    <li>The future is hybrid systems combining neural models with WFST efficiency</li>
+                    <li>For career growth, learn Kaldi + Whisper + Wav2Vec—this combination is incredibly valuable</li>
+                </ul>
+
+                <h2>Next Steps</h2>
+
+                <ol>
+                    <li><strong>Install Kaldi:</strong> Follow the installation guide above</li>
+                    <li><strong>Run the yesno recipe:</strong> Get hands-on experience with the pipeline</li>
+                    <li><strong>Study WFSTs:</strong> This is the hardest concept but most important for interviews</li>
+                    <li><strong>Build a project:</strong> Train a model on LibriSpeech or your own domain data</li>
+                    <li><strong>Apply for jobs:</strong> Check our Kaldi job listings below</li>
+                </ol>
+            </div>
+
+            <div class="jobs-cta">
+                <h3>Ready to Put Your Kaldi Skills to Work?</h3>
+                <p>Browse Kaldi engineer positions at top companies. From FAANG to innovative startups.</p>
+                <a href="/jobs?skill=kaldi" class="btn">View Kaldi Jobs</a>
+            </div>
+
+            <div class="related-articles">
+                <h3>Related Articles</h3>
+                
+                <a href="/blog/speech-recognition-interview-questions-2026.html" class="related-article-card">
+                    <div class="related-article-title">30+ ASR Interview Questions with Answers (2026)</div>
+                    <div class="related-article-excerpt">Technical concepts, coding challenges, and system design questions for speech tech roles</div>
+                </a>
+                
+                <a href="/blog/speech-recognition-engineer-salary-2026.html" class="related-article-card">
+                    <div class="related-article-title">Speech Recognition Engineer Salary Guide 2026</div>
+                    <div class="related-article-excerpt">Real compensation data from FAANG, startups, and enterprise. What you should actually be making</div>
+                </a>
+                
+                <a href="/blog/kaldi-vs-whisper-vs-wav2vec-2026.html" class="related-article-card">
+                    <div class="related-article-title">Kaldi vs Whisper vs Wav2Vec: Which to Learn?</div>
+                    <div class="related-article-excerpt">Complete framework comparison so you can focus your learning on what matters</div>
+                </a>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/privacy.html" style="color: var(--muted); margin-left: 16px;">Privacy</a> <a href="/terms.html" style="color: var(--muted); margin-left: 16px;">Terms</a></p>
+        </div>
+    </footer>
+</body>
+</html>

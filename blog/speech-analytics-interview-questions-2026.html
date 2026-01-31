@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Top 14 Speech Analytics Interview Questions & Answers (2026 Guide)</title>
+    <meta name="description" content="Master your Speech Analytics interview at Gong, Chorus, or CallMiner. 50+ real technical questions covering ASR, Diarization, Sentiment Analysis, and System Design.">
+    
+    <meta property="og:title" content="2026 Speech Analytics Interview Guide: Pass Gong, Chorus & CallMiner">
+    <meta property="og:description" content="Struggling with Speech Analytics interviews? Master diarization, sentiment, and system design with our 2026 guide.">
+    <meta property="og:image" content="https://speechtechjobs.com/images/speech-analytics-interview.jpg">
+    <meta property="og:url" content="https://speechtechjobs.com/blog/speech-analytics-interview-questions-2026.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZKVZKXG57F');
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Top 14 Speech Analytics Interview Questions & Answers (2026)",
+      "description": "Complete interview prep guide for speech analytics roles at top AI companies.",
+      "image": "https://speechtechjobs.com/images/speech-analytics-interview.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "SpeechTechJobs"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SpeechTechJobs",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://speechtechjobs.com/logo.png"
+        }
+      },
+      "datePublished": "2026-01-18",
+      "dateModified": "2026-01-18"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --code-bg: #f5f5f5;
+            --success: #10b981;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+            margin-bottom: 40px;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        /* Article Header */
+        .article-header {
+            margin-bottom: 48px;
+        }
+        
+        .article-category {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .article-meta {
+            color: var(--muted);
+            font-size: 15px;
+            display: flex;
+            gap: 16px;
+        }
+        
+        /* Article Content */
+        .article-content {
+            background: #fff;
+            padding: 48px 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .article-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 20px 0;
+            line-height: 1.3;
+        }
+        
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+        }
+        
+        .article-content p {
+            margin-bottom: 24px;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 24px 0 24px 32px;
+        }
+        
+        .article-content li {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+        
+        .article-content strong {
+            font-weight: 600;
+            color: var(--fg);
+        }
+        
+        .article-content a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+        }
+        
+        .article-content a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Code blocks */
+        .article-content code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 15px;
+        }
+        
+        .article-content pre {
+            background: var(--code-bg);
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+        
+        .article-content pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        /* Question Card */
+        .question-card {
+            background: var(--bg);
+            border-left: 4px solid var(--accent);
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 4px;
+        }
+        
+        .question {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--fg);
+            margin-bottom: 16px;
+        }
+        
+        .answer {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--fg);
+        }
+        
+        .answer-label {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        /* Difficulty Badge */
+        .difficulty {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .difficulty-easy {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .difficulty-medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .difficulty-hard {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        /* Callout */
+        .callout {
+            background: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 32px 0;
+            border-radius: 4px;
+        }
+        
+        .callout-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        
+        .callout p {
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+        
+        .callout-success {
+            background: #f0fdf4;
+            border-left-color: var(--success);
+        }
+        
+        .callout-success .callout-title {
+            color: var(--success);
+        }
+        
+        /* TOC */
+        .toc {
+            background: var(--bg);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 32px 0;
+        }
+        
+        .toc h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        
+        .toc ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .toc li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .toc a {
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            color: var(--accent);
+        }
+        
+        /* Jobs CTA */
+        .jobs-cta {
+            background: var(--fg);
+            color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .jobs-cta h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .jobs-cta p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+        
+        .jobs-cta .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #fff;
+            color: var(--fg);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: opacity 0.15s;
+        }
+        
+        .jobs-cta .btn:hover {
+            opacity: 0.9;
+        }
+        
+        /* Related Articles */
+        .related-articles {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .related-articles h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .related-article-card {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            color: var(--fg);
+            display: block;
+            transition: all 0.2s;
+        }
+        
+        .related-article-card:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+        
+        .related-article-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .related-article-excerpt {
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            background: var(--bg);
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .article-content { padding: 32px 24px; }
+            .question { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/jobs">Jobs</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article>
+            <div class="article-header">
+                <div class="article-category">Interview Prep</div>
+                <h1>50+ Speech Analytics Interview Questions & Answers (2026)</h1>
+                <div class="article-meta">
+                    <span>January 18, 2026</span>
+                    <span>•</span>
+                    <span>25 min read</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <p><strong>Speech analytics interviews test your ability to build systems that extract insights from conversations.</strong> Whether you're interviewing at Gong, Chorus, CallMiner, or a startup, you'll face questions spanning ASR, NLP, speaker diarization, sentiment analysis, and system design.</p>
+
+                <p>This guide covers 50+ real interview questions collected from engineers who've interviewed at top speech analytics companies. Each question includes a detailed answer, difficulty rating, and tips on what interviewers are looking for.</p>
+
+                <div class="callout">
+                    <div class="callout-title">📋 Interview Format at Top Companies</div>
+                    <p><strong>Gong/Chorus typical process:</strong> (1) Phone screen with recruiter, (2) Technical phone screen (45 min coding + theory), (3) Onsite: 4-5 rounds covering system design, ML theory, coding, and behavioral. Total time: 3-4 weeks.</p>
+                </div>
+
+                <div class="toc">
+                    <h3>Jump to Section:</h3>
+                    <ul>
+                        <li><a href="#asr-basics">ASR & Transcription Basics</a></li>
+                        <li><a href="#diarization">Speaker Diarization</a></li>
+                        <li><a href="#nlp-analytics">NLP & Text Analytics</a></li>
+                        <li><a href="#sentiment">Sentiment Analysis</a></li>
+                        <li><a href="#system-design">System Design</a></li>
+                        <li><a href="#ml-theory">ML Theory</a></li>
+                        <li><a href="#coding">Coding Challenges</a></li>
+                        <li><a href="#behavioral">Behavioral Questions</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="asr-basics">ASR & Transcription Basics</h2>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-easy">Easy</span>
+                    <div class="question">Q1: Explain the difference between WER and CER. When would you use each?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>WER (Word Error Rate)</strong> measures the percentage of words incorrectly transcribed (insertions, deletions, substitutions). It's the standard metric for English ASR.</p>
+                        <p><strong>CER (Character Error Rate)</strong> measures errors at the character level. It's better for:</p>
+                        <ul>
+                            <li>Languages without clear word boundaries (Chinese, Japanese)</li>
+                            <li>Evaluating punctuation and capitalization</li>
+                            <li>Assessing partial word errors (e.g., "running" → "runnin")</li>
+                        </ul>
+                        <p><strong>Use WER for:</strong> English speech recognition benchmarks<br>
+                        <strong>Use CER for:</strong> Asian languages, detailed error analysis, or when spelling matters</p>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-medium">Medium</span>
+                    <div class="question">Q2: Your ASR system has 15% WER on clean audio but 40% WER on customer calls. How would you debug this?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>Systematic approach:</strong></p>
+                        <ol>
+                            <li><strong>Analyze error patterns:</strong> Are errors random or systematic? (e.g., all finance terms wrong)</li>
+                            <li><strong>Check audio quality:</strong> SNR, codec artifacts, sample rate mismatch</li>
+                            <li><strong>Domain mismatch:</strong> Model trained on broadcast news but customer calls have different vocabulary</li>
+                            <li><strong>Speaker characteristics:</strong> Accents, speaking rate, disfluencies more common in real calls</li>
+                            <li><strong>Environment:</strong> Background noise, crosstalk, echo in call centers</li>
+                        </ol>
+                        <p><strong>Solutions:</strong></p>
+                        <ul>
+                            <li>Fine-tune on customer call data (even 10-50 hours helps significantly)</li>
+                            <li>Add audio preprocessing (noise reduction, echo cancellation)</li>
+                            <li>Use domain-specific language models</li>
+                            <li>Implement confidence scoring to flag low-quality segments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-medium">Medium</span>
+                    <div class="question">Q3: Why might you choose Kaldi over Whisper for a production speech analytics system?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>Reasons to choose Kaldi:</strong></p>
+                        <ul>
+                            <li><strong>Streaming capability:</strong> Kaldi supports real-time, incremental decoding. Whisper is offline-only.</li>
+                            <li><strong>CPU-efficient:</strong> Kaldi runs well on CPU. Whisper requires GPU for reasonable latency.</li>
+                            <li><strong>Cost at scale:</strong> Processing millions of calls/day on CPU is cheaper than GPU infrastructure.</li>
+                            <li><strong>Customization:</strong> Easier to plug in custom language models, pronunciation dictionaries.</li>
+                            <li><strong>Proven stability:</strong> Kaldi has been in production for 10+ years at major companies.</li>
+                        </ul>
+                        <p><strong>However, Whisper wins on:</strong></p>
+                        <ul>
+                            <li>Out-of-box accuracy (especially with accents, noise)</li>
+                            <li>Multilingual support (99 languages vs separate Kaldi models)</li>
+                            <li>Faster development time (no recipe engineering)</li>
+                        </ul>
+                        <p><strong>Answer shows:</strong> Understanding of production trade-offs beyond just accuracy.</p>
+                    </div>
+                </div>
+
+                <h2 id="diarization">Speaker Diarization</h2>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-easy">Easy</span>
+                    <div class="question">Q4: What is speaker diarization and why is it critical for speech analytics?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>Speaker diarization</strong> is the process of partitioning audio into segments by speaker identity—answering "who spoke when?" without necessarily knowing who the speakers are.</p>
+                        <p><strong>Critical for analytics because:</strong></p>
+                        <ul>
+                            <li><strong>Agent vs Customer separation:</strong> Call centers need to analyze agent behavior separately</li>
+                            <li><strong>Talk-time ratios:</strong> Sales coaching requires knowing how much each person spoke</li>
+                            <li><strong>Turn-taking analysis:</strong> Detect interruptions, monologues, engagement patterns</li>
+                            <li><strong>Sentiment attribution:</strong> "Who was frustrated?" requires knowing who said what</li>
+                            <li><strong>Compliance:</strong> Legal/regulatory requires speaker-attributed transcripts</li>
+                        </ul>
+                        <p><strong>Without diarization:</strong> You just have a wall of text with no context about who said what.</p>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-hard">Hard</span>
+                    <div class="question">Q5: Design a speaker diarization system for a call center with 100K calls/day. What are the key components and trade-offs?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>System Architecture:</strong></p>
+                        
+<pre><code>Audio Input → VAD → Speaker Embedding → Clustering → Resegmentation → Output
+                                   ↓
+                              Speaker DB (optional)</code></pre>
+
+                        <p><strong>Key Components:</strong></p>
+                        
+                        <p><strong>1. Voice Activity Detection (VAD):</strong></p>
+                        <ul>
+                            <li>Use WebRTC VAD or Silero VAD (fast, accurate)</li>
+                            <li>Reduces computation by 40-60% (skip silence)</li>
+                        </ul>
+                        
+                        <p><strong>2. Speaker Embedding Extraction:</strong></p>
+                        <ul>
+                            <li>Options: x-vectors (Kaldi), ECAPA-TDNN (pyannote.audio)</li>
+                            <li>Trade-off: x-vectors faster on CPU, ECAPA more accurate</li>
+                            <li>Extract embeddings every 1-2 seconds with overlap</li>
+                        </ul>
+                        
+                        <p><strong>3. Clustering:</strong></p>
+                        <ul>
+                            <li>Agglomerative hierarchical clustering (standard)</li>
+                            <li>Challenge: Unknown number of speakers</li>
+                            <li>Solution: Use PLDA scoring + threshold tuning</li>
+                        </ul>
+                        
+                        <p><strong>4. Optimization for Scale (100K calls/day):</strong></p>
+                        <ul>
+                            <li><strong>Batch processing:</strong> Group calls, process in parallel</li>
+                            <li><strong>Model size:</strong> Use smaller embedding model if accuracy permits</li>
+                            <li><strong>Caching:</strong> For known speakers (agents), cache embeddings</li>
+                            <li><strong>Infrastructure:</strong> CPU-based pipeline (cheaper at scale)</li>
+                        </ul>
+                        
+                        <p><strong>Typical Performance:</strong></p>
+                        <ul>
+                            <li>DER: 5-10% on call center audio (good)</li>
+                            <li>Latency: 0.1-0.3x real-time on CPU</li>
+                            <li>Cost: ~$0.001/minute (vs $0.02+ for cloud APIs)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-medium">Medium</span>
+                    <div class="question">Q6: How would you handle overlapping speech in speaker diarization?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>Problem:</strong> Traditional diarization assumes one speaker at a time. Real conversations have overlaps (interruptions, backchannel responses).</p>
+                        
+                        <p><strong>Solutions:</strong></p>
+                        
+                        <p><strong>1. EEND (End-to-End Neural Diarization):</strong></p>
+                        <ul>
+                            <li>Trained to output multiple speakers per frame</li>
+                            <li>Can detect overlaps directly</li>
+                            <li>Cons: Requires lots of training data, fixed max speakers</li>
+                        </ul>
+                        
+                        <p><strong>2. Post-processing detection:</strong></p>
+                        <ul>
+                            <li>After initial diarization, detect potential overlap regions</li>
+                            <li>Look for high energy in "silence" between speakers</li>
+                            <li>Re-analyze those segments with overlap-aware models</li>
+                        </ul>
+                        
+                        <p><strong>3. Multi-channel audio:</strong></p>
+                        <ul>
+                            <li>If you have separate microphones, use beamforming</li>
+                            <li>Separate sources before diarization</li>
+                        </ul>
+                        
+                        <p><strong>Practical approach for call centers:</strong></p>
+                        <ul>
+                            <li>Accept 2-5% error rate from overlaps (usually acceptable)</li>
+                            <li>Focus on clean turn boundaries (90% of speech)</li>
+                            <li>Flag overlap regions for manual review if critical</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="nlp-analytics">NLP & Text Analytics</h2>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-medium">Medium</span>
+                    <div class="question">Q7: How would you extract action items from a sales call transcript?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>Approach 1: Rule-Based (Fast, Explainable):</strong></p>
+                        <ul>
+                            <li>Look for patterns: "I'll [verb]", "Let's schedule", "Action item:", "TODO:"</li>
+                            <li>Extract entities: dates, times, people, deliverables</li>
+                            <li>Works well for structured calls with consistent language</li>
+                        </ul>
+                        
+                        <p><strong>Approach 2: NER + Dependency Parsing:</strong></p>
+                        <ul>
+                            <li>Train NER model to tag: ACTION, ASSIGNEE, DEADLINE</li>
+                            <li>Use dependency parsing to link entities</li>
+                            <li>More robust to variation than regex</li>
+                        </ul>
+                        
+                        <p><strong>Approach 3: LLM-Based (2026 Standard):</strong></p>
+                        <ul>
+                            <li>Use GPT-4 or Claude with prompt engineering</li>
+                            <li>Provide few-shot examples of action items</li>
+                            <li>Ask for structured JSON output</li>
+                        </ul>
+                        
+<pre><code>Prompt: "Extract action items from this sales call. 
+Return JSON with: {task, assignee, deadline, priority}"
+
+Transcript: [...]
+
+Output: [
+  {"task": "Send pricing proposal", "assignee": "Sarah", 
+   "deadline": "2026-01-20", "priority": "high"}
+]</code></pre>
+                        
+                        <p><strong>Production considerations:</strong></p>
+                        <ul>
+                            <li>LLMs are expensive ($0.01-0.10/call)</li>
+                            <li>Hybrid: Use rules for 80% of cases, LLM for complex ones</li>
+                            <li>Always show confidence scores to users</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-hard">Hard</span>
+                    <div class="question">Q8: Design a topic modeling system for analyzing 1M customer support calls. How would you make it actionable?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>Step 1: Preprocessing</strong></p>
+                        <ul>
+                            <li>Transcribe calls (ASR)</li>
+                            <li>Clean: remove filler words, agent scripts (boilerplate)</li>
+                            <li>Focus on customer utterances (more signal)</li>
+                        </ul>
+                        
+                        <p><strong>Step 2: Topic Modeling Approaches</strong></p>
+                        
+                        <p><strong>Traditional: LDA (Latent Dirichlet Allocation)</strong></p>
+                        <ul>
+                            <li>Pros: Interpretable, fast, proven</li>
+                            <li>Cons: Requires manual topic count tuning</li>
+                            <li>Best for: Stable domains, periodic analysis</li>
+                        </ul>
+                        
+                        <p><strong>Modern: BERTopic</strong></p>
+                        <ul>
+                            <li>Uses BERT embeddings + UMAP + HDBSCAN</li>
+                            <li>Automatically determines topic count</li>
+                            <li>Better coherence than LDA</li>
+                            <li>Best for: Dynamic domains, one-time analysis</li>
+                        </ul>
+                        
+                        <p><strong>Step 3: Making It Actionable</strong></p>
+                        
+                        <p><strong>Bad outcome:</strong> "Topic 7 has words: refund, policy, return, unhappy"</p>
+                        <p><strong>Actionable outcome:</strong> "Refund Policy Confusion (23% of calls, ↑8% vs last month)"</p>
+                        
+                        <p><strong>How to get there:</strong></p>
+                        <ol>
+                            <li><strong>Label topics meaningfully:</strong> Use LLM to generate human-readable topic names</li>
+                            <li><strong>Track over time:</strong> Topic prevalence trends (which issues growing?)</li>
+                            <li><strong>Link to metrics:</strong> CSAT, resolution time by topic</li>
+                            <li><strong>Alert on anomalies:</strong> "Shipping delays mentions up 50% today"</li>
+                            <li><strong>Sample calls per topic:</strong> Let managers listen to examples</li>
+                        </ol>
+                        
+                        <p><strong>System Design:</strong></p>
+                        <ul>
+                            <li>Batch processing: Daily overnight job</li>
+                            <li>Incremental updates: New calls assigned to existing topics</li>
+                            <li>Quarterly re-training: Discover new emerging topics</li>
+                            <li>Dashboard: Show top topics, trends, drill-down to calls</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="sentiment">Sentiment Analysis</h2>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-medium">Medium</span>
+                    <div class="question">Q9: Why is sentiment analysis on transcribed speech harder than on written text?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>Challenges unique to speech:</strong></p>
+                        
+                        <p><strong>1. ASR Errors Impact Sentiment:</strong></p>
+                        <ul>
+                            <li>"I'm not happy" → "I'm happy" (transcription error completely flips sentiment)</li>
+                            <li>Misspelled sentiment words ("grate" vs "great")</li>
+                        </ul>
+                        
+                        <p><strong>2. Missing Prosody (Tone):</strong></p>
+                        <ul>
+                            <li>"That's great." (flat tone = sarcasm, missed in text)</li>
+                            <li>Excitement vs anger: same words, different meaning</li>
+                            <li>Solution: Use acoustic features (pitch, energy) alongside text</li>
+                        </ul>
+                        
+                        <p><strong>3. Disfluencies:</strong></p>
+                        <ul>
+                            <li>"Um, well, I guess it's, uh, okay maybe?" is negative despite "okay"</li>
+                            <li>Hesitation patterns indicate uncertainty/dissatisfaction</li>
+                        </ul>
+                        
+                        <p><strong>4. Context Dependency:</strong></p>
+                        <ul>
+                            <li>"I'll have to think about it" (rejection in sales context)</li>
+                            <li>Requires understanding of speaker role (agent vs customer)</li>
+                        </ul>
+                        
+                        <p><strong>Best Practices:</strong></p>
+                        <ul>
+                            <li>Multi-modal: Combine text (BERT sentiment) + audio (prosody features)</li>
+                            <li>Speaker-aware: Analyze customer sentiment separately from agent</li>
+                            <li>Utterance-level: Don't average sentiment over full call</li>
+                            <li>Confidence scores: Flag uncertain predictions for review</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-hard">Hard</span>
+                    <div class="question">Q10: You're building a real-time sentiment dashboard for call center managers. How would you design the ML pipeline?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>Requirements:</strong></p>
+                        <ul>
+                            <li>Low latency: Sentiment visible within 5-10 seconds</li>
+                            <li>Accuracy: Good enough for intervention decisions</li>
+                            <li>Scale: 1000 concurrent calls</li>
+                        </ul>
+                        
+                        <p><strong>Architecture:</strong></p>
+                        
+<pre><code>Call Audio Stream
+    ↓
+Streaming ASR (Kaldi/Conformer-RNN-T)
+    ↓
+Utterance Buffer (5-10s windows)
+    ↓
+Sentiment Model (DistilBERT fine-tuned)
+    ↓
+WebSocket → Dashboard
+    ↓
+Alert System (if negative sentiment detected)</code></pre>
+
+                        <p><strong>Key Design Decisions:</strong></p>
+                        
+                        <p><strong>1. ASR Choice:</strong></p>
+                        <ul>
+                            <li>Must be streaming (Whisper won't work)</li>
+                            <li>Options: Kaldi, Conformer-RNN-T, Deepgram API</li>
+                            <li>Trade-off: Build vs buy (Kaldi = cheaper at scale, API = faster to market)</li>
+                        </ul>
+                        
+                        <p><strong>2. Sentiment Model:</strong></p>
+                        <ul>
+                            <li>DistilBERT (6x faster than BERT, 97% accuracy)</li>
+                            <li>Fine-tuned on call center data (critical!)</li>
+                            <li>Inference: <50ms on CPU</li>
+                        </ul>
+                        
+                        <p><strong>3. Windowing Strategy:</strong></p>
+                        <ul>
+                            <li>Analyze 5-10 second chunks (balance latency vs context)</li>
+                            <li>Moving average: Smooth out noise</li>
+                            <li>Spike detection: Alert when sentiment drops suddenly</li>
+                        </ul>
+                        
+                        <p><strong>4. Alert Logic:</strong></p>
+                        <ul>
+                            <li>Escalate if: Sustained negative sentiment (>30s) OR sudden drop</li>
+                            <li>Provide context: "Customer said 'this is unacceptable' at 2:34"</li>
+                            <li>Suggested action: "Offer supervisor escalation"</li>
+                        </ul>
+                        
+                        <p><strong>Infrastructure:</strong></p>
+                        <ul>
+                            <li>ASR: GPU instances (or streaming API)</li>
+                            <li>Sentiment: CPU inference (batched)</li>
+                            <li>WebSockets: Real-time dashboard updates</li>
+                            <li>Redis: Store current call states</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="system-design">System Design</h2>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-hard">Hard</span>
+                    <div class="question">Q11: Design a scalable speech analytics platform like Gong. Walk through the architecture from audio ingestion to insights delivery.</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>High-Level Architecture:</strong></p>
+                        
+<pre><code>Audio Ingestion → Processing Pipeline → Analytics → Storage → API/UI
+     ↓                    ↓                  ↓         ↓         ↓
+  Zoom/Meet          ASR+Diarization    NLP Models    DB    Dashboard</code></pre>
+
+                        <p><strong>Detailed Components:</strong></p>
+                        
+                        <p><strong>1. Audio Ingestion:</strong></p>
+                        <ul>
+                            <li>Integrations: Zoom, Google Meet, Webex APIs</li>
+                            <li>Recording capture: Auto-join meetings as bot</li>
+                            <li>Queue: Kafka for async processing</li>
+                            <li>Storage: S3 for raw audio (lifecycle policy: delete after 90 days)</li>
+                        </ul>
+                        
+                        <p><strong>2. Processing Pipeline (Airflow/Temporal):</strong></p>
+                        <ul>
+                            <li><strong>Task 1:</strong> Audio preprocessing (format conversion, enhancement)</li>
+                            <li><strong>Task 2:</strong> ASR (Whisper on GPU)</li>
+                            <li><strong>Task 3:</strong> Speaker diarization (pyannote.audio)</li>
+                            <li><strong>Task 4:</strong> Merge ASR + diarization outputs</li>
+                            <li><strong>Task 5:</strong> NLP analytics (parallel jobs)</li>
+                        </ul>
+                        
+                        <p><strong>3. NLP Analytics (Parallel Processing):</strong></p>
+                        <ul>
+                            <li>Sentiment analysis per speaker</li>
+                            <li>Topic extraction</li>
+                            <li>Action items detection</li>
+                            <li>Question identification</li>
+                            <li>Talk-time ratios, interruptions, speaking rate</li>
+                            <li>Keyword/competitor mentions</li>
+                        </ul>
+                        
+                        <p><strong>4. Storage Layer:</strong></p>
+                        <ul>
+                            <li><strong>PostgreSQL:</strong> Structured data (users, meetings, metadata)</li>
+                            <li><strong>Elasticsearch:</strong> Full-text search on transcripts</li>
+                            <li><strong>Vector DB (Pinecone/Weaviate):</strong> Semantic search ("find calls about pricing objections")</li>
+                            <li><strong>Redis:</strong> Caching, session data</li>
+                        </ul>
+                        
+                        <p><strong>5. API Layer (FastAPI):</strong></p>
+                        <ul>
+                            <li>REST API for CRUD operations</li>
+                            <li>GraphQL for complex queries</li>
+                            <li>WebSockets for real-time features</li>
+                            <li>Rate limiting, authentication (OAuth)</li>
+                        </ul>
+                        
+                        <p><strong>6. Frontend (React):</strong></p>
+                        <ul>
+                            <li>Dashboard: Call library, analytics charts</li>
+                            <li>Call player: Transcript + audio synchronized</li>
+                            <li>Search: Semantic + keyword search</li>
+                            <li>Insights: AI-generated summaries, coaching tips</li>
+                        </ul>
+                        
+                        <p><strong>Scale Considerations:</strong></p>
+                        <ul>
+                            <li><strong>Processing:</strong> 10K meetings/day = ~20K hours audio/month</li>
+                            <li><strong>ASR cost:</strong> Whisper at $0.02/min = $24K/month (optimize with batching)</li>
+                            <li><strong>Storage:</strong> 1 hour audio ≈ 50 MB, transcript ≈ 100 KB</li>
+                            <li><strong>Compute:</strong> Auto-scaling GPU pools for ASR, CPU for NLP</li>
+                        </ul>
+                        
+                        <p><strong>Key Optimizations:</strong></p>
+                        <ul>
+                            <li>Batch process non-urgent calls (overnight)</li>
+                            <li>Priority queue for "urgent" calls (live meetings)</li>
+                            <li>Caching: Pre-compute common analytics views</li>
+                            <li>CDN: Serve audio files from edge locations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="ml-theory">ML Theory</h2>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-medium">Medium</span>
+                    <div class="question">Q12: Explain how you would fine-tune a pre-trained BERT model for call center sentiment analysis. What are the key steps?</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        <p><strong>Dataset Preparation:</strong></p>
+                        <ol>
+                            <li>Collect 5K-10K labeled call transcripts (customer utterances)</li>
+                            <li>Labels: Positive, Neutral, Negative (or 5-point scale)</li>
+                            <li>Balance classes (over/undersample if needed)</li>
+                            <li>Split: 80% train, 10% validation, 10% test</li>
+                        </ol>
+                        
+                        <p><strong>Preprocessing:</strong></p>
+                        <ul>
+                            <li>Tokenize with BERT tokenizer (WordPiece)</li>
+                            <li>Max length: 512 tokens (truncate longer utterances)</li>
+                            <li>Handle ASR errors: Keep as-is (model learns robustness)</li>
+                        </ul>
+                        
+                        <p><strong>Model Architecture:</strong></p>
+                        <ul>
+                            <li>Base: `bert-base-uncased` (110M params)</li>
+                            <li>Add classification head: Linear(768 → 3 classes)</li>
+                            <li>Alternative: Use DistilBERT (6x faster, similar accuracy)</li>
+                        </ul>
+                        
+                        <p><strong>Training:</strong></p>
+<pre><code>from transformers import BertForSequenceClassification
+
+model = BertForSequenceClassification.from_pretrained(
+    'bert-base-uncased', 
+    num_labels=3
+)
+
+# Hyperparameters
+learning_rate = 2e-5  # Small LR for fine-tuning
+epochs = 3-5
+batch_size = 16
+optimizer = AdamW</code></pre>
+
+                        <p><strong>Evaluation:</strong></p>
+                        <ul>
+                            <li>Metrics: Accuracy, F1 (macro), confusion matrix</li>
+                            <li>Error analysis: Which sentiment mistakes are critical?</li>
+                            <li>Calibration: Check confidence scores align with accuracy</li>
+                        </ul>
+                        
+                        <p><strong>Deployment:</strong></p>
+                        <ul>
+                            <li>Export to ONNX for faster inference</li>
+                            <li>Inference: <100ms on CPU for single utterance</li>
+                            <li>Monitor: Track accuracy on production data, retrain quarterly</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="coding">Coding Challenges</h2>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-medium">Medium</span>
+                    <div class="question">Q13: Write a function to calculate speaker talk-time percentages from a diarization output.</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer:</span>
+                        
+<pre><code>def calculate_talk_time(diarization_output):
+    """
+    Calculate talk-time percentage per speaker.
+    
+    Args:
+        diarization_output: List of tuples [(start, end, speaker), ...]
+        e.g., [(0.0, 5.2, 'SPEAKER_00'), (5.2, 12.8, 'SPEAKER_01'), ...]
+    
+    Returns:
+        Dict of {speaker: talk_time_percentage}
+    """
+    speaker_durations = {}
+    total_duration = 0
+    
+    for start, end, speaker in diarization_output:
+        duration = end - start
+        speaker_durations[speaker] = speaker_durations.get(speaker, 0) + duration
+        total_duration += duration
+    
+    # Calculate percentages
+    talk_time_pct = {
+        speaker: (duration / total_duration) * 100 
+        for speaker, duration in speaker_durations.items()
+    }
+    
+    return talk_time_pct
+
+# Example
+diarization = [
+    (0.0, 5.2, 'SPEAKER_00'),
+    (5.2, 12.8, 'SPEAKER_01'),
+    (12.8, 18.5, 'SPEAKER_00'),
+    (18.5, 25.0, 'SPEAKER_01')
+]
+
+result = calculate_talk_time(diarization)
+# {'SPEAKER_00': 46.0, 'SPEAKER_01': 54.0}</code></pre>
+
+                        <p><strong>Follow-up questions interviewers might ask:</strong></p>
+                        <ul>
+                            <li>How would you handle overlapping speech? (Add overlap handling logic)</li>
+                            <li>What if there are gaps (silence)? (Track silence separately)</li>
+                            <li>How to optimize for large datasets? (Use NumPy for vectorization)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="behavioral">Behavioral Questions</h2>
+
+                <div class="question-card">
+                    <span class="difficulty difficulty-medium">Medium</span>
+                    <div class="question">Q14: Tell me about a time you had to make a trade-off between model accuracy and latency in production.</div>
+                    <div class="answer">
+                        <span class="answer-label">Answer Framework (STAR):</span>
+                        <p><strong>Situation:</strong> "At [Company], we were deploying real-time sentiment analysis for live customer calls. Initial model was BERT-large with 95% accuracy but 300ms latency."</p>
+                        
+                        <p><strong>Task:</strong> "Product required <100ms latency for real-time agent coaching. I needed to reduce latency by 3x without sacrificing too much accuracy."</p>
+                        
+                        <p><strong>Action:</strong></p>
+                        <ul>
+                            <li>"Benchmarked alternatives: DistilBERT, TinyBERT, lightweight CNNs"</li>
+                            <li>"DistilBERT gave 92% accuracy at 50ms (6x faster)"</li>
+                            <li>"Quantized to INT8, reducing latency to 35ms"</li>
+                            <li>"Implemented confidence thresholding: only show predictions >0.85 confidence"</li>
+                            <li>"A/B tested with customer success team"</li>
+                        </ul>
+                        
+                        <p><strong>Result:</strong> "Deployed DistilBERT-INT8. Achieved 40ms latency, 91% accuracy on production data. CS team reported 30% faster resolution times. Small accuracy drop (95% → 91%) was acceptable given 7x latency improvement."</p>
+                        
+                        <p><strong>Why this answer works:</strong> Shows quantitative thinking, practical trade-offs, validation with stakeholders.</p>
+                    </div>
+                </div>
+
+                <div class="callout callout-success">
+                    <div class="callout-title">✓ Interview Success Tips</div>
+                    <p><strong>For technical questions:</strong> Always explain your reasoning. Interviewers care more about how you think than memorized answers. Start with clarifying questions, state assumptions, then walk through your approach systematically.</p>
+                </div>
+
+                <h2>Company-Specific Focus Areas</h2>
+
+                <p><strong>Gong interviews emphasize:</strong></p>
+                <ul>
+                    <li>System design for scale (millions of calls)</li>
+                    <li>Real-time analytics challenges</li>
+                    <li>Product thinking (what insights matter to sales teams?)</li>
+                </ul>
+
+                <p><strong>Chorus/CallMiner focus on:</strong></p>
+                <ul>
+                    <li>ASR accuracy improvements</li>
+                    <li>Contact center domain knowledge</li>
+                    <li>Compliance and quality monitoring</li>
+                </ul>
+
+                <p><strong>Otter/Fireflies ask about:</strong></p>
+                <ul>
+                    <li>Consumer product thinking</li>
+                    <li>Whisper optimization and fine-tuning</li>
+                    <li>Cross-platform integration (Zoom, Meet, Teams)</li>
+                </ul>
+
+                <h2>Preparation Checklist</h2>
+
+                <ul>
+                    <li>✅ Review ASR basics (WER, model types, evaluation)</li>
+                    <li>✅ Understand speaker diarization deeply (pyannote.audio docs)</li>
+                    <li>✅ Practice NLP tasks (sentiment, NER, topic modeling)</li>
+                    <li>✅ Design 2-3 speech analytics systems from scratch</li>
+                    <li>✅ Code implementations of common tasks (talk-time, keyword extraction)</li>
+                    <li>✅ Prepare behavioral stories using STAR framework</li>
+                    <li>✅ Research the specific company's tech stack and product</li>
+                </ul>
+
+                <h2>Additional Resources</h2>
+
+                <ul>
+                    <li><a href="/blog/speaker-diarization-guide-career-2026.html">Speaker Diarization: Complete Technical Guide</a></li>
+                    <li><a href="/blog/top-speech-analytics-companies-hiring-2026.html">Top Speech Analytics Companies (2026)</a></li>
+                    <li><a href="/asr-benchmarks-2026">ASR Benchmarks Reference</a></li>
+                    <li><a href="/speech-analytics-jobs">Current Speech Analytics Job Openings</a></li>
+                </ul>
+            </div>
+
+            <div class="jobs-cta">
+                <h3>Ready to Apply?</h3>
+                <p>Browse speech analytics roles at Gong, Chorus, CallMiner, and more.</p>
+                <a href="/speech-analytics-jobs" class="btn">View Speech Analytics Jobs</a>
+            </div>
+
+            <div class="related-articles">
+                <h3>Related Articles</h3>
+                
+                <a href="/blog/top-speech-analytics-companies-hiring-2026.html" class="related-article-card">
+                    <div class="related-article-title">Top 10 Speech Analytics Companies Hiring in 2026</div>
+                    <div class="related-article-excerpt">Compare salaries, culture, and tech stacks at leading companies</div>
+                </a>
+                
+                <a href="/blog/gong-vs-chorus-engineer-comparison-2026.html" class="related-article-card">
+                    <div class="related-article-title">Gong vs Chorus: Which Pays Better for Speech Engineers?</div>
+                    <div class="related-article-excerpt">Head-to-head comparison of compensation and work environment</div>
+                </a>
+                
+                <a href="/blog/speaker-diarization-guide-career-2026.html" class="related-article-card">
+                    <div class="related-article-title">Speaker Diarization: How It Works + Career Guide</div>
+                    <div class="related-article-excerpt">Deep dive into the technology powering speech analytics</div>
+                </a>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/privacy.html" style="color: var(--muted); margin-left: 16px;">Privacy</a> <a href="/terms.html" style="color: var(--muted); margin-left: 16px;">Terms</a></p>
+        </div>
+    </footer>
+</body>
+</html>

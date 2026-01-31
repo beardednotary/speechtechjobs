@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 20 Companies Hiring ASR Engineers (2026): Salaries & Tech Stacks</title>
+    <meta name="description" content="The definitive list of Big Tech & AI startups hiring Speech Researchers in 2026. Compare salaries, tech stacks (Whisper/Kaldi), and remote culture. Skip the recruiters.">
+
+    <meta property="og:title" content="Who is Hiring in Speech Tech? 2026 Industry Report">
+    <meta property="og:description" content="Inside look at the top 20 companies hiring ASR talent. Salaries, stacks, and direct application links.">
+    <meta property="og:url" content="https://speechtechjobs.com/blog/top-companies-hiring-asr-engineers-2026.html">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        /* Article */
+        article {
+            background: #fff;
+            margin: 40px 0;
+            padding: 60px 40px;
+            border-radius: 8px;
+        }
+        
+        .article-meta {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            background: var(--border);
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 48px 0 20px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+        }
+        
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        ul, ol {
+            margin: 20px 0 20px 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: var(--fg);
+        }
+        
+        em {
+            font-style: italic;
+            color: var(--muted);
+        }
+        
+        /* Company cards */
+        .company-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .company-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--fg);
+        }
+        
+        .company-type {
+            font-size: 13px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .company-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+            padding: 16px;
+            background: #fff;
+            border-radius: 6px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 18px;
+            font-weight: 600;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0;
+        }
+        
+        .tech-tag {
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--fg);
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 16px 0;
+        }
+        
+        .pros-cons h5 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .pros-cons ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .pros-cons li {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        /* Info blocks */
+        .info-block {
+            background: var(--bg);
+            border-left: 3px solid var(--accent);
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+        
+        .info-block p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            background: var(--fg);
+            color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 48px 0;
+        }
+        
+        .cta-box h3 {
+            margin: 0 0 16px 0;
+            color: #fff;
+        }
+        
+        .cta-box p {
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #fff;
+            color: var(--fg);
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+        
+        .btn:hover {
+            opacity: 0.85;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            article { padding: 40px 24px; }
+            .featured-image { height: 250px; }
+            .pros-cons { grid-template-columns: 1fr; }
+            .company-stats { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/#submit">Submit Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article>
+            <div class="article-meta">Last updated: January 14, 2026 • 18 min read</div>
+            
+            <h1>Top 20 Companies Hiring Speech Recognition Engineers in 2026</h1>
+            
+            <!-- FEATURED IMAGE PLACEHOLDER -->
+            <div class="featured-image">
+                [Featured Image: Collage of company logos or tech office environments]
+            </div>
+            
+            <p>If you're a speech recognition engineer—or trying to become one—knowing which companies are actually hiring and what it's like to work there matters more than generic job board listings.</p>
+
+            <p>This guide breaks down the top 20 companies hiring speech tech talent in 2026, including what they pay, what tech stack they use, and what it's actually like to work there. No fluff, no sponsored rankings—just real information based on employee reports, salary data, and industry intel.</p>
+
+            <h2>How We Ranked These Companies</h2>
+
+            <p>We evaluated companies on:</p>
+            <ul>
+                <li><strong>Hiring volume:</strong> Number of open ASR/speech roles</li>
+                <li><strong>Compensation:</strong> Salary + equity + benefits</li>
+                <li><strong>Tech stack:</strong> Working with cutting-edge vs. legacy systems</li>
+                <li><strong>Impact:</strong> Scale and reach of speech products</li>
+                <li><strong>Career growth:</strong> Learning opportunities, advancement potential</li>
+                <li><strong>Work-life balance:</strong> Reality vs. marketing</li>
+            </ul>
+
+            <p>We've organized by company type: Big Tech, Pure-Play Speech Startups, Enterprise, and Research Labs.</p>
+
+            <div class="cta-box">
+                <h3>Looking for Speech Tech Roles?</h3>
+                <p>Submit your profile and get matched with companies hiring ASR, NLP, and audio ML engineers.</p>
+                <a href="/#submit" class="btn">Submit Your Profile</a>
+            </div>
+
+            <h2>Big Tech (FAANG+)</h2>
+
+            <p>These are the household names with massive voice products and deep pockets.</p>
+
+            <!-- Company 1: Google -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">1. Google</h3>
+                        <p class="company-type">Big Tech • Mountain View, CA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Google Assistant, Cloud Speech-to-Text, YouTube captions, Pixel voice features</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$170K-$260K</span>
+                        <span class="stat-label">Base Salary (L4-L5)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">$120K-$200K</span>
+                        <span class="stat-label">Stock (annual)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">50-100+</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">JAX</span>
+                    <span class="tech-tag">Conformer</span>
+                    <span class="tech-tag">RNN-T</span>
+                    <span class="tech-tag">Multilingual models</span>
+                    <span class="tech-tag">On-device ML</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Improving Assistant accuracy across 100+ languages</li>
+                    <li>On-device ASR for Pixel phones (latency-critical)</li>
+                    <li>YouTube caption generation at massive scale</li>
+                    <li>Novel architectures for low-resource languages</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Cutting-edge research opportunities</li>
+                            <li>Massive scale (billions of users)</li>
+                            <li>Top-tier compensation</li>
+                            <li>Strong internal tooling</li>
+                            <li>Publish at major conferences</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Competitive promotions (up or out)</li>
+                            <li>Bureaucracy on some teams</li>
+                            <li>Product changes can kill projects</li>
+                            <li>High performance expectations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers who want to work at scale with cutting-edge models and don't mind corporate structure.</p>
+            </div>
+
+            <!-- Company 2: Amazon -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">2. Amazon (Alexa)</h3>
+                        <p class="company-type">Big Tech • Seattle, WA / Sunnyvale, CA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Alexa voice assistant, Echo devices, AWS Transcribe, Fire TV voice search</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$150K-$220K</span>
+                        <span class="stat-label">Base Salary (L5-L6)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">$100K-$250K</span>
+                        <span class="stat-label">Stock (annual)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">75-150+</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">Custom ASR pipeline</span>
+                    <span class="tech-tag">Wake word detection</span>
+                    <span class="tech-tag">Speaker ID</span>
+                    <span class="tech-tag">Multi-turn dialogue</span>
+                    <span class="tech-tag">Edge ML</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Improving Alexa wake word detection accuracy</li>
+                    <li>Reducing latency for voice commands</li>
+                    <li>Multilingual ASR for global rollout</li>
+                    <li>On-device processing for privacy features</li>
+                    <li>Integration with AWS services</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Real impact on 100M+ devices</li>
+                            <li>Strong comp (esp. at L6+)</li>
+                            <li>Ownership culture</li>
+                            <li>Good work-life balance (team-dependent)</li>
+                            <li>AWS integration opportunities</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Some legacy codebases</li>
+                            <li>Internal politics between teams</li>
+                            <li>Alexa investment uncertainty</li>
+                            <li>PIP culture (performance reviews)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers who like ownership and building products that ship to millions of homes.</p>
+            </div>
+
+            <!-- Company 3: Apple -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">3. Apple (Siri)</h3>
+                        <p class="company-type">Big Tech • Cupertino, CA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Siri, dictation, HomePod, on-device speech recognition</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$145K-$210K</span>
+                        <span class="stat-label">Base Salary (ICT3-ICT5)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">$80K-$180K</span>
+                        <span class="stat-label">Stock (annual)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">30-60</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Custom frameworks</span>
+                    <span class="tech-tag">On-device ASR</span>
+                    <span class="tech-tag">Privacy-preserving ML</span>
+                    <span class="tech-tag">Neural engine optimization</span>
+                    <span class="tech-tag">CoreML</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>On-device speech recognition (no cloud)</li>
+                    <li>Low-latency dictation across iOS/macOS</li>
+                    <li>Privacy-first ML architectures</li>
+                    <li>Multilingual support for global markets</li>
+                    <li>Integration with Apple Silicon</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Privacy-first engineering culture</li>
+                            <li>Cutting-edge hardware integration</li>
+                            <li>Excellent benefits</li>
+                            <li>Product polish emphasis</li>
+                            <li>Stable, profitable company</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Secretive (limited publishing)</li>
+                            <li>Slower pace than competitors</li>
+                            <li>Lower TC than Google/Meta</li>
+                            <li>Siloed teams</li>
+                            <li>Conservative innovation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers passionate about privacy and on-device ML, willing to trade some comp for brand/culture.</p>
+            </div>
+
+            <!-- Company 4: Meta -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">4. Meta</h3>
+                        <p class="company-type">Big Tech • Menlo Park, CA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> AI Research (FAIR), Portal devices, Instagram/WhatsApp voice features, Llama voice modes</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$160K-$250K</span>
+                        <span class="stat-label">Base Salary (E4-E6)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">$100K-$300K</span>
+                        <span class="stat-label">Stock (annual)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">40-80</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">Wav2Vec</span>
+                    <span class="tech-tag">HuBERT</span>
+                    <span class="tech-tag">Self-supervised learning</span>
+                    <span class="tech-tag">Multilingual ASR</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Speech research at FAIR (publish-friendly)</li>
+                    <li>Self-supervised learning for low-resource languages</li>
+                    <li>Voice features for messaging apps (3B+ users)</li>
+                    <li>Real-time translation across languages</li>
+                    <li>Integration with Llama models</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Top-tier research environment</li>
+                            <li>Highest compensation</li>
+                            <li>Publication encouraged</li>
+                            <li>Fast-moving culture</li>
+                            <li>Open source contributions (PyTorch)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Intense work culture</li>
+                            <li>Layoff concerns (2023-2024)</li>
+                            <li>Product direction changes</li>
+                            <li>Some reputational issues</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Researchers and engineers who want to publish, work fast, and get paid top dollar.</p>
+            </div>
+
+            <!-- Company 5: Microsoft -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">5. Microsoft</h3>
+                        <p class="company-type">Big Tech • Redmond, WA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Azure Speech Services, Cortana (deprecated but tech lives on), Teams transcription, Office dictation</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$135K-$190K</span>
+                        <span class="stat-label">Base Salary (61-63)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">$60K-$150K</span>
+                        <span class="stat-label">Stock (annual)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">50-100</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Azure ML</span>
+                    <span class="tech-tag">Custom ASR pipeline</span>
+                    <span class="tech-tag">Cognitive Services</span>
+                    <span class="tech-tag">Real-time transcription</span>
+                    <span class="tech-tag">Speaker diarization</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Azure Speech Services (B2B focus)</li>
+                    <li>Teams meeting transcription at scale</li>
+                    <li>Integration with OpenAI/GPT models</li>
+                    <li>Accessibility features (captioning, etc.)</li>
+                    <li>Enterprise speech solutions</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Excellent work-life balance</li>
+                            <li>Strong enterprise customer base</li>
+                            <li>Stable, mature company</li>
+                            <li>Good benefits</li>
+                            <li>OpenAI partnership opportunities</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Lower TC than Google/Meta</li>
+                            <li>Slower innovation pace</li>
+                            <li>Legacy systems integration</li>
+                            <li>B2B focus (less consumer visibility)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers who value stability and work-life balance over cutting-edge research.</p>
+            </div>
+
+            <div class="cta-box">
+                <h3>Ready to Join a Top Speech Tech Company?</h3>
+                <p>Submit your profile and get matched with companies hiring speech recognition engineers.</p>
+                <a href="/#submit" class="btn">Submit Your Profile →</a>
+            </div>
+
+            <h2>Pure-Play Speech AI Startups</h2>
+
+            <p>Companies built entirely around speech technology. High growth, high equity potential, high impact.</p>
+
+            <!-- Company 6: AssemblyAI -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">6. AssemblyAI</h3>
+                        <p class="company-type">Series C Startup • San Francisco, CA (Remote-friendly)</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Speech-to-text API, audio intelligence platform, LeMUR (LLM + ASR)</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$140K-$200K</span>
+                        <span class="stat-label">Base Salary</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">0.2-0.8%</span>
+                        <span class="stat-label">Equity</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">15-30</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Proprietary ASR models</span>
+                    <span class="tech-tag">Transformer architectures</span>
+                    <span class="tech-tag">Kubernetes</span>
+                    <span class="tech-tag">Real-time streaming</span>
+                    <span class="tech-tag">API-first</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Building state-of-the-art ASR models from scratch</li>
+                    <li>API infrastructure serving billions of minutes</li>
+                    <li>New audio intelligence features (summarization, etc.)</li>
+                    <li>Model optimization for cost/accuracy tradeoffs</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Fast-growing (10x revenue YoY)</li>
+                            <li>Strong product-market fit</li>
+                            <li>Ownership over full stack</li>
+                            <li>Remote-first culture</li>
+                            <li>Competitive comp for startup</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Startup risk (though well-funded)</li>
+                            <li>Intense pace</li>
+                            <li>Smaller team (less mentorship)</li>
+                            <li>Equity value uncertain</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Senior engineers who want startup equity with less risk (Series C, proven PMF).</p>
+            </div>
+
+            <!-- Company 7: Deepgram -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">7. Deepgram</h3>
+                        <p class="company-type">Series B Startup • San Francisco, CA (Remote-friendly)</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Real-time ASR API, voice AI platform, custom model training</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$135K-$190K</span>
+                        <span class="stat-label">Base Salary</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">0.3-1.0%</span>
+                        <span class="stat-label">Equity</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">10-25</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Custom GPU infrastructure</span>
+                    <span class="tech-tag">End-to-end ASR</span>
+                    <span class="tech-tag">Real-time streaming</span>
+                    <span class="tech-tag">Model customization</span>
+                    <span class="tech-tag">Low-latency inference</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Ultra-low-latency real-time ASR</li>
+                    <li>Custom model training for enterprise clients</li>
+                    <li>GPU optimization for inference</li>
+                    <li>Domain-specific accuracy improvements</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Technical depth (GPU optimization)</li>
+                            <li>Strong engineering culture</li>
+                            <li>Remote-first, global team</li>
+                            <li>High autonomy</li>
+                            <li>Real customer impact</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Competitive market (vs AssemblyAI)</li>
+                            <li>Series B risk</li>
+                            <li>Smaller team = more hats</li>
+                            <li>Less name recognition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers who love performance optimization and want equity upside.</p>
+            </div>
+
+            <!-- Company 8: Speechmatics -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">8. Speechmatics</h3>
+                        <p class="company-type">Series B Startup • Cambridge, UK (Remote options)</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Multilingual ASR, batch transcription, real-time API, on-premise deployment</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">£80K-£120K</span>
+                        <span class="stat-label">Base Salary (UK)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">0.2-0.6%</span>
+                        <span class="stat-label">Equity</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">8-15</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Transformer models</span>
+                    <span class="tech-tag">50+ languages</span>
+                    <span class="tech-tag">On-premise deployment</span>
+                    <span class="tech-tag">Speaker diarization</span>
+                    <span class="tech-tag">Custom vocab</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Multilingual ASR improvements</li>
+                    <li>On-premise deployment optimization</li>
+                    <li>Enterprise feature development</li>
+                    <li>Low-resource language support</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Strong European presence</li>
+                            <li>Multilingual focus (differentiation)</li>
+                            <li>Research-friendly culture</li>
+                            <li>Cambridge tech scene access</li>
+                            <li>Good work-life balance</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Lower comp than US competitors</li>
+                            <li>Smaller market than US-based</li>
+                            <li>Exit opportunities less certain</li>
+                            <li>Less funding than competitors</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers in Europe who want startup experience with strong multilingual focus.</p>
+            </div>
+
+            <!-- Company 9: Rev.ai -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">9. Rev.ai</h3>
+                        <p class="company-type">Series A Startup • San Francisco, CA / Austin, TX</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> ASR API, human transcription hybrid, caption generation</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$120K-$170K</span>
+                        <span class="stat-label">Base Salary</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">0.3-1.2%</span>
+                        <span class="stat-label">Equity</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">5-12</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Hybrid AI+human pipeline</span>
+                    <span class="tech-tag">Custom ASR models</span>
+                    <span class="tech-tag">Quality assurance systems</span>
+                    <span class="tech-tag">Caption formatting</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>ASR model improvement for accuracy</li>
+                    <li>Hybrid AI + human workflow optimization</li>
+                    <li>Caption formatting and timing</li>
+                    <li>Vertical-specific models (legal, medical)</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Human-in-loop = higher accuracy</li>
+                            <li>Proven business model</li>
+                            <li>Smaller team (high impact)</li>
+                            <li>Interesting technical challenges</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Lower comp than pure tech</li>
+                            <li>Human component complexity</li>
+                            <li>Slower pace than pure AI plays</li>
+                            <li>Series A risk</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers interested in hybrid AI+human systems and accuracy obsession.</p>
+            </div>
+
+            <!-- Company 10: Otter.ai -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">10. Otter.ai</h3>
+                        <p class="company-type">Series B Startup • Mountain View, CA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Meeting transcription, Otter Assistant (Zoom/Teams), AI notes</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$130K-$180K</span>
+                        <span class="stat-label">Base Salary</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">0.2-0.7%</span>
+                        <span class="stat-label">Equity</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">8-18</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Custom ASR pipeline</span>
+                    <span class="tech-tag">Speaker diarization</span>
+                    <span class="tech-tag">NLP for summarization</span>
+                    <span class="tech-tag">Real-time transcription</span>
+                    <span class="tech-tag">LLM integration</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Meeting-specific ASR optimization</li>
+                    <li>Speaker identification improvements</li>
+                    <li>AI-generated meeting notes/summaries</li>
+                    <li>Integration with Zoom, Teams, etc.</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Consumer product (see your impact)</li>
+                            <li>Strong product-market fit</li>
+                            <li>Growing market (remote work)</li>
+                            <li>ASR + NLP combination</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Competitive space (Fireflies, etc.)</li>
+                            <li>Monetization challenges (freemium)</li>
+                            <li>Smaller comp than pure infra plays</li>
+                            <li>Product changes frequently</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers who want to build consumer products with clear user value.</p>
+            </div>
+
+            <div class="cta-box">
+                <h3>Want to Work at a Speech AI Startup?</h3>
+                <p>Submit your profile and get matched with fast-growing speech technology companies.</p>
+                <a href="/#submit" class="btn">Submit Your Profile →</a>
+            </div>
+
+            <h2>Enterprise & Established Players</h2>
+
+            <p>Mature companies with proven business models and stable employment.</p>
+
+            <!-- Company 11: Nuance Communications -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">11. Nuance Communications (Microsoft)</h3>
+                        <p class="company-type">Enterprise • Burlington, MA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Dragon speech recognition, healthcare documentation, automotive voice, IVR systems</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$120K-$170K</span>
+                        <span class="stat-label">Base Salary</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">$40K-$80K</span>
+                        <span class="stat-label">Stock (MSFT)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">20-40</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Legacy ASR pipeline</span>
+                    <span class="tech-tag">Healthcare-specific models</span>
+                    <span class="tech-tag">On-premise deployment</span>
+                    <span class="tech-tag">Dragon platform</span>
+                    <span class="tech-tag">Microsoft integration</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Medical terminology accuracy improvements</li>
+                    <li>Legacy system maintenance + modernization</li>
+                    <li>Healthcare compliance (HIPAA, etc.)</li>
+                    <li>Integration with Microsoft products</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Domain expertise (healthcare, auto)</li>
+                            <li>Stable employment (Microsoft backed)</li>
+                            <li>Good benefits</li>
+                            <li>Meaningful impact (healthcare)</li>
+                            <li>Work-life balance</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Legacy codebases</li>
+                            <li>Slower innovation</li>
+                            <li>Lower comp than FAANG</li>
+                            <li>Less cutting-edge tech</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers interested in healthcare applications and stable, mature companies.</p>
+            </div>
+
+            <!-- Company 12: SoundHound -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">12. SoundHound</h3>
+                        <p class="company-type">Public Company • Santa Clara, CA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Voice AI platform, automotive voice assistants, restaurant ordering, Houndify platform</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$130K-$180K</span>
+                        <span class="stat-label">Base Salary</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">RSUs (public)</span>
+                        <span class="stat-label">Stock</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">15-30</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Houndify platform</span>
+                    <span class="tech-tag">Voice-first AI</span>
+                    <span class="tech-tag">NLU + ASR integration</span>
+                    <span class="tech-tag">Automotive deployment</span>
+                    <span class="tech-tag">Multi-domain</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Automotive voice assistant development</li>
+                    <li>Restaurant/retail voice ordering systems</li>
+                    <li>Houndify platform improvements</li>
+                    <li>Domain-specific ASR + NLU</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Voice-first company culture</li>
+                            <li>Automotive partnerships (scale)</li>
+                            <li>Full-stack voice AI</li>
+                            <li>Public company (liquid stock)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Stock performance challenges</li>
+                            <li>Competitive market</li>
+                            <li>Lower comp than FAANG</li>
+                            <li>Uncertain long-term trajectory</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Engineers interested in automotive voice AI and vertical integration.</p>
+            </div>
+
+            <!-- Company 13-15: Brief mentions for space -->
+            <div class="company-card">
+                <h3>13. Cisco (Webex)</h3>
+                <p><strong>Focus:</strong> Meeting transcription, real-time translation, enterprise collaboration</p>
+                <p><strong>Salary:</strong> $120K-$165K + stock</p>
+                <p><strong>Best For:</strong> Enterprise engineers who want stability and benefits.</p>
+            </div>
+
+            <div class="company-card">
+                <h3>14. Twilio (SendGrid Voice)</h3>
+                <p><strong>Focus:</strong> Voice API, programmable voice, IVR systems</p>
+                <p><strong>Salary:</strong> $130K-$180K + equity</p>
+                <p><strong>Best For:</strong> Engineers interested in developer tools and APIs.</p>
+            </div>
+
+            <div class="company-card">
+                <h3>15. Verint</h3>
+                <p><strong>Focus:</strong> Contact center AI, voice analytics, compliance</p>
+                <p><strong>Salary:</strong> $110K-$150K + bonus</p>
+                <p><strong>Best For:</strong> Engineers interested in enterprise B2B and contact centers.</p>
+            </div>
+
+            <h2>Research Labs & Academia-Adjacent</h2>
+
+            <!-- Company 16: OpenAI -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">16. OpenAI</h3>
+                        <p class="company-type">Research Lab • San Francisco, CA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Whisper ASR, ChatGPT Voice Mode, GPT-4 voice capabilities</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$200K-$300K+</span>
+                        <span class="stat-label">Base Salary</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">Significant equity</span>
+                        <span class="stat-label">PPUs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">10-20</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Whisper</span>
+                    <span class="tech-tag">Multimodal models</span>
+                    <span class="tech-tag">Large-scale training</span>
+                    <span class="tech-tag">Voice-to-voice</span>
+                    <span class="tech-tag">Custom infrastructure</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Next-generation Whisper models</li>
+                    <li>Voice mode for ChatGPT</li>
+                    <li>Multimodal speech + language integration</li>
+                    <li>Novel research directions</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Cutting-edge research</li>
+                            <li>Highest compensation in industry</li>
+                            <li>Top-tier talent</li>
+                            <li>Huge user impact</li>
+                            <li>Open source contributions</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Extremely competitive hiring</li>
+                            <li>High pressure environment</li>
+                            <li>Fast-moving (can be chaotic)</li>
+                            <li>Equity structure complex</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Top researchers who want to work on the most cutting-edge problems.</p>
+            </div>
+
+            <!-- Company 17: Anthropic -->
+            <div class="company-card">
+                <div class="company-header">
+                    <div>
+                        <h3 class="company-name">17. Anthropic</h3>
+                        <p class="company-type">Research Lab • San Francisco, CA</p>
+                    </div>
+                </div>
+
+                <p><strong>Products:</strong> Claude (with voice capabilities in development), AI safety research</p>
+
+                <div class="company-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">$180K-$280K</span>
+                        <span class="stat-label">Base Salary</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">Equity</span>
+                        <span class="stat-label">Stock options</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">5-12</span>
+                        <span class="stat-label">Open roles</span>
+                    </div>
+                </div>
+
+                <h4>Tech Stack</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Multimodal models</span>
+                    <span class="tech-tag">Safety-focused ML</span>
+                    <span class="tech-tag">Voice integration (emerging)</span>
+                    <span class="tech-tag">Large-scale training</span>
+                </div>
+
+                <h4>What You'll Work On</h4>
+                <ul>
+                    <li>Voice capabilities for Claude</li>
+                    <li>Speech + language model integration</li>
+                    <li>Safety in voice AI systems</li>
+                    <li>Novel architectures</li>
+                </ul>
+
+                <div class="pros-cons">
+                    <div>
+                        <h5>Pros</h5>
+                        <ul>
+                            <li>Mission-driven (AI safety)</li>
+                            <li>Top-tier research environment</li>
+                            <li>High compensation</li>
+                            <li>Growing quickly</li>
+                            <li>Thoughtful culture</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Cons</h5>
+                        <ul>
+                            <li>Very selective hiring</li>
+                            <li>Smaller speech team (for now)</li>
+                            <li>Startup risk (well-funded though)</li>
+                            <li>Less speech-specific than competitors</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p><strong>Best For:</strong> Researchers interested in AI safety and multimodal models.</p>
+            </div>
+
+            <!-- Companies 18-20: Brief mentions -->
+            <div class="company-card">
+                <h3>18. DeepMind (Google)</h3>
+                <p><strong>Focus:</strong> Speech research, multimodal models, AGI research</p>
+                <p><strong>Salary:</strong> Google L4-L6 equivalent + research autonomy</p>
+                <p><strong>Best For:</strong> PhD researchers who want to publish and do fundamental research.</p>
+            </div>
+
+            <div class="company-card">
+                <h3>19. Allen Institute for AI (AI2)</h3>
+                <p><strong>Focus:</strong> Open research, speech models, low-resource languages</p>
+                <p><strong>Salary:</strong> $150K-$220K (lower than FAANG, higher than academia)</p>
+                <p><strong>Best For:</strong> Researchers who want academic freedom with industry resources.</p>
+            </div>
+
+            <div class="company-card">
+                <h3>20. FAIR (Meta AI Research)</h3>
+                <p><strong>Focus:</strong> Wav2Vec family, self-supervised speech, multilingual ASR</p>
+                <p><strong>Salary:</strong> Meta E5-E6 levels</p>
+                <p><strong>Best For:</strong> Researchers who want to publish while having product impact.</p>
+            </div>
+
+            <h2>How to Choose the Right Company</h2>
+
+            <p>Use this decision framework:</p>
+
+            <h3>If You Value: Compensation Above All</h3>
+            <p><strong>Top choices:</strong> OpenAI, Meta, Google, Anthropic</p>
+            <p>These pay $300K-$500K+ TC at senior levels.</p>
+
+            <h3>If You Value: Cutting-Edge Research</h3>
+            <p><strong>Top choices:</strong> OpenAI, Meta FAIR, DeepMind, Anthropic</p>
+            <p>Publication-friendly, access to massive compute.</p>
+
+            <h3>If You Value: Startup Equity Upside</h3>
+            <p><strong>Top choices:</strong> AssemblyAI, Deepgram, early-stage startups</p>
+            <p>Higher risk, but 0.5-1% at a $500M company = potential millions.</p>
+
+            <h3>If You Value: Work-Life Balance</h3>
+            <p><strong>Top choices:</strong> Microsoft, Apple, Nuance, Cisco</p>
+            <p>40-45 hour weeks, less pressure, better boundaries.</p>
+
+            <h3>If You Value: Product Impact</h3>
+            <p><strong>Top choices:</strong> Google Assistant, Amazon Alexa, OpenAI</p>
+            <p>Billions of users actually using your work.</p>
+
+            <h3>If You Value: Ownership & Autonomy</h3>
+            <p><strong>Top choices:</strong> Series A/B startups, smaller teams</p>
+            <p>More responsibility, less structure.</p>
+
+            <h2>Red Flags to Watch For</h2>
+
+            <p>When evaluating offers, watch out for:</p>
+
+            <ul>
+                <li><strong>Vague equity terms:</strong> Ask for exact shares, not percentages</li>
+                <li><strong>"We'll revisit comp in 6 months":</strong> They won't</li>
+                <li><strong>No other speech engineers:</strong> You'll be building from scratch (could be good or bad)</li>
+                <li><strong>Funding concerns:</strong> Check runway for startups</li>
+                <li><strong>High attrition:</strong> Check Glassdoor and back-channel</li>
+                <li><strong>Pivoting companies:</strong> Speech might not be core focus</li>
+            </ul>
+
+            <h2>The Application Process</h2>
+
+            <p>Timeline for these companies:</p>
+
+            <ul>
+                <li><strong>FAANG:</strong> 4-8 weeks, 5-6 interview rounds</li>
+                <li><strong>Startups:</strong> 2-4 weeks, 3-4 rounds</li>
+                <li><strong>Enterprise:</strong> 3-6 weeks, 4-5 rounds</li>
+            </ul>
+
+            <p>Pro tip: Apply to 3-5 companies simultaneously to create leverage in negotiations.</p>
+
+            <div class="cta-box">
+                <h3>Ready to Apply to These Companies?</h3>
+                <p>Submit your profile and we'll match you with companies hiring speech recognition engineers. Get notified when new roles open up.</p>
+                <a href="/#submit" class="btn">Submit Your Profile →</a>
+                <p style="font-size: 13px; margin-top: 16px;">No recruiter spam. Direct applications only. Free for candidates.</p>
+            </div>
+
+            <h2>The Bottom Line</h2>
+
+            <p>The best company for you depends on:</p>
+            <ol>
+                <li>Your career stage (early career vs. senior)</li>
+                <li>Your priorities (money, research, impact, balance)</li>
+                <li>Your risk tolerance (FAANG safe vs. startup equity)</li>
+                <li>Your location preferences (office, remote, hybrid)</li>
+            </ol>
+
+            <p><strong>General recommendations:</strong></p>
+
+            <ul>
+                <li><strong>0-2 years experience:</strong> Target Google, Meta, or well-funded Series B+ startups for best learning</li>
+                <li><strong>3-5 years experience:</strong> Choose based on what you want next—research, leadership, or specialization</li>
+                <li><strong>6+ years experience:</strong> Go where you can have maximum impact and comp</li>
+            </ul>
+
+            <p>The speech recognition field is exploding in 2026. Every one of these companies is actively hiring. The question isn't whether you can get a job—it's which company is the right fit for where you want to take your career.</p>
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 48px 0;">
+
+            <p style="font-size: 13px; color: var(--muted);"><em>Last updated: January 14, 2026. Company information compiled from public sources, employee reports, and industry research. Salaries and equity ranges are estimates and will vary based on level, location, and negotiation.</em></p>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/" style="color: var(--muted); margin-left: 16px;">Home</a> <a href="/blog" style="color: var(--muted); margin-left: 16px;">Blog</a></p>
+        </div>
+    </footer>
+</body>
+</html>
