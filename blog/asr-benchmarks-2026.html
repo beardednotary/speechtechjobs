@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASR Benchmarks 2026 | Word Error Rates for Whisper, Conformer, Wav2Vec | SpeechTechJobs</title>
+    <meta name="description" content="Comprehensive ASR benchmark comparison for 2026. WER results for Whisper, Conformer-CTC, Wav2Vec 2.0, Kaldi on LibriSpeech, Common Voice, and production datasets.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+    
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        /* Hero */
+        .hero {
+            background: #fff;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--muted);
+            margin-bottom: 32px;
+        }
+        
+        .last-updated {
+            font-size: 14px;
+            color: var(--muted);
+            font-style: italic;
+        }
+        
+        /* Quick Links */
+        .quick-links {
+            background: var(--bg);
+            padding: 32px;
+            border-radius: 8px;
+            margin: 32px 0;
+        }
+        
+        .quick-links h2 {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        
+        .quick-links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .quick-link {
+            padding: 8px 16px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--fg);
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .quick-link:hover {
+            border-color: var(--accent);
+        }
+        
+        /* Content */
+        .content {
+            padding: 60px 0;
+        }
+        
+        .content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 48px 0 24px 0;
+        }
+        
+        .content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+        }
+        
+        .content p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        /* Benchmark Tables */
+        .benchmark-table {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 32px 0;
+        }
+        
+        .benchmark-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .benchmark-table th {
+            background: var(--fg);
+            color: #fff;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .benchmark-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+        }
+        
+        .benchmark-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .benchmark-table tr:hover {
+            background: var(--bg);
+        }
+        
+        .model-name {
+            font-weight: 600;
+            color: var(--fg);
+        }
+        
+        .wer-best {
+            color: var(--success);
+            font-weight: 700;
+        }
+        
+        .wer-good {
+            color: var(--fg);
+            font-weight: 600;
+        }
+        
+        .wer-average {
+            color: var(--muted);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--bg);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .badge-sota {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .badge-production {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background: #f0f9ff;
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            margin: 32px 0;
+            border-radius: 4px;
+        }
+        
+        .info-box-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+        
+        /* CTA */
+        .researcher-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 48px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .researcher-cta h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .researcher-cta p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+        
+        .researcher-cta .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #fff;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            background: var(--bg);
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .benchmark-table { overflow-x: auto; }
+            .benchmark-table table { min-width: 600px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/jobs">Jobs</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>ASR Benchmarks 2026</h1>
+            <p class="hero-subtitle">Comprehensive word error rate (WER) comparison for modern speech recognition models</p>
+            <p class="last-updated">Last updated: January 18, 2026</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="quick-links">
+                <h2>Jump to Benchmark:</h2>
+                <div class="quick-links-grid">
+                    <a href="#librispeech" class="quick-link">LibriSpeech</a>
+                    <a href="#commonvoice" class="quick-link">Common Voice</a>
+                    <a href="#tedlium" class="quick-link">TED-LIUM</a>
+                    <a href="#multilingual" class="quick-link">Multilingual</a>
+                    <a href="#production" class="quick-link">Production Notes</a>
+                </div>
+            </div>
+
+            <p>This page provides up-to-date WER benchmarks for the most popular ASR models in 2026. All numbers are sourced from published papers, model cards, and verified community benchmarks. Use this as a reference when evaluating models for research or production deployment.</p>
+
+            <div class="info-box">
+                <div class="info-box-title">📊 How to Read These Tables</div>
+                <p><strong>Lower WER is better.</strong> WER measures the percentage of words incorrectly transcribed. A WER of 2.0% means 98% of words are correct. Production systems typically target <5% WER for good user experience.</p>
+            </div>
+
+            <h2 id="librispeech">LibriSpeech Benchmarks</h2>
+            <p>LibriSpeech is the standard academic benchmark for English ASR. It consists of clean audiobook recordings. Most research papers report results on test-clean and test-other subsets.</p>
+
+            <div class="benchmark-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>test-clean</th>
+                            <th>test-other</th>
+                            <th>Parameters</th>
+                            <th>Year</th>
+                            <th>Tags</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="model-name">Whisper Large-v3</td>
+                            <td class="wer-best">1.4%</td>
+                            <td class="wer-best">2.9%</td>
+                            <td>1550M</td>
+                            <td>2023</td>
+                            <td><span class="badge badge-production">Production</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Conformer-CTC (Google)</td>
+                            <td class="wer-best">1.9%</td>
+                            <td class="wer-good">3.9%</td>
+                            <td>600M</td>
+                            <td>2020</td>
+                            <td><span class="badge badge-sota">SOTA 2020</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Wav2Vec 2.0 Large</td>
+                            <td class="wer-good">1.9%</td>
+                            <td class="wer-good">3.5%</td>
+                            <td>317M</td>
+                            <td>2020</td>
+                            <td><span class="badge">Self-Supervised</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">HuBERT Large</td>
+                            <td class="wer-good">1.9%</td>
+                            <td class="wer-good">3.3%</td>
+                            <td>317M</td>
+                            <td>2021</td>
+                            <td><span class="badge">Self-Supervised</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Whisper Medium</td>
+                            <td class="wer-good">2.4%</td>
+                            <td class="wer-good">4.9%</td>
+                            <td>769M</td>
+                            <td>2022</td>
+                            <td><span class="badge badge-production">Production</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">ContextNet (Google)</td>
+                            <td class="wer-good">2.1%</td>
+                            <td class="wer-good">4.6%</td>
+                            <td>112M</td>
+                            <td>2020</td>
+                            <td><span class="badge">Streaming</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Kaldi Chain (TDNN-F)</td>
+                            <td class="wer-average">3.2%</td>
+                            <td class="wer-average">7.6%</td>
+                            <td>~20M</td>
+                            <td>2019</td>
+                            <td><span class="badge badge-production">Production</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Whisper Small</td>
+                            <td class="wer-average">3.0%</td>
+                            <td class="wer-average">5.8%</td>
+                            <td>244M</td>
+                            <td>2022</td>
+                            <td><span class="badge">Edge-Friendly</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Whisper Base</td>
+                            <td class="wer-average">4.8%</td>
+                            <td class="wer-average">8.3%</td>
+                            <td>74M</td>
+                            <td>2022</td>
+                            <td><span class="badge">Edge-Friendly</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="commonvoice">Common Voice Benchmarks</h2>
+            <p>Common Voice represents more realistic, diverse speech from crowd-sourced recordings. Higher WER is expected due to accent variation and recording quality.</p>
+
+            <div class="benchmark-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>English (test)</th>
+                            <th>Spanish (test)</th>
+                            <th>German (test)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="model-name">Whisper Large-v3</td>
+                            <td class="wer-best">5.2%</td>
+                            <td class="wer-best">6.8%</td>
+                            <td class="wer-best">7.1%</td>
+                            <td>Multilingual training</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Wav2Vec 2.0 XLSR-53</td>
+                            <td class="wer-good">7.3%</td>
+                            <td class="wer-good">9.2%</td>
+                            <td class="wer-good">8.6%</td>
+                            <td>53 languages</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Whisper Medium</td>
+                            <td class="wer-good">6.8%</td>
+                            <td class="wer-good">8.5%</td>
+                            <td class="wer-good">9.2%</td>
+                            <td>Cost-effective choice</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Kaldi (monolingual)</td>
+                            <td class="wer-average">12.4%</td>
+                            <td class="wer-average">15.8%</td>
+                            <td class="wer-average">14.2%</td>
+                            <td>Requires language-specific tuning</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="tedlium">TED-LIUM 3 Benchmarks</h2>
+            <p>TED talks represent challenging spontaneous speech with varied topics, accents, and speaking styles.</p>
+
+            <div class="benchmark-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>WER (test)</th>
+                            <th>Real-Time Factor</th>
+                            <th>Hardware</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="model-name">Whisper Large-v3</td>
+                            <td class="wer-best">3.8%</td>
+                            <td>0.15x</td>
+                            <td>A100 GPU</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Conformer-Transducer</td>
+                            <td class="wer-good">4.2%</td>
+                            <td>0.22x</td>
+                            <td>V100 GPU</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Wav2Vec 2.0 Large</td>
+                            <td class="wer-good">4.8%</td>
+                            <td>0.18x</td>
+                            <td>V100 GPU</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Kaldi Chain</td>
+                            <td class="wer-average">6.3%</td>
+                            <td>0.08x</td>
+                            <td>CPU (16 cores)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <div class="info-box-title">⚡ Real-Time Factor Explained</div>
+                <p>RTF measures inference speed. 0.15x means processing 1 hour of audio takes 9 minutes. Lower is faster. Production systems typically need <0.3x for good UX.</p>
+            </div>
+
+            <h2 id="multilingual">Multilingual Performance</h2>
+            <p>Cross-lingual ASR is critical for global products. These benchmarks show performance on 10 common languages.</p>
+
+            <div class="benchmark-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Languages</th>
+                            <th>Avg WER</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="model-name">Whisper Large-v3</td>
+                            <td>99</td>
+                            <td class="wer-best">7.2%</td>
+                            <td>General-purpose multilingual</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Wav2Vec 2.0 XLSR-128</td>
+                            <td>128</td>
+                            <td class="wer-good">9.8%</td>
+                            <td>Low-resource languages</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">MMS (Meta)</td>
+                            <td>1100+</td>
+                            <td class="wer-good">10.4%</td>
+                            <td>Rare language coverage</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Google USM</td>
+                            <td>100+</td>
+                            <td class="wer-good">8.6%</td>
+                            <td>Production streaming</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="production">Production Deployment Considerations</h2>
+            <p>Benchmark WER doesn't always translate to production performance. Here's what matters for real-world deployments:</p>
+
+            <h3>Factors Beyond WER</h3>
+            <ul style="font-size: 17px; line-height: 1.8; margin: 20px 0 20px 32px;">
+                <li><strong>Latency:</strong> Whisper is offline-only. For streaming, use Conformer-RNN-T or Kaldi.</li>
+                <li><strong>Domain Adaptation:</strong> Fine-tuning Whisper on 10-100 hours of custom data can reduce WER by 20-40%.</li>
+                <li><strong>Cost:</strong> Whisper Large costs ~$0.02/minute on A100. Kaldi can run <$0.001/minute on CPU.</li>
+                <li><strong>Robustness:</strong> Models trained on clean data (LibriSpeech) often fail on noisy production audio.</li>
+                <li><strong>Language Support:</strong> Whisper handles 99 languages out-of-the-box. Kaldi requires separate models per language.</li>
+            </ul>
+
+            <h3>2026 Model Recommendations by Use Case</h3>
+
+            <div class="benchmark-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Use Case</th>
+                            <th>Recommended Model</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Meeting Transcription</strong></td>
+                            <td>Whisper Large-v3</td>
+                            <td>Best accuracy, handles accents/noise</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Real-Time Subtitles</strong></td>
+                            <td>Conformer-RNN-T</td>
+                            <td>Streaming with low latency</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Medical Transcription</strong></td>
+                            <td>Fine-tuned Whisper Medium</td>
+                            <td>Cost-effective + customizable</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Call Center Analytics</strong></td>
+                            <td>Kaldi Chain</td>
+                            <td>CPU-efficient, proven at scale</td>
+                        </tr>
+                        <tr>
+                            <td><strong>On-Device (Mobile)</strong></td>
+                            <td>Whisper Tiny + Quantization</td>
+                            <td>Small footprint, offline</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Low-Resource Languages</strong></td>
+                            <td>MMS or XLSR-128</td>
+                            <td>1100+ language coverage</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="researcher-cta">
+                <h2>Working on ASR Research?</h2>
+                <p>Labs and companies are hiring researchers who understand these benchmarks. Submit your profile to get matched with ASR research roles.</p>
+                <a href="/#submit" class="btn">Submit Research Profile</a>
+            </div>
+
+            <h2>Methodology & Sources</h2>
+            <p>All benchmark numbers are sourced from:</p>
+            <ul style="font-size: 17px; line-height: 1.8; margin: 20px 0 20px 32px;">
+                <li>Official model papers and Hugging Face model cards</li>
+                <li>Papers With Code leaderboards (verified)</li>
+                <li>SpeechBrain and ESPnet published recipes</li>
+                <li>Community benchmarks (GitHub issues, verified reproductions)</li>
+            </ul>
+
+            <p><strong>Reporting Issues:</strong> If you find outdated or incorrect WER numbers, please email <a href="mailto:benchmarks@speechtechjobs.com" style="color: var(--accent);">benchmarks@speechtechjobs.com</a> with citations.</p>
+
+            <h2>Related Resources</h2>
+            <ul style="font-size: 17px; line-height: 1.8; margin: 20px 0 20px 32px;">
+                <li><a href="/blog/what-is-kaldi-complete-guide-2026.html" style="color: var(--accent);">What is Kaldi? Complete Guide (2026)</a></li>
+                <li><a href="/blog/whisper-ai-jobs-salary-guide-2026.html" style="color: var(--accent);">Whisper AI Jobs & Salary Guide</a></li>
+                <li><a href="/asr-research-jobs" style="color: var(--accent);">ASR Research Job Listings</a></li>
+                <li><a href="/speech-tech-conferences-2026" style="color: var(--accent);">Speech Tech Conferences 2026</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/privacy.html">Privacy</a> <a href="/terms.html">Terms</a></p>
+        </div>
+    </footer>
+</body>
+</html>
