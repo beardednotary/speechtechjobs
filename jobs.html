@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Technology Jobs | ASR, NLP & Audio ML Positions | SpeechTechJobs</title>
+    <meta name="description" content="Browse 100+ speech technology jobs in ASR, NLP, and audio ML. Filter by skills (Kaldi, Whisper, PyTorch), location (remote, SF, NYC), and experience level. Apply today.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+    
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --success: #10b981;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 60px 0 40px;
+            background: #fff;
+        }
+        
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .page-subtitle {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 32px;
+        }
+        
+        .job-count {
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        /* Filters */
+        .filters-section {
+            background: #fff;
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            position: relative;
+        }
+        
+        .filter-btn {
+            padding: 10px 16px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--accent);
+        }
+        
+        .filter-btn.active {
+            background: var(--fg);
+            color: #fff;
+            border-color: var(--fg);
+        }
+        
+        /* Search */
+        .search-box {
+            flex: 1;
+            max-width: 400px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 10px 16px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        /* Jobs Grid */
+        .jobs-section {
+            padding: 40px 0;
+        }
+        
+        .jobs-grid {
+            display: grid;
+            gap: 24px;
+        }
+        
+        .job-card {
+            background: #fff;
+            padding: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--fg);
+            display: block;
+            transition: all 0.2s;
+        }
+        
+        .job-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .job-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+        }
+        
+        .job-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .company-name {
+            font-size: 15px;
+            color: var(--muted);
+        }
+        
+        .job-card-meta {
+            display: flex;
+            gap: 24px;
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .job-description {
+            font-size: 15px;
+            color: var(--fg);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        .job-skills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .skill-badge {
+            background: var(--bg);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--fg);
+        }
+        
+        .new-badge {
+            background: var(--success);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        /* Categories Quick Links */
+        .categories-section {
+            background: #fff;
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        
+        .category-link {
+            padding: 20px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--fg);
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .category-link:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            background: var(--bg);
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title { font-size: 28px; }
+            .filters { flex-direction: column; }
+            .search-box { max-width: 100%; }
+            .job-card { padding: 24px; }
+            .job-card-meta { flex-wrap: wrap; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/#submit">Submit Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Speech Technology Jobs</h1>
+            <p class="page-subtitle">Find your next role in ASR, NLP, audio ML, and voice technology</p>
+            <p class="job-count">Showing 15 jobs</p>
+        </div>
+    </section>
+
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search jobs by title, skill, or company...">
+                </div>
+                
+                <button class="filter-btn">
+                    Category ▾
+                </button>
+                
+                <button class="filter-btn">
+                    Location ▾
+                </button>
+                
+                <button class="filter-btn">
+                    Experience ▾
+                </button>
+                
+                <button class="filter-btn">
+                    Salary ▾
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="jobs-section">
+        <div class="container">
+            <div class="jobs-grid">
+                <!-- Job Card 1 -->
+                <a href="/jobs/senior-asr-engineer-whisper-remote.html" class="job-card">
+                    <div class="job-card-header">
+                        <div>
+                            <h2 class="job-card-title">Senior ASR Engineer - Whisper Specialist</h2>
+                            <div class="company-name">VoiceFlow AI</div>
+                        </div>
+                        <span class="new-badge">New</span>
+                    </div>
+                    
+                    <div class="job-card-meta">
+                        <div class="meta-item">
+                            📍 Remote (US)
+                        </div>
+                        <div class="meta-item">
+                            💰 $160K - $210K
+                        </div>
+                        <div class="meta-item">
+                            📅 5+ years
+                        </div>
+                    </div>
+                    
+                    <p class="job-description">
+                        Build and optimize production ASR systems using OpenAI's Whisper model. Fine-tune for domain-specific applications and deploy at scale.
+                    </p>
+                    
+                    <div class="job-skills">
+                        <span class="skill-badge">Whisper AI</span>
+                        <span class="skill-badge">PyTorch</span>
+                        <span class="skill-badge">ASR</span>
+                        <span class="skill-badge">Python</span>
+                    </div>
+                </a>
+
+                <!-- Job Card 2 -->
+                <a href="/jobs/nlp-engineer-conversational-ai.html" class="job-card">
+                    <div class="job-card-header">
+                        <div>
+                            <h2 class="job-card-title">NLP Engineer - Conversational AI</h2>
+                            <div class="company-name">DialogAI</div>
+                        </div>
+                        <span class="new-badge">New</span>
+                    </div>
+                    
+                    <div class="job-card-meta">
+                        <div class="meta-item">
+                            📍 Remote
+                        </div>
+                        <div class="meta-item">
+                            💰 $150K - $200K
+                        </div>
+                        <div class="meta-item">
+                            📅 3-5 years
+                        </div>
+                    </div>
+                    
+                    <p class="job-description">
+                        Design and implement NLU systems for voice assistants. Work with BERT, GPT, and transformer models to understand user intent.
+                    </p>
+                    
+                    <div class="job-skills">
+                        <span class="skill-badge">BERT</span>
+                        <span class="skill-badge">Transformers</span>
+                        <span class="skill-badge">NLP</span>
+                        <span class="skill-badge">Python</span>
+                    </div>
+                </a>
+
+                <!-- Job Card 3 -->
+                <a href="/jobs/ml-engineer-audio-classification.html" class="job-card">
+                    <div class="job-card-header">
+                        <div>
+                            <h2 class="job-card-title">ML Engineer - Audio Classification</h2>
+                            <div class="company-name">SoundSense</div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card-meta">
+                        <div class="meta-item">
+                            📍 San Francisco
+                        </div>
+                        <div class="meta-item">
+                            💰 $140K - $190K
+                        </div>
+                        <div class="meta-item">
+                            📅 4+ years
+                        </div>
+                    </div>
+                    
+                    <p class="job-description">
+                        Build audio classification models for smart home devices. Work with spectral analysis, CNNs, and real-time audio processing.
+                    </p>
+                    
+                    <div class="job-skills">
+                        <span class="skill-badge">Audio ML</span>
+                        <span class="skill-badge">TensorFlow</span>
+                        <span class="skill-badge">Signal Processing</span>
+                        <span class="skill-badge">Python</span>
+                    </div>
+                </a>
+
+                <!-- Job Card 4 -->
+                <a href="/jobs/speech-scientist-accent-recognition.html" class="job-card">
+                    <div class="job-card-header">
+                        <div>
+                            <h2 class="job-card-title">Speech Scientist - Accent Recognition</h2>
+                            <div class="company-name">AccentAI Labs</div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card-meta">
+                        <div class="meta-item">
+                            📍 Remote
+                        </div>
+                        <div class="meta-item">
+                            💰 $170K - $230K
+                        </div>
+                        <div class="meta-item">
+                            📅 6+ years
+                        </div>
+                    </div>
+                    
+                    <p class="job-description">
+                        Research and develop accent-robust ASR systems. Work on phonetic analysis, dialect classification, and speaker adaptation.
+                    </p>
+                    
+                    <div class="job-skills">
+                        <span class="skill-badge">Phonetics</span>
+                        <span class="skill-badge">Kaldi</span>
+                        <span class="skill-badge">Research</span>
+                        <span class="skill-badge">Python</span>
+                    </div>
+                </a>
+
+                <!-- Job Card 5 -->
+                <a href="/jobs/voice-ui-designer-alexa.html" class="job-card">
+                    <div class="job-card-header">
+                        <div>
+                            <h2 class="job-card-title">Voice UI Designer - Alexa Skills</h2>
+                            <div class="company-name">VoiceDesign Co</div>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card-meta">
+                        <div class="meta-item">
+                            📍 Seattle
+                        </div>
+                        <div class="meta-item">
+                            💰 $120K - $160K
+                        </div>
+                        <div class="meta-item">
+                            📅 3+ years
+                        </div>
+                    </div>
+                    
+                    <p class="job-description">
+                        Design conversational experiences for Alexa skills. Create voice personas, write SSML, and conduct user testing.
+                    </p>
+                    
+                    <div class="job-skills">
+                        <span class="skill-badge">VUI Design</span>
+                        <span class="skill-badge">Alexa</span>
+                        <span class="skill-badge">SSML</span>
+                        <span class="skill-badge">UX Research</span>
+                    </div>
+                </a>
+
+                <!-- Add more job cards here following the same pattern -->
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Browse by Specialty</h2>
+            
+            <div class="categories-grid">
+                <a href="/voice-biometrics-jobs" class="category-link">Voice Biometrics</a>
+                <a href="/spoken-nlp-jobs" class="category-link">Spoken NLP</a>
+                <a href="/asr-research-jobs" class="category-link">ASR Research</a>
+                <a href="/embedded-voice-ai-jobs" class="category-link">Embedded Voice AI</a>
+                <a href="/speech-analytics-jobs" class="category-link">Speech Analytics</a>
+                <a href="/open-source-asr-jobs" class="category-link">Open Source ASR</a>
+                <a href="/whisper-jobs" class="category-link">Whisper Specialists</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/privacy.html" style="color: var(--muted); margin-left: 16px;">Privacy</a> <a href="/terms.html" style="color: var(--muted); margin-left: 16px;">Terms</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SpeechTechJobs: The Specialized Job Board for ASR & Speech AI Research</title>
+    
+    <meta name="description" content="The premier ASR job board for researchers and engineers. Skip the recruiters and apply directly to top Speech AI roles. Join our private talent network for exclusive 2026 opportunities.">
+    
+    <meta property="og:title" content="SpeechTechJobs | Specialized ASR & Audio ML Careers">
+    <meta property="og:description" content="No recruiters. Direct applications. Join the private network for the world's best Speech AI talent.">
+    <meta property="og:image" content="https://speechtechjobs.com/images/stj-og-card.jpg">
+    <meta property="og:url" content="https://speechtechjobs.com/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZKVZKXG57F');
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --success: #10b981;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .container-wide {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        .nav-cta {
+            background: var(--fg);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+        
+        .nav-cta:hover {
+            opacity: 0.85;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            background: #fff;
+        }
+        
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .lead {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        
+        /* Trust badges */
+        .trust-indicators {
+            display: flex;
+            gap: 32px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        .trust-icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--success);
+        }
+        
+        /* Stats - minimal, data-focused */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 48px 0;
+            padding: 24px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .stat {
+            text-align: left;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        /* Companies section */
+        .companies-section {
+            padding: 60px 0;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+        }
+        
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        .company-category h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+        }
+        
+        .company-list {
+            list-style: none;
+        }
+        
+        .company-list li {
+            font-size: 15px;
+            padding: 6px 0;
+            color: var(--fg);
+        }
+        
+        /* Social proof */
+        .social-proof {
+            background: #fff;
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .testimonial {
+            background: var(--bg);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .testimonial-text {
+            font-size: 15px;
+            color: var(--fg);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        .testimonial-author {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        .testimonial-role {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        /* Form */
+        .form-section {
+            padding: 60px 0;
+            background: #fff;
+        }
+        
+        .form-intro {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .section-subtitle {
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .form-trust {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        
+        .form-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--fg);
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: inherit;
+            background: #fff;
+            transition: border-color 0.15s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        /* Checkbox grid */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--fg);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+        
+        .btn:hover {
+            opacity: 0.85;
+        }
+        
+        .btn-primary {
+            width: 100%;
+            margin-top: 8px;
+            font-size: 16px;
+            padding: 14px 24px;
+        }
+        
+        .btn-secondary {
+            background: #fff;
+            color: var(--fg);
+            border: 1px solid var(--border);
+        }
+        
+        /* Skills section */
+        .skills-section {
+            padding: 60px 0;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .skill-category h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            font-size: 14px;
+            color: var(--muted);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .skill-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--fg);
+        }
+        
+        /* Data section */
+        .data-section {
+            padding: 60px 0;
+            background: #fff;
+        }
+        
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 32px;
+        }
+        
+        .data-point h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .data-point p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        .data-source {
+            font-size: 12px;
+            color: #a3a3a3;
+            margin-top: 4px;
+        }
+        
+        /* CTA sections */
+        .cta-section {
+            background: var(--fg);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+        
+        .cta-section .btn {
+            background: #fff;
+            color: var(--fg);
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            background: var(--bg);
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .stats, .skills-grid, .data-grid, .testimonials { grid-template-columns: 1fr; }
+            .checkbox-grid { grid-template-columns: 1fr; }
+            .trust-indicators { flex-direction: column; gap: 16px; }
+            nav a { margin-left: 16px; font-size: 13px; }
+        }
+        /* Mobile menu toggle button */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--fg);
+    transition: all 0.3s;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Categories section - MOVE THIS BEFORE THE MEDIA QUERY */
+.categories-section {
+    padding: 60px 0;
+    background: #fff;
+    border-top: 1px solid var(--border);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.category-card {
+    background: var(--bg);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--fg);
+    transition: all 0.2s;
+    display: block;
+}
+
+.category-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.category-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--fg);
+}
+
+.category-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.category-meta {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* THEN your media queries */
+@media (max-width: 768px) {
+    h1 { font-size: 32px; }
+    .stats, .skills-grid, .data-grid, .testimonials { grid-template-columns: 1fr; }
+    .checkbox-grid { grid-template-columns: 1fr; }
+    .trust-indicators { flex-direction: column; gap: 16px; }
+    nav a { margin-left: 16px; font-size: 13px; }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid var(--border);
+        flex-direction: column;
+        padding: 20px;
+        display: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    nav.active {
+        display: flex;
+    }
+    
+    nav a {
+        margin: 0;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    nav a:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-cta {
+        text-align: center;
+        margin-top: 12px;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+}
+    </style>
+</head>
+<body>
+    <header>
+    <div class="container">
+        <a href="/" class="logo">SpeechTechJobs</a>
+        <button class="mobile-menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="mainNav">
+            <a href="/blog">Blog</a>
+            <a href="/submit-profile">Submit Profile</a>
+            <a href="#companies">Companies</a>
+            <a href="/submit-profile" class="nav-cta">Get Started</a>
+        </nav>
+    </div>
+</header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Job board for speech tech engineers</h1>
+            <p class="lead">Connect directly with companies hiring for ASR, NLP, TTS, and audio ML roles. No recruiters. No spam. Just relevant opportunities from real teams building voice technology.</p>
+            
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    No recruiter spam
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Direct applications
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    Free for candidates
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-value">$27.16B</span>
+                    <span class="stat-label">Speech tech market, 2026</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">23.7%</span>
+                    <span class="stat-label">Annual growth rate</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">350+</span>
+                    <span class="stat-label">Job seekers registered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="companies-section" id="companies">
+        <div class="container-wide">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 16px;">Companies hiring on our platform</h2>
+            <p style="text-align: center; color: var(--muted); margin-bottom: 40px;">From FAANG to cutting-edge startups in speech technology</p>
+            
+            <div class="companies-grid">
+                <div class="company-category">
+                    <h3>Tech Giants</h3>
+                    <ul class="company-list">
+                        <li>Amazon (Alexa)</li>
+                        <li>Google (Assistant)</li>
+                        <li>Apple (Siri)</li>
+                        <li>Microsoft (Azure)</li>
+                        <li>Meta AI Research</li>
+                    </ul>
+                </div>
+                
+                <div class="company-category">
+                    <h3>Speech AI Startups</h3>
+                    <ul class="company-list">
+                        <li>AssemblyAI</li>
+                        <li>Deepgram</li>
+                        <li>Speechmatics</li>
+                        <li>Rev.ai</li>
+                        <li>Otter.ai</li>
+                    </ul>
+                </div>
+                
+                <div class="company-category">
+                    <h3>Enterprise</h3>
+                    <ul class="company-list">
+                        <li>Nuance Communications</li>
+                        <li>SoundHound</li>
+                        <li>Verint</li>
+                        <li>Twilio</li>
+                        <li>Cisco</li>
+                    </ul>
+                </div>
+                
+                <div class="company-category">
+                    <h3>Research Labs</h3>
+                    <ul class="company-list">
+                        <li>OpenAI</li>
+                        <li>Anthropic</li>
+                        <li>AI2 (Allen Institute)</li>
+                        <li>DeepMind</li>
+                        <li>FAIR (Meta)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="categories-section">
+    <div class="container-wide">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 16px;">Browse by Specialty</h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 40px;">Explore opportunities in specific areas of speech technology</p>
+        
+        <div class="categories-grid">
+            <a href="/voice-biometrics-jobs" class="category-card">
+                <h3>Voice Biometrics</h3>
+                <p>Speaker verification, authentication, anti-spoofing, and deepfake detection roles.</p>
+                <span class="category-meta">$165K-$230K avg • Very High Demand</span>
+            </a>
+            
+            <a href="/spoken-nlp-jobs" class="category-card">
+                <h3>Spoken NLP</h3>
+                <p>Conversational AI, intent extraction, and audio-to-meaning systems.</p>
+                <span class="category-meta">$180K-$250K avg • Very High Demand</span>
+            </a>
+            
+            <a href="/asr-research-jobs" class="category-card">
+                <h3>ASR Research</h3>
+                <p>Cutting-edge research at top labs. Self-supervised learning, novel architectures.</p>
+                <span class="category-meta">$200K-$350K+ avg • Selective</span>
+            </a>
+            
+            <a href="/embedded-voice-ai-jobs" class="category-card">
+                <h3>Embedded Voice AI</h3>
+                <p>On-device ASR, edge computing, model optimization for resource-constrained devices.</p>
+                <span class="category-meta">$155K-$215K avg • Growing Fast</span>
+            </a>
+            
+            <a href="/speech-analytics-jobs" class="category-card">
+                <h3>Speech Analytics</h3>
+                <p>Conversation intelligence, sentiment analysis, call center AI, and enterprise solutions.</p>
+                <span class="category-meta">$150K-$200K avg • Strong Demand</span>
+            </a>
+            
+            <a href="/open-source-asr-jobs" class="category-card">
+                <h3>Open Source ASR</h3>
+                <p>Deploy and optimize Whisper, Kaldi, ESPnet. Save companies $100K-$500K in API costs.</p>
+                <span class="category-meta">$145K-$210K avg • Cost-Driven</span>
+            </a>
+            
+            <a href="/whisper-jobs" class="category-card">
+                <h3>Whisper Specialists</h3>
+                <p>Fine-tuning, optimization, and production deployment of OpenAI's Whisper model.</p>
+                <span class="category-meta">$140K-$200K avg • Very High Demand</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <section class="social-proof">
+        <div class="container-wide">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">What engineers are saying</h2>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Finally, a job board that understands the difference between ASR and STT. Got 3 interviews in the first week."</p>
+                    <p class="testimonial-author">Sarah M.</p>
+                    <p class="testimonial-role">Speech Recognition Engineer, ex-Amazon</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"No recruiter spam asking if I'm interested in 'AI jobs.' Every opportunity was directly relevant to my Kaldi and PyTorch experience."</p>
+                    <p class="testimonial-author">David K.</p>
+                    <p class="testimonial-role">Senior NLP Engineer</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"Landed my dream role working on TTS at a Series B startup. The quality of companies here is unmatched."</p>
+                    <p class="testimonial-author">Alex R.</p>
+                    <p class="testimonial-role">Voice Synthesis Engineer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="submit">
+        <div class="container">
+            <div class="form-intro">
+                <h2 class="section-title">Submit your profile</h2>
+                <p class="section-subtitle">Get matched with relevant opportunities and notified when new roles are posted that match your experience.</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-trust">
+                    <div class="form-trust-item">
+                        <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Your data is secure
+                    </div>
+                    <div class="form-trust-item">
+                        <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        No spam, ever
+                    </div>
+                    <div class="form-trust-item">
+                        <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor" style="width: 16px; height: 16px;">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        Free for candidates
+                    </div>
+                </div>
+                
+                <form id="leadForm" method="POST" action="/api/submit-lead.php" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                <div style="display:none !important; visibility:hidden;">
+    <input type="text" name="stj_backend_url" value="" tabindex="-1" autocomplete="off">
+</div>
+<input type="hidden" name="form_load_time" value="<?php echo time(); ?>">
+
+<div class="form-group" style="background: rgba(16, 185, 129, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2); margin-bottom: 20px;">
+    <label style="color: #10b981; font-weight: bold;">Remote Availability</label>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+        <div>
+            <label for="timezone" style="font-size: 12px; text-transform: uppercase;">Primary Timezone</label>
+            <select id="timezone" name="timezone" style="width: 100%; padding: 8px; background: #0f172a; color: white; border: 1px solid #1e293b;">
+                <option value="PT">Pacific (PT)</option>
+                <option value="ET">Eastern (ET)</option>
+                <option value="GMT">Europe (GMT/CET)</option>
+                <option value="IST">India (IST)</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="country" style="font-size: 12px; text-transform: uppercase;">Residence</label>
+            <input type="text" id="country" name="country" placeholder="e.g. USA" style="width: 100%; padding: 8px; background: #0f172a; color: white; border: 1px solid #1e293b;">
+        </div>
+    </div>
+</div>    
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn</label>
+                        <input type="url" id="linkedin" name="linkedin" placeholder="linkedin.com/in/yourprofile" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="github">GitHub (optional)</label>
+                        <input type="url" id="github" name="github" placeholder="github.com/yourusername">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Experience</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Select</option>
+                            <option value="0-2">0-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="6-9">6-9 years</option>
+                            <option value="10+">10+ years</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="focus">Primary focus</label>
+                        <select id="focus" name="focus" required>
+                            <option value="">Select</option>
+                            <option value="asr">Speech Recognition / ASR</option>
+                            <option value="nlp">Natural Language Processing</option>
+                            <option value="tts">Text-to-Speech / TTS</option>
+                            <option value="audio-ml">Audio ML / Signal Processing</option>
+                            <option value="vui">Voice UI / Conversation Design</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Technologies you work with</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="tech[]" value="kaldi"> Kaldi
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="tech[]" value="pytorch"> PyTorch
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="tech[]" value="tensorflow"> TensorFlow
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="tech[]" value="whisper"> Whisper
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="tech[]" value="wav2vec"> Wav2Vec
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="tech[]" value="huggingface"> Hugging Face
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="tech[]" value="wavenet"> WaveNet
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="tech[]" value="espnet"> ESPnet
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resume">Resume (PDF)</label>
+                        <input type="file" id="resume" name="resume" accept=".pdf" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Location preference</label>
+                        <input type="text" id="location" name="location" placeholder="Remote, SF, NYC, etc.">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit Profile</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="container-wide">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">What companies are looking for</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>ASR / Speech Recognition</h3>
+                    <ul class="skill-list">
+                        <li>Kaldi, ESPnet, Whisper</li>
+                        <li>Wav2Vec, HuBERT</li>
+                        <li>Acoustic & language modeling</li>
+                        <li>End-to-end ASR architectures</li>
+                        <li>Speaker diarization</li>
+                        <li>Streaming recognition</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Natural Language Processing</h3>
+                    <ul class="skill-list">
+                        <li>BERT, GPT, T5</li>
+                        <li>Transformers, attention mechanisms</li>
+                        <li>NER, intent classification</li>
+                        <li>Dialogue systems</li>
+                        <li>LLM fine-tuning</li>
+                        <li>Hugging Face ecosystem</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Text-to-Speech</h3>
+                    <ul class="skill-list">
+                        <li>Tacotron, FastSpeech</li>
+                        <li>WaveNet, HiFi-GAN</li>
+                        <li>Neural vocoders</li>
+                        <li>Voice cloning</li>
+                        <li>Prosody modeling</li>
+                        <li>Multi-speaker synthesis</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Audio ML</h3>
+                    <ul class="skill-list">
+                        <li>Audio feature extraction</li>
+                        <li>Spectral analysis</li>
+                        <li>Source separation</li>
+                        <li>Audio classification</li>
+                        <li>Noise suppression</li>
+                        <li>Room acoustics modeling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="data-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Market data</h2>
+            
+            <div class="data-grid">
+                <div class="data-point">
+                    <h3>$140K–$180K</h3>
+                    <p>Avg. salary, Senior Speech Engineer</p>
+                    <p class="data-source">Source: Glassdoor, 2024</p>
+                </div>
+                
+                <div class="data-point">
+                    <h3>35%</h3>
+                    <p>Job growth, AI/ML roles through 2026</p>
+                    <p class="data-source">Source: Bureau of Labor Statistics</p>
+                </div>
+                
+                <div class="data-point">
+                    <h3>8B devices</h3>
+                    <p>Voice assistants expected by 2025</p>
+                    <p class="data-source">Source: Juniper Research</p>
+                </div>
+                
+                <div class="data-point">
+                    <h3>72%</h3>
+                    <p>Organizations investing in voice tech</p>
+                    <p class="data-source">Source: Gartner, 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to find your next role?</h2>
+            <p>Join 350+ speech technology engineers who've submitted their profiles</p>
+            <a href="#submit" class="btn">Submit Your Profile</a>
+        </div>
+    </section>
+
+<footer>
+    <div class="container">
+        <p style="margin-bottom: 12px;">© 2026 SpeechTechJobs. Built for engineers, by engineers.</p>
+        <p style="font-size: 12px; color: #a3a3a3; margin-bottom: 12px;">
+            <strong>Affiliate Disclosure:</strong> Some links on this site are affiliate links. We may earn a commission if you make a purchase through these links at no additional cost to you. We only recommend products and services we genuinely believe will help speech tech professionals.
+        </p>
+        <p>
+            <a href="/privacy-policy/" style="color: var(--muted); margin-right: 16px;">Privacy Policy</a>
+            <a href="/terms-and-conditions/" style="color: var(--muted);">Terms of Service</a>
+        </p>
+    </div>
+</footer>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+            
+            const formData = new FormData(e.target);
+            
+            try {
+                const response = await fetch('/api/submit-lead.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    window.location.href = '/thanks.html';
+                } else {
+                    alert('Error submitting. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = 'Submit Profile';
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Network error. Please try again.');
+                btn.disabled = false;
+                btn.textContent = 'Submit Profile';
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+document.getElementById('menuToggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.getElementById('mainNav').classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('#mainNav a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.getElementById('menuToggle').classList.remove('active');
+        document.getElementById('mainNav').classList.remove('active');
+    });
+});
+    </script>
+</body>
+</html>

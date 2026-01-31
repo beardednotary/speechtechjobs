@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | We'll Send You Qualified Candidates | SpeechTechJobs</title>
+    <meta name="description" content="Thanks for submitting your hiring needs. We'll match you with qualified Whisper AI engineers within 48 hours.">
+    <meta name="robots" content="noindex">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+        
+        // Track employer conversion
+        gtag('event', 'conversion', {
+            'send_to': 'G-ZKVZKXG57F/employer_lead'
+        });
+    </script>
+    
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --success: #10b981;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+        }
+        
+        nav a:hover {
+            color: var(--fg);
+        }
+        
+        /* Success Section */
+        .success-section {
+            text-align: center;
+            padding: 80px 0 60px;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+        }
+        
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: #fff;
+            stroke-width: 3;
+            fill: none;
+        }
+        
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: var(--muted);
+            margin-bottom: 48px;
+        }
+        
+        /* Next Steps */
+        .next-steps {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 48px;
+        }
+        
+        .next-steps h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 32px;
+            align-items: flex-start;
+        }
+        
+        .step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .step-content h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        
+        .step-content p {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        
+        /* Resources */
+        .resources {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 48px;
+        }
+        
+        .resources h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .resource-grid {
+            display: grid;
+            gap: 16px;
+        }
+        
+        .resource-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--fg);
+            display: block;
+            transition: all 0.2s;
+        }
+        
+        .resource-card:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+        
+        .resource-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .resource-card p {
+            font-size: 14px;
+            color: var(--muted);
+            margin: 0;
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .cta-box h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .cta-box p {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #fff;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: opacity 0.15s;
+        }
+        
+        .cta-btn:hover {
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            background: var(--bg);
+        }
+        
+        footer p {
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 16px;
+        }
+        
+        footer a:hover {
+            color: var(--fg);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .subtitle { font-size: 18px; }
+            .next-steps, .resources, .cta-box { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/jobs">Jobs</a>
+                <a href="/hire-whisper-engineers">For Employers</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="success-section">
+        <div class="container">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            
+            <h1>We'll Send You Candidates Soon</h1>
+            <p class="subtitle">Our team will match your role with qualified Whisper engineers and reach out within 48 hours.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="next-steps">
+                <h2>What Happens Next</h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>We Review Your Requirements (Today)</h3>
+                        <p>Our team analyzes your specific needs and matches them against our database of pre-vetted Whisper specialists.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>You Receive 3-5 Candidate Profiles (48 Hours)</h3>
+                        <p>We'll send you detailed profiles including portfolio projects, GitHub links, previous Whisper deployments, and salary expectations.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Schedule Interviews with Top Matches (Week 1)</h3>
+                        <p>Connect directly with candidates via email. We can facilitate intro calls if needed.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Make Your Hire (2-4 Weeks)</h3>
+                        <p>Our average time-to-hire is 2-4 weeks vs 3-6 months industry standard for specialized speech tech roles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resources">
+                <h2>While You Wait: Helpful Resources</h2>
+                
+                <div class="resource-grid">
+                    <a href="/blog/whisper-ai-jobs-salary-guide-2026.html" class="resource-card">
+                        <h3>Whisper AI Salary Guide (2026)</h3>
+                        <p>Understand market rates for different experience levels and specializations</p>
+                    </a>
+                    
+                    <a href="/blog/what-is-kaldi-complete-guide-2026.html" class="resource-card">
+                        <h3>Should You Hire Kaldi or Whisper Engineers?</h3>
+                        <p>Compare traditional ASR expertise vs modern transformer-based approaches</p>
+                    </a>
+                    
+                    <a href="/salary-estimator.html" class="resource-card">
+                        <h3>Speech Tech Salary Calculator</h3>
+                        <p>Benchmark your budget against current market rates</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h2>Need Urgent Help?</h2>
+                <p>For rush hiring or contract work starting this week, email us directly.</p>
+                <a href="mailto:employers@speechtechjobs.com" class="cta-btn">Email employers@speechtechjobs.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/privacy.html">Privacy</a> <a href="/terms.html">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Track page view with source
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('source') || 'hire-whisper';
+        
+        gtag('event', 'page_view', {
+            'page_title': 'Employer Thanks',
+            'source': source
+        });
+    </script>
+</body>
+</html>

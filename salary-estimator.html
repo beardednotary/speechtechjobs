@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Tech Salary Calculator 2026 | ASR Engineer Compensation | SpeechTechJobs</title>
+    <meta name="description" content="Calculate your expected salary as a speech recognition engineer. Compare rates for Whisper, Kaldi, ASR research, and voice AI roles based on experience and location.">
+    
+    <style>
+        /* Same base styles */
+        
+        .calculator-container {
+            max-width: 600px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 48px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        
+        .calculator-container h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .calculator-intro {
+            font-size: 16px;
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .form-field {
+            margin-bottom: 24px;
+        }
+        
+        .form-field label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .form-field select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            font-size: 15px;
+            background: #fff;
+        }
+        
+        .calculate-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        
+        .calculate-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .result-box {
+            display: none;
+            margin-top: 32px;
+            padding: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .result-box.show {
+            display: block;
+        }
+        
+        .result-salary {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 16px 0;
+        }
+        
+        .result-description {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+        
+        .result-cta {
+            padding: 14px 28px;
+            background: #fff;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/jobs">Jobs</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="calculator-container">
+        <h1>💰 Speech Tech Salary Calculator</h1>
+        <p class="calculator-intro">Get an instant estimate of your market value as a speech engineer in 2026</p>
+        
+        <form id="salaryForm">
+            <div class="form-field">
+                <label for="specialty">Your Specialty</label>
+                <select id="specialty" required>
+                    <option value="">Select...</option>
+                    <option value="whisper">Whisper Specialist</option>
+                    <option value="kaldi">Kaldi Engineer</option>
+                    <option value="asr-research">ASR Research Scientist</option>
+                    <option value="voice-biometrics">Voice Biometrics</option>
+                    <option value="nlp">Spoken NLP</option>
+                    <option value="embedded">Embedded Voice AI</option>
+                    <option value="analytics">Speech Analytics</option>
+                </select>
+            </div>
+            
+            <div class="form-field">
+                <label for="experience">Years of Experience</label>
+                <select id="experience" required>
+                    <option value="">Select...</option>
+                    <option value="0-2">0-2 years</option>
+                    <option value="3-5">3-5 years</option>
+                    <option value="6-9">6-9 years</option>
+                    <option value="10+">10+ years</option>
+                </select>
+            </div>
+            
+            <div class="form-field">
+                <label for="location">Location</label>
+                <select id="location" required>
+                    <option value="">Select...</option>
+                    <option value="sf-bay">SF Bay Area</option>
+                    <option value="nyc">NYC</option>
+                    <option value="seattle">Seattle</option>
+                    <option value="remote">Remote (US)</option>
+                    <option value="international">International</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="calculate-btn">Calculate My Salary</button>
+        </form>
+        
+        <div class="result-box" id="resultBox">
+            <h2>Your Estimated Salary Range</h2>
+            <div class="result-salary" id="resultSalary">$150K - $200K</div>
+            <p class="result-description" id="resultDescription">Based on market data for your specialty and experience level</p>
+            <a href="#submit" class="result-cta">Find Jobs at This Level</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/privacy.html">Privacy</a> <a href="/terms.html">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const salaryData = {
+            'whisper': {
+                '0-2': { base: 120, range: 35, title: 'Junior Whisper Engineer' },
+                '3-5': { base: 155, range: 40, title: 'Mid-Level Whisper Specialist' },
+                '6-9': { base: 190, range: 45, title: 'Senior Whisper Engineer' },
+                '10+': { base: 230, range: 70, title: 'Principal Whisper Architect' }
+            },
+            'kaldi': {
+                '0-2': { base: 115, range: 30, title: 'Junior Kaldi Engineer' },
+                '3-5': { base: 145, range: 35, title: 'Mid-Level Kaldi Engineer' },
+                '6-9': { base: 180, range: 40, title: 'Senior Kaldi Engineer' },
+                '10+': { base: 220, range: 60, title: 'Staff Kaldi Engineer' }
+            },
+            'asr-research': {
+                '0-2': { base: 140, range: 40, title: 'Research Engineer' },
+                '3-5': { base: 180, range: 50, title: 'Research Scientist' },
+                '6-9': { base: 230, range: 60, title: 'Senior Research Scientist' },
+                '10+': { base: 280, range: 70, title: 'Principal Research Scientist' }
+            },
+            'voice-biometrics': {
+                '0-2': { base: 125, range: 35, title: 'Junior Biometrics Engineer' },
+                '3-5': { base: 160, range: 40, title: 'Biometrics Engineer' },
+                '6-9': { base: 195, range: 45, title: 'Senior Biometrics Engineer' },
+                '10+': { base: 240, range: 60, title: 'Principal Biometrics Engineer' }
+            },
+            'nlp': {
+                '0-2': { base: 120, range: 35, title: 'Junior NLP Engineer' },
+                '3-5': { base: 150, range: 40, title: 'NLP Engineer' },
+                '6-9': { base: 185, range: 45, title: 'Senior NLP Engineer' },
+                '10+': { base: 220, range: 50, title: 'Staff NLP Engineer' }
+            },
+            'embedded': {
+                '0-2': { base: 130, range: 35, title: 'Junior Embedded AI Engineer' },
+                '3-5': { base: 165, range: 40, title: 'Embedded AI Engineer' },
+                '6-9': { base: 200, range: 45, title: 'Senior Embedded AI Engineer' },
+                '10+': { base: 235, range: 50, title: 'Principal Embedded AI Engineer' }
+            },
+            'analytics': {
+                '0-2': { base: 115, range: 35, title: 'Junior Analytics Engineer' },
+                '3-5': { base: 150, range: 40, title: 'Speech Analytics Engineer' },
+                '6-9': { base: 180, range: 45, title: 'Senior Analytics Engineer' },
+                '10+': { base: 210, range: 50, title: 'Staff Analytics Engineer' }
+            }
+        };
+        
+        const locationMultipliers = {
+            'sf-bay': 1.2,
+            'nyc': 1.15,
+            'seattle': 1.1,
+            'remote': 1.0,
+            'international': 0.75
+        };
+        
+        document.getElementById('salaryForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const specialty = document.getElementById('specialty').value;
+            const experience = document.getElementById('experience').value;
+            const location = document.getElementById('location').value;
+            
+            const data = salaryData[specialty][experience];
+            const multiplier = locationMultipliers[location];
+            
+            const low = Math.round(data.base * multiplier);
+            const high = Math.round((data.base + data.range) * multiplier);
+            
+            document.getElementById('resultSalary').textContent = `$${low}K - $${high}K`;
+            document.getElementById('resultDescription').textContent = 
+                `Based on 2026 market data for ${data.title} roles in your location`;
+            
+            document.getElementById('resultBox').classList.add('show');
+            document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth' });
+            
+            // Track in analytics
+            gtag('event', 'salary_calculation', {
+                'specialty': specialty,
+                'experience': experience,
+                'location': location,
+                'result_low': low,
+                'result_high': high
+            });
+        });
+    </script>
+</body>
+</html>
