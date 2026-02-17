@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Speech AI Talent | Vetted ASR & NLP Engineering Network | SpeechTechJobs</title>
+    <meta name="description" content="Access the top 5% of Speech AI talent. Pre-vetted Research Scientists and ML Engineers from Meta, Zoom, and OpenAI labs. Fast-track your technical hiring.">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --success: #10b981;
+        }
+
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--fg); margin: 0; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+        /* Authority Hero */
+        header.b2b-hero { background: #fff; border-bottom: 1px solid var(--border); padding: 80px 0; text-align: center; }
+        header.b2b-hero h1 { font-size: 42px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
+        header.b2b-hero p { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto 32px; }
+
+        .btn-primary { background: var(--accent); color: #fff; padding: 16px 32px; border-radius: 6px; text-decoration: none; font-weight: 700; display: inline-block; transition: opacity 0.2s; }
+        .btn-primary:hover { opacity: 0.9; }
+
+        /* The Talent Grid */
+        .talent-section { padding: 60px 0; }
+        .talent-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 20px; }
+        .badge { font-size: 11px; font-weight: 700; background: #f0fdf4; color: var(--success); padding: 4px 8px; border-radius: 4px; text-transform: uppercase; border: 1px solid #bbf7d0; }
+
+        /* Simple B2B Form */
+        .form-container { background: #fff; border: 1px solid var(--border); padding: 40px; border-radius: 8px; margin-top: 40px; }
+        input, select, textarea { width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; }
+    </style>
+</head>
+<body>
+
+    <header class="b2b-hero">
+        <div class="container">
+            <a href="/" style="text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px;">← SPEECH TECH JOBS</a>
+            <h1>Hire the World's Best <br>Speech AI Talent</h1>
+            <p>Access our private network of PhD researchers and production engineers. We've vetted the talent so you don't have to.</p>
+            <a href="#hire-form" class="btn-primary">Request Talent Shortlist</a>
+        </div>
+    </header>
+
+    <div class="container talent-section">
+        <h2 style="font-size: 20px; margin-bottom: 24px;">Active Talent in our Network:</h2>
+        
+        <div class="talent-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="font-size: 18px;">Senior Research Scientist (ASR)</strong>
+                <span class="badge">Vetted</span>
+            </div>
+            <p style="font-size: 14px; color: var(--muted); margin: 4px 0 16px;">PhD Research • 7+ Years Exp • Ex-FAIR / Google Brain</p>
+            <div style="display: flex; gap: 8px;">
+                <span style="font-size: 12px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">Self-Supervised Learning</span>
+                <span style="font-size: 12px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">Wav2Vec 2.0</span>
+            </div>
+        </div>
+
+        <div class="talent-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="font-size: 18px;">Lead Inference Engineer</strong>
+                <span class="badge">Vetted</span>
+            </div>
+            <p style="font-size: 14px; color: var(--muted); margin: 4px 0 16px;">System Architect • Expert in CUDA & TensorRT-LLM</p>
+            <div style="display: flex; gap: 8px;">
+                <span style="font-size: 12px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">Whisper Optimization</span>
+                <span style="font-size: 12px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">vLLM</span>
+            </div>
+        </div>
+
+        <div id="hire-form" class="form-container">
+            <h3 style="margin-top: 0;">Tell us what you're building</h3>
+            <p style="font-size: 14px; color: var(--muted);">We'll match your requirements against our private database and respond within 24 hours.</p>
+            
+            <form action="/api/employer-lead.php" method="POST">
+                <div style="margin-bottom: 20px;">
+                    <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Company & Role</label>
+                    <input type="text" name="company" placeholder="e.g. Together AI / Senior ML Engineer" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Work Email</label>
+                    <input type="email" name="email" placeholder="cto@company.com" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Technical focus needed</label>
+                    <select name="focus">
+                        <option>Whisper Fine-Tuning & Deployment</option>
+                        <option>ASR Research (PhD level)</option>
+                        <option>Diarization & Speech Analytics</option>
+                        <option>TTS & Voice Synthesis</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Request →</button>
+            </form>
+        </div>
+    </div>
+
+    <footer style="padding: 40px 0; text-align: center; color: var(--muted); font-size: 13px;">
+        © 2026 SpeechTechJobs. Built for the Speech AI Community.
+    </footer>
+
+</body>
+</html>
