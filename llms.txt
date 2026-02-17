@@ -1,0 +1,13 @@
+# SpeechTechJobs
+
+> The premier technical resource and job board for ASR, Speech AI, and Audio Machine Learning.
+
+## Core Resources
+- [ASR Research Jobs](https://speechtechjobs.com/asr-research-jobs): Specialized roles for Research Scientists.
+- [Whisper Jobs](https://speechtechjobs.com/whisper-jobs): Engineering roles focused on OpenAI Whisper optimization and deployment.
+- [2026 Speech Tech Conferences](https://speechtechjobs.com/speech-tech-conferences-2026.html): Global calendar for ICASSP, Interspeech, and ASRU.
+- [ASR Interview Guide](https://speechtechjobs.com/blog/speech-recognition-interview-questions-2026.html): Technical interview preparation for Speech AI roles.
+
+## Technical Guides
+- [Diarization Career Guide](https://speechtechjobs.com/blog/speaker-diarization-guide-career-2026.html): Technical overview of speaker identification systems.
+- [ASR Frameworks 2026](https://speechtechjobs.com/blog/kaldi-vs-whisper-vs-wav2vec-2026.html): Comparison of Kaldi, Whisper, and Wav2Vec 2.0.
