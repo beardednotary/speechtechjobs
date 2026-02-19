@@ -376,12 +376,20 @@
             color: var(--muted);
         }
         
+        .job-card-body {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 40px;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 28px; }
             .content { padding: 40px 24px; }
             .cta-section { padding: 32px 24px; }
             .market-stats { grid-template-columns: 1fr; }
             .tool-item { flex-direction: column; gap: 12px; align-items: flex-start; }
+            .job-card-body { grid-template-columns: 1fr; padding: 24px; }
         }
     </style>
 </head>
@@ -412,7 +420,7 @@
             <span style="background: #f0fdf4; color: var(--success); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; border: 1px solid #bbf7d0; text-transform: uppercase;">⚙️ SPEECH LLM</span>
         </div>
     </div>
-    <div style="padding: 40px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px;">
+    <div class="job-card-body">
         <div>
             <h3 style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 16px;">The Role</h3>
             <p style="font-size: 15px; color: var(--fg); line-height: 1.7; margin-bottom: 24px;">Building note-taking infrastructure for 1.5M+ users. Focus on multi-language hotword algorithms and fine-tuning SpeechLLM for diarization.</p>
@@ -442,7 +450,7 @@
             <span style="background: #f0fdf4; color: var(--success); padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 700; border: 1px solid #bbf7d0; text-transform: uppercase;">⚙️ Siri Personalization</span>
         </div>
     </div>
-    <div style="padding: 40px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px;">
+    <div class="job-card-body">
         <div>
             <h3 style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 16px;">The Role</h3>
             <p style="font-size: 15px; color: var(--fg); line-height: 1.7; margin-bottom: 24px;">Leading software projects suffusing knowledge of the user throughout Apple’s products. Building entity resolution APIs that Siri application developers love.</p>
