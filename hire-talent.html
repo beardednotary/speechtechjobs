@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hire Speech AI Talent | Vetted ASR & NLP Engineering Network | SpeechTechJobs</title>
-    <meta name="description" content="Access the top 5% of Speech AI talent. Pre-vetted Research Scientists and ML Engineers from Meta, Zoom, and OpenAI labs. Fast-track your technical hiring.">
+    <title>Hire Speech AI &amp; ASR Engineers | SpeechTechJobs</title>
+    <meta name="description" content="Hiring for a speech recognition, TTS, or voice AI role? Tell us what you're building and we'll surface it to speech-tech engineers in our audience and help you find the right person.">
     <style>
         :root {
             --bg: #fafafa;
@@ -35,68 +35,72 @@
         .form-container { background: #fff; border: 1px solid var(--border); padding: 40px; border-radius: 8px; margin-top: 40px; }
         input, select, textarea { width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; }
     </style>
+    <link rel="canonical" href="https://speechtechjobs.com/hire-talent">
 </head>
 <body>
 
     <header class="b2b-hero">
         <div class="container">
             <a href="/" style="text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px;">← SPEECH TECH JOBS</a>
-            <h1>Hire the World's Best <br>Speech AI Talent</h1>
-            <p>Access our private network of PhD researchers and production engineers. We've vetted the talent so you don't have to.</p>
-            <a href="#hire-form" class="btn-primary">Request Talent Shortlist</a>
+            <h1>Hire speech AI &amp;<br>ASR engineers</h1>
+            <p>Tell us what you're building and the kind of engineer you need. We'll put the role in front of the speech-tech specialists who read SpeechTechJobs and point qualified people your way.</p>
+            <a href="#hire-form" class="btn-primary">Tell us who you need</a>
         </div>
     </header>
 
     <div class="container talent-section">
-        <h2 style="font-size: 20px; margin-bottom: 24px;">Active Talent in our Network:</h2>
-        
+        <h2 style="font-size: 20px; margin-bottom: 24px;">How it works</h2>
+
         <div class="talent-card">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="font-size: 18px;">Senior Research Scientist (ASR)</strong>
-                <span class="badge">Vetted</span>
-            </div>
-            <p style="font-size: 14px; color: var(--muted); margin: 4px 0 16px;">PhD Research • 7+ Years Exp • Ex-FAIR / Google Brain</p>
-            <div style="display: flex; gap: 8px;">
-                <span style="font-size: 12px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">Self-Supervised Learning</span>
-                <span style="font-size: 12px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">Wav2Vec 2.0</span>
-            </div>
+            <strong style="font-size: 18px;">1. Send us the brief</strong>
+            <p style="font-size: 14px; color: var(--muted); margin: 4px 0 0;">The role, the must-have skills (ASR, Whisper, diarization, TTS, embedded, analytics), budget range, and whether it's contract or full-time.</p>
         </div>
 
         <div class="talent-card">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="font-size: 18px;">Lead Inference Engineer</strong>
-                <span class="badge">Vetted</span>
-            </div>
-            <p style="font-size: 14px; color: var(--muted); margin: 4px 0 16px;">System Architect • Expert in CUDA & TensorRT-LLM</p>
-            <div style="display: flex; gap: 8px;">
-                <span style="font-size: 12px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">Whisper Optimization</span>
-                <span style="font-size: 12px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">vLLM</span>
-            </div>
+            <strong style="font-size: 18px;">2. We surface it</strong>
+            <p style="font-size: 14px; color: var(--muted); margin: 4px 0 0;">Your role goes into the weekly hiring digest and to any engineers in our audience whose focus matches.</p>
+        </div>
+
+        <div class="talent-card">
+            <strong style="font-size: 18px;">3. You talk to people directly</strong>
+            <p style="font-size: 14px; color: var(--muted); margin: 4px 0 0;">Interested engineers reach out to you. No exclusivity, no retainer &mdash; if it works out we agree a placement fee up front.</p>
         </div>
 
         <div id="hire-form" class="form-container">
-            <h3 style="margin-top: 0;">Tell us what you're building</h3>
-            <p style="font-size: 14px; color: var(--muted);">We'll match your requirements against our private database and respond within 24 hours.</p>
-            
-            <form action="/api/employer-lead.php" method="POST">
+            <h3 style="margin-top: 0;">Tell us what you're hiring for</h3>
+            <p style="font-size: 14px; color: var(--muted);">We'll get back to you by email, usually within a couple of business days.</p>
+
+            <!-- SETUP: form posts to the Brevo "employer inquiry" form. Field names must match
+                 that form's contact attributes (EMAIL always works; COMPANY / FOCUS / MESSAGE
+                 need matching custom attributes added in Brevo -> Contacts -> Contact Attributes,
+                 and added to the form). Fields Brevo doesn't recognise are ignored, not errored. -->
+            <form action="https://a51e606b.sibforms.com/v2/serve/MUIFADEYlDu1nnAbZHkztNx3PqOU07PxjNT1kj3arMW5jhsLsTBAGZC14DY4kgHnyJGu8LWo8YbrsqLj7GUzYp0uEhuRQlYbNQggBXTfdZRtZCYbMX2ZVlNpNG7V64lEezb31IHn4ZsnP3hoyqLwDP7-dFX6-5fEq3DjY-H3o-fjzC5Wr0sPG5JjVqT_eE-sKEnPVKe7p6SBzgKe" method="POST">
                 <div style="margin-bottom: 20px;">
-                    <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Company & Role</label>
-                    <input type="text" name="company" placeholder="e.g. Together AI / Senior ML Engineer" required>
+                    <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Company</label>
+                    <input type="text" name="COMPANY" placeholder="e.g. Together AI" required>
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Work Email</label>
-                    <input type="email" name="email" placeholder="cto@company.com" required>
+                    <input type="email" name="EMAIL" placeholder="you@company.com" required>
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Technical focus needed</label>
-                    <select name="focus">
-                        <option>Whisper Fine-Tuning & Deployment</option>
-                        <option>ASR Research (PhD level)</option>
-                        <option>Diarization & Speech Analytics</option>
-                        <option>TTS & Voice Synthesis</option>
+                    <select name="FOCUS">
+                        <option>Whisper fine-tuning &amp; deployment</option>
+                        <option>ASR research</option>
+                        <option>Diarization &amp; speech analytics</option>
+                        <option>TTS &amp; voice synthesis</option>
+                        <option>Embedded / on-device voice</option>
+                        <option>Other</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Request →</button>
+                <div style="margin-bottom: 20px;">
+                    <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">The role</label>
+                    <textarea name="MESSAGE" rows="4" placeholder="Seniority, contract or full-time, budget range, timeline, and anything else that matters."></textarea>
+                </div>
+                <input type="hidden" name="locale" value="en">
+                <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Send &rarr;</button>
             </form>
         </div>
     </div>
