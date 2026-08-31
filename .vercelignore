@@ -1,0 +1,3 @@
+# Repo files that should live in git but never be served from the domain
+CONTENT-PLAN.md
+indexnow.py
