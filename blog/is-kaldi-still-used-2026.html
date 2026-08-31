@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Kaldi Still Used in 2026? An Honest Look | SpeechTechJobs</title>
+    <meta name="description" content="Is Kaldi still used in 2026? Yes — but 'Kaldi' now means two things. Where classic Kaldi and next-gen Kaldi (k2, icefall, sherpa) still beat Whisper, and what it means for your career.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Is Kaldi Still Used in 2026? An Honest Look",
+      "description": "Where classic Kaldi and next-gen Kaldi still beat Whisper in 2026, and what it means for speech engineers.",
+      "author": { "@type": "Organization", "name": "SpeechTechJobs" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SpeechTechJobs",
+        "logo": { "@type": "ImageObject", "url": "https://speechtechjobs.com/logo.png" }
+      },
+      "datePublished": "2026-09-01",
+      "dateModified": "2026-09-01"
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #171717;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --muted: #737373;
+            --code-bg: #f5f5f5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.7;
+        }
+
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            background: #fff;
+            margin-bottom: 40px;
+        }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 16px; font-weight: 600; color: var(--fg); text-decoration: none; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 14px; margin-left: 24px; }
+        nav a:hover { color: var(--fg); }
+
+        .article-header { margin-bottom: 48px; }
+        .article-category {
+            color: var(--accent); font-size: 14px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px;
+        }
+        h1 { font-size: 42px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+        .article-meta { color: var(--muted); font-size: 15px; display: flex; gap: 16px; }
+
+        .article-content { background: #fff; padding: 48px 40px; border-radius: 8px; margin-bottom: 40px; }
+        .article-content h2 { font-size: 28px; font-weight: 700; margin: 48px 0 20px 0; line-height: 1.3; }
+        .article-content h2:first-child { margin-top: 0; }
+        .article-content h3 { font-size: 22px; font-weight: 600; margin: 32px 0 16px 0; }
+        .article-content p { margin-bottom: 24px; font-size: 17px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin: 24px 0 24px 32px; }
+        .article-content li { margin-bottom: 12px; font-size: 17px; }
+        .article-content strong { font-weight: 600; color: var(--fg); }
+        .article-content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+        .article-content a:hover { opacity: 0.8; }
+        .article-content code {
+            background: var(--code-bg); padding: 2px 6px; border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace; font-size: 15px;
+        }
+
+        .callout {
+            background: #f0f9ff; border-left: 4px solid var(--accent);
+            padding: 20px 24px; margin: 32px 0; border-radius: 4px;
+        }
+        .callout-title { font-weight: 600; margin-bottom: 8px; color: var(--accent); }
+        .callout p { margin-bottom: 0; font-size: 16px; }
+
+        table { width: 100%; border-collapse: collapse; margin: 32px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); font-size: 16px; }
+        th { font-weight: 600; background: var(--bg); }
+
+        .jobs-cta {
+            background: var(--fg); color: #fff; padding: 40px;
+            border-radius: 8px; margin: 40px 0; text-align: center;
+        }
+        .jobs-cta h3 { font-size: 24px; margin-bottom: 12px; }
+        .jobs-cta p { font-size: 16px; opacity: 0.9; margin-bottom: 24px; }
+        .jobs-cta .btn {
+            display: inline-block; padding: 12px 32px; background: #fff; color: var(--fg);
+            text-decoration: none; border-radius: 6px; font-weight: 600; transition: opacity 0.15s;
+        }
+        .jobs-cta .btn:hover { opacity: 0.9; }
+
+        .signup { background: var(--fg); color: #fff; padding: 40px; border-radius: 8px; margin: 40px 0; text-align: center; }
+        .signup h3 { font-size: 24px; margin-bottom: 12px; }
+        .signup p { font-size: 16px; opacity: 0.9; margin-bottom: 24px; }
+        .signup form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .signup input[type=email] {
+            padding: 13px 16px; border: 0; border-radius: 6px; font-size: 15px;
+            min-width: 260px; color: var(--fg);
+        }
+        .signup button {
+            padding: 13px 28px; background: #fff; color: var(--fg); border: 0;
+            border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer;
+        }
+
+        .related-articles { background: #fff; padding: 40px; border-radius: 8px; margin-bottom: 40px; }
+        .related-articles h3 { font-size: 24px; margin-bottom: 24px; }
+        .related-article-card {
+            padding: 20px; border: 1px solid var(--border); border-radius: 6px;
+            margin-bottom: 16px; text-decoration: none; color: var(--fg); display: block; transition: all 0.2s;
+        }
+        .related-article-card:hover { border-color: var(--accent); transform: translateX(4px); }
+        .related-article-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .related-article-excerpt { font-size: 14px; color: var(--muted); }
+
+        footer { border-top: 1px solid var(--border); padding: 40px 0; background: var(--bg); }
+        footer p { font-size: 13px; color: var(--muted); text-align: center; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .article-content { padding: 32px 24px; }
+            .article-content h2 { font-size: 24px; }
+            .article-content p, .article-content li { font-size: 16px; }
+        }
+    </style>
+    <link rel="canonical" href="https://speechtechjobs.com/blog/is-kaldi-still-used-2026">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">SpeechTechJobs</a>
+            <nav>
+                <a href="/blog">Blog</a>
+                <a href="/jobs">Jobs</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <article>
+            <div class="article-header">
+                <div class="article-category">Technical Guide</div>
+                <h1>Is Kaldi still used in 2026? An honest look</h1>
+                <div class="article-meta">
+                    <span>September 1, 2026</span>
+                    <span>&bull;</span>
+                    <span>10 min read</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <p><strong>Short answer: yes &mdash; but "Kaldi" now means two different things,
+                and only one of them is under active development.</strong> Classic Kaldi (the
+                C++/bash toolkit with HMM-DNN models and WFST decoding) has slowed to a
+                near-maintenance pace, yet it still runs in a huge number of production systems.
+                Next-gen Kaldi (the <code>k2</code> / <code>lhotse</code> / <code>icefall</code> /
+                <code>sherpa</code> stack) is very much alive, shipping releases through 2026, and
+                is one of the leading choices for streaming and on-device speech recognition.</p>
+
+                <p>If you're deciding whether to learn Kaldi, evaluate it for a project, or you
+                just saw "Kaldi" in a job description and wondered if it's a red flag &mdash; here's
+                the honest picture.</p>
+
+                <h2>"Kaldi" is now two projects</h2>
+
+                <h3>Classic Kaldi (kaldi-asr/kaldi)</h3>
+                <p>This is what most people mean by "Kaldi": the toolkit Daniel Povey and
+                collaborators released in 2011, built around Gaussian mixture models, then DNN
+                acoustic models (<code>nnet3</code>), the <code>chain</code> (LF-MMI) recipes, and
+                weighted finite-state transducer (WFST) decoding. For most of the 2010s it was the
+                default research and production ASR toolkit.</p>
+                <p>In 2026 the classic repository is still online and still builds, but active
+                development has largely stopped. There is no modern end-to-end recipe, no
+                transformer acoustic model in the core recipes, and the community's energy has
+                moved elsewhere. It is not where you start a new project &mdash; but it is far from
+                dead in the field. Telephony platforms, government and defense contractors,
+                broadcast monitoring, and plenty of enterprises still run <code>nnet3</code>/chain
+                models that were tuned years ago and work fine.</p>
+
+                <h3>Next-gen Kaldi (the k2-fsa ecosystem)</h3>
+                <p>This is the part that's alive. Led by Povey, "Next-gen Kaldi" (sometimes called
+                Kaldi 2.0) is a set of PyTorch-native libraries:</p>
+                <ul>
+                    <li><strong>k2</strong> &mdash; differentiable finite-state automata / FST
+                    operations that plug into PyTorch, so you can train with lattice-based losses.</li>
+                    <li><strong>lhotse</strong> &mdash; data preparation and audio dataloading for
+                    modern deep-learning workflows.</li>
+                    <li><strong>icefall</strong> &mdash; training recipes (transducer / RNN-T,
+                    CTC, Zipformer, etc.).</li>
+                    <li><strong>sherpa</strong>, <strong>sherpa-onnx</strong>,
+                    <strong>sherpa-ncnn</strong> &mdash; deployment runtimes for servers, browsers,
+                    Android, iOS, Raspberry Pi, RISC-V and NPU accelerators, with no cloud
+                    dependency.</li>
+                </ul>
+                <p>As of mid-2026 these repositories were seeing commits within the same week you
+                might check them &mdash; icefall and k2 both had updates in July 2026. sherpa-onnx
+                in particular has become a popular way to run offline speech-to-text, text-to-speech,
+                VAD and speaker diarization on-device.</p>
+
+                <div class="callout">
+                    <div class="callout-title">The one-line version</div>
+                    <p>Don't build on classic Kaldi's old recipes in 2026. Do take the Kaldi
+                    ecosystem seriously &mdash; via next-gen Kaldi &mdash; if you need streaming,
+                    embedded, or fully on-prem ASR.</p>
+                </div>
+
+                <h2>Where Kaldi still beats Whisper in 2026</h2>
+
+                <p>Whisper (and models like wav2vec 2.0, MMS, and NVIDIA's Parakeet/Canary) won
+                the "paste in an audio file, get a good transcript" use case. But there are jobs
+                Whisper is simply not built for, and that's where the Kaldi lineage still wins:</p>
+
+                <table>
+                    <tr><th>Requirement</th><th>Why Kaldi / next-gen Kaldi fits</th></tr>
+                    <tr>
+                        <td>Real-time streaming, low latency</td>
+                        <td>Whisper is a chunk-based encoder-decoder; true streaming is awkward.
+                        icefall's transducer models and sherpa are designed for it.</td>
+                    </tr>
+                    <tr>
+                        <td>On-device / embedded</td>
+                        <td>sherpa-onnx and sherpa-ncnn run small models on phones, Pi, and
+                        microcontrollers offline. Whisper large needs a GPU.</td>
+                    </tr>
+                    <tr>
+                        <td>Lattices, word-level confidence, keyword spotting</td>
+                        <td>WFST decoding gives you a lattice and calibrated confidence scores.
+                        Whisper gives you text (and sometimes made-up text on silence).</td>
+                    </tr>
+                    <tr>
+                        <td>Custom vocabulary / pronunciation lexicons</td>
+                        <td>Add domain terms, product names, or drug names via the lexicon and
+                        language model without retraining the acoustic model.</td>
+                    </tr>
+                    <tr>
+                        <td>Forced alignment</td>
+                        <td>Kaldi remains a go-to for aligning known transcripts to audio
+                        (subtitling, dataset creation, linguistics).</td>
+                    </tr>
+                    <tr>
+                        <td>Telephony / 8&nbsp;kHz narrowband</td>
+                        <td>Decades of recipes and models tuned for call-center audio.</td>
+                    </tr>
+                    <tr>
+                        <td>Strict on-prem, no cloud, auditable pipeline</td>
+                        <td>Everything runs locally and is inspectable end to end.</td>
+                    </tr>
+                    <tr>
+                        <td>Cost at very high volume</td>
+                        <td>A tuned small model on your own hardware can be far cheaper per hour
+                        than GPU-hosted Whisper large.</td>
+                    </tr>
+                </table>
+
+                <h2>Where Whisper (and friends) win</h2>
+                <ul>
+                    <li><strong>Out-of-the-box multilingual accuracy</strong> with zero training.</li>
+                    <li><strong>Speed to a prototype</strong> &mdash; <code>pip install</code> and
+                    you have a transcript in minutes.</li>
+                    <li><strong>Punctuation, casing, and formatting</strong> for free.</li>
+                    <li><strong>Ecosystem</strong> &mdash; faster-whisper, WhisperX, countless
+                    wrappers, hosted APIs, and fine-tuning tutorials.</li>
+                    <li><strong>Hiring pool</strong> &mdash; far more engineers have Whisper
+                    experience than Kaldi experience.</li>
+                </ul>
+                <p>For a deeper side-by-side, see our
+                <a href="/blog/kaldi-vs-whisper-vs-wav2vec-2026">Kaldi vs Whisper vs Wav2Vec</a>
+                comparison.</p>
+
+                <h2>A note on Vosk</h2>
+                <p>If you've used <strong>Vosk</strong> for offline speech-to-text, you've used
+                Kaldi &mdash; Vosk wraps Kaldi models behind a simple API in a dozen languages.
+                It's still widely downloaded and is a common reason "Kaldi" quietly sits inside
+                products whose developers never touched a Kaldi recipe.</p>
+
+                <h2>What it means if "Kaldi" is in a job description</h2>
+                <p>Seeing Kaldi in a 2026 JD usually signals one of a few things:</p>
+                <ul>
+                    <li><strong>Telephony, contact-center, or broadcast</strong> ASR with an
+                    established Kaldi pipeline to maintain and extend.</li>
+                    <li><strong>Government, defense, or regulated industries</strong> that require
+                    fully on-prem, auditable systems.</li>
+                    <li><strong>Embedded / edge voice</strong> teams &mdash; increasingly this
+                    means next-gen Kaldi (sherpa), not the classic toolkit.</li>
+                    <li><strong>A legacy system</strong> someone needs to modernize &mdash;
+                    sometimes the real job is migrating off classic Kaldi.</li>
+                </ul>
+                <p>Knowing WFST decoding, lattices, lexicons, and LF-MMI is still a genuine
+                differentiator in interviews for these roles, because few newer engineers have it.
+                If you want the fundamentals, start with our
+                <a href="/blog/what-is-kaldi-complete-guide-2026">complete guide to Kaldi</a>.</p>
+
+                <h2>So should you learn it?</h2>
+                <ul>
+                    <li><strong>Yes, learn the concepts</strong> (WFST, lattices, lexicons, forced
+                    alignment) &mdash; they transfer and they're rare.</li>
+                    <li><strong>Yes, learn next-gen Kaldi</strong> if you're targeting streaming or
+                    on-device ASR roles &mdash; k2/icefall/sherpa is where that work happens.</li>
+                    <li><strong>Don't</strong> sink weeks into classic Kaldi's <code>nnet3</code>/chain
+                    recipes unless a specific job requires maintaining them.</li>
+                    <li><strong>Best combination for the job market:</strong> Whisper for breadth,
+                    next-gen Kaldi for streaming/edge, plus the classic-Kaldi vocabulary to work on
+                    legacy systems.</li>
+                </ul>
+
+                <p><strong>Bottom line:</strong> Kaldi in 2026 is not a museum piece. The classic
+                toolkit is coasting but still deployed everywhere; the ecosystem's future is
+                next-gen Kaldi, and it's a serious, actively developed option for the problems
+                Whisper doesn't solve.</p>
+            </div>
+
+            <div class="signup">
+                <h3>Get the weekly Speech AI jobs digest</h3>
+                <p>New ASR, TTS, voice-AI and speech-analytics roles from ~30 companies, plus
+                salary and hiring notes. One email a week, free.</p>
+                <form class="lead-form" data-redirect="/thanks-newsletter" method="POST" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG">
+                    <label for="k-email" style="position:absolute; left:-9999px;">Email</label>
+                    <input type="email" id="k-email" name="EMAIL" required placeholder="you@example.com">
+                    <input type="hidden" name="locale" value="en">
+                    <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                    <button type="submit">Subscribe &rarr;</button>
+                </form>
+            </div>
+
+            <div class="jobs-cta">
+                <h3>Hiring or job-hunting in open-source ASR?</h3>
+                <p>Kaldi, k2, ESPnet and Whisper roles &mdash; the specialties where these skills pay.</p>
+                <a href="/open-source-asr-jobs" class="btn">Open-source ASR jobs</a>
+            </div>
+
+            <div class="related-articles">
+                <h3>Related articles</h3>
+
+                <a href="/blog/what-is-kaldi-complete-guide-2026" class="related-article-card">
+                    <div class="related-article-title">What is Kaldi? Complete Guide for Speech Engineers (2026)</div>
+                    <div class="related-article-excerpt">How Kaldi works, WFST decoding, and the fundamentals interviewers still ask about</div>
+                </a>
+
+                <a href="/blog/kaldi-vs-whisper-vs-wav2vec-2026" class="related-article-card">
+                    <div class="related-article-title">Kaldi vs Whisper vs Wav2Vec: Which to Learn?</div>
+                    <div class="related-article-excerpt">A framework-by-framework comparison so you can focus your learning</div>
+                </a>
+
+                <a href="/blog/speech-recognition-interview-questions-2026" class="related-article-card">
+                    <div class="related-article-title">30+ ASR Interview Questions with Answers (2026)</div>
+                    <div class="related-article-excerpt">Technical concepts, coding challenges, and system design for speech-tech roles</div>
+                </a>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 SpeechTechJobs. <a href="/privacy" style="color: var(--muted); margin-left: 16px;">Privacy</a> <a href="/terms" style="color: var(--muted); margin-left: 16px;">Terms</a></p>
+        </div>
+    </footer>
+
+<!-- brevo-ajax -->
+<script>
+(function () {
+  document.querySelectorAll('form[action*="sibforms.com"]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = f.querySelector('[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+      function done(ok, msg) {
+        if (ok) {
+          var to = f.getAttribute('data-redirect');
+          if (to) { window.location.href = to; return; }
+          f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — check your inbox to confirm.</p>';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          window.alert(msg || 'Something went wrong. Please try again.');
+        }
+      }
+      fetch(f.action, { method: 'POST', body: new FormData(f) })
+        .then(function (r) { return r.json().catch(function () { return { success: true }; }); })
+        .then(function (d) { done(!d || d.success !== false, d && d.message); })
+        .catch(function () { done(true); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

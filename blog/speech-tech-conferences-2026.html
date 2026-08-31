@@ -453,7 +453,7 @@
                 
                 <div class="conference-links">
                     <a href="https://2026.ieeeicassp.org" class="conf-link" target="_blank" rel="nofollow">Official Website</a>
-                    <a href="#submit" class="conf-link conf-link-secondary">Submit Your Profile</a>
+                    <a href="#newsletter" class="conf-link conf-link-secondary">Get the weekly digest</a>
                 </div>
             </div>
 
@@ -507,7 +507,7 @@
                 
                 <div class="conference-links">
                     <a href="https://interspeech2026.org" class="conf-link" target="_blank" rel="nofollow">Official Website</a>
-                    <a href="#submit" class="conf-link conf-link-secondary">Submit Your Profile</a>
+                    <a href="#newsletter" class="conf-link conf-link-secondary">Get the weekly digest</a>
                 </div>
             </div>
 
@@ -561,7 +561,7 @@
                 
                 <div class="conference-links">
                     <a href="https://asru2026.org" class="conf-link" target="_blank" rel="nofollow">Official Website</a>
-                    <a href="#submit" class="conf-link conf-link-secondary">Submit Your Profile</a>
+                    <a href="#newsletter" class="conf-link conf-link-secondary">Get the weekly digest</a>
                 </div>
             </div>
 
@@ -744,10 +744,16 @@
                 </div>
             </div>
 
-            <div class="researcher-cta" id="submit">
-                <h2>Presenting at a Conference?</h2>
-                <p>Companies actively recruit researchers presenting at Interspeech, ICASSP, and ASRU. Submit your profile to get matched with research roles.</p>
-                <a href="/#newsletter" class="btn">Get the weekly digest</a>
+            <div class="researcher-cta" id="newsletter">
+                <h2>Never miss a deadline</h2>
+                <p>Get the weekly SpeechTechJobs digest &mdash; conference deadlines, new ASR / TTS / voice-AI roles, and salary notes. One email a week, free.</p>
+                <form class="lead-form" data-redirect="/thanks-newsletter" method="POST" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:8px;">
+                    <label for="conf-email" style="position:absolute; left:-9999px;">Email</label>
+                    <input type="email" id="conf-email" name="EMAIL" required placeholder="you@example.com" style="padding:13px 16px; border:0; border-radius:6px; font-size:15px; min-width:260px; color:#171717;">
+                    <input type="hidden" name="locale" value="en">
+                    <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                    <button type="submit" class="btn" style="border:0; cursor:pointer;">Subscribe &rarr;</button>
+                </form>
             </div>
 
             <h2>Conference Submission Tips</h2>
@@ -799,5 +805,32 @@
             });
         });
     </script>
+<!-- brevo-ajax -->
+<script>
+(function () {
+  document.querySelectorAll('form[action*="sibforms.com"]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = f.querySelector('[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+      function done(ok, msg) {
+        if (ok) {
+          var to = f.getAttribute('data-redirect');
+          if (to) { window.location.href = to; return; }
+          f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — check your inbox to confirm.</p>';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          window.alert(msg || 'Something went wrong. Please try again.');
+        }
+      }
+      fetch(f.action, { method: 'POST', body: new FormData(f) })
+        .then(function (r) { return r.json().catch(function () { return { success: true }; }); })
+        .then(function (d) { done(!d || d.success !== false, d && d.message); })
+        .catch(function () { done(true); });
+    });
+  });
+})();
+</script>
 </body>
 </html>
