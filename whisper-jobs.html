@@ -519,7 +519,7 @@
             <h2>Get the weekly Speech&nbsp;AI jobs digest</h2>
             <p>New ASR, TTS, voice-AI and speech-analytics roles from ~30 companies, plus salary and hiring notes &mdash; one email a week. Free, unsubscribe anytime.</p>
 
-            <form class="lead-form" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG" method="POST">
+            <form class="lead-form" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG" method="POST" data-redirect="/thanks-newsletter">
                 <div class="form-group">
                     <label for="brevo-email">Email</label>
                     <input type="email" id="brevo-email" name="EMAIL" required placeholder="you@example.com">
@@ -550,5 +550,32 @@
         </div>
     </footer>
 
+<!-- brevo-ajax -->
+<script>
+(function () {
+  document.querySelectorAll('form[action*="sibforms.com"]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = f.querySelector('[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+      function done(ok, msg) {
+        if (ok) {
+          var to = f.getAttribute('data-redirect');
+          if (to) { window.location.href = to; return; }
+          f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — we’ll be in touch by email.</p>';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          window.alert(msg || 'Something went wrong. Please try again.');
+        }
+      }
+      fetch(f.action, { method: 'POST', body: new FormData(f) })
+        .then(function (r) { return r.json().catch(function () { return { success: true }; }); })
+        .then(function (d) { done(!d || d.success !== false, d && d.message); })
+        .catch(function () { done(true); });
+    });
+  });
+})();
+</script>
 </body>
 </html>

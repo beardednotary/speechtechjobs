@@ -109,5 +109,32 @@
         © 2026 SpeechTechJobs. Built for the Speech AI Community.
     </footer>
 
+<!-- brevo-ajax -->
+<script>
+(function () {
+  document.querySelectorAll('form[action*="sibforms.com"]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = f.querySelector('[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+      function done(ok, msg) {
+        if (ok) {
+          var to = f.getAttribute('data-redirect');
+          if (to) { window.location.href = to; return; }
+          f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — we’ll be in touch by email.</p>';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          window.alert(msg || 'Something went wrong. Please try again.');
+        }
+      }
+      fetch(f.action, { method: 'POST', body: new FormData(f) })
+        .then(function (r) { return r.json().catch(function () { return { success: true }; }); })
+        .then(function (d) { done(!d || d.success !== false, d && d.message); })
+        .catch(function () { done(true); });
+    });
+  });
+})();
+</script>
 </body>
 </html>
