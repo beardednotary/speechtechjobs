@@ -70,14 +70,12 @@
             <h3 style="margin-top: 0;">Tell us what you're hiring for</h3>
             <p style="font-size: 14px; color: var(--muted);">We'll get back to you by email, usually within a couple of business days.</p>
 
-            <!-- SETUP: form posts to the Brevo "employer inquiry" form. Field names must match
-                 that form's contact attributes (EMAIL always works; COMPANY / FOCUS / MESSAGE
-                 need matching custom attributes added in Brevo -> Contacts -> Contact Attributes,
-                 and added to the form). Fields Brevo doesn't recognise are ignored, not errored. -->
+            <!-- Field names match the Brevo "employer inquiry" form exactly:
+                 COMPANY:name, EMAIL, COMPANY:industry (all required), OPTIONAL_MESSAGE. -->
             <form action="https://a51e606b.sibforms.com/v2/serve/MUIFADEYlDu1nnAbZHkztNx3PqOU07PxjNT1kj3arMW5jhsLsTBAGZC14DY4kgHnyJGu8LWo8YbrsqLj7GUzYp0uEhuRQlYbNQggBXTfdZRtZCYbMX2ZVlNpNG7V64lEezb31IHn4ZsnP3hoyqLwDP7-dFX6-5fEq3DjY-H3o-fjzC5Wr0sPG5JjVqT_eE-sKEnPVKe7p6SBzgKe" method="POST">
                 <div style="margin-bottom: 20px;">
                     <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Company</label>
-                    <input type="text" name="COMPANY" placeholder="e.g. Together AI" required>
+                    <input type="text" name="COMPANY:name" maxlength="200" placeholder="e.g. Together AI" required>
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Work Email</label>
@@ -85,7 +83,8 @@
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">Technical focus needed</label>
-                    <select name="FOCUS">
+                    <select name="COMPANY:industry" required>
+                        <option value="">Select&hellip;</option>
                         <option>Whisper fine-tuning &amp; deployment</option>
                         <option>ASR research</option>
                         <option>Diarization &amp; speech analytics</option>
@@ -95,8 +94,8 @@
                     </select>
                 </div>
                 <div style="margin-bottom: 20px;">
-                    <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">The role</label>
-                    <textarea name="MESSAGE" rows="4" placeholder="Seniority, contract or full-time, budget range, timeline, and anything else that matters."></textarea>
+                    <label style="font-size: 12px; font-weight: 700; text-transform: uppercase;">The role (optional)</label>
+                    <textarea name="OPTIONAL_MESSAGE" maxlength="200" rows="3" placeholder="Seniority, contract or full-time, budget, timeline (200 chars)."></textarea>
                 </div>
                 <input type="hidden" name="locale" value="en">
                 <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">

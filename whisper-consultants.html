@@ -493,59 +493,36 @@
             <p>Tell us about your project. We'll get back to you by email, usually within a couple of business days.</p>
             
             <form class="request-form" id="consultantForm" action="https://a51e606b.sibforms.com/v2/serve/MUIFADEYlDu1nnAbZHkztNx3PqOU07PxjNT1kj3arMW5jhsLsTBAGZC14DY4kgHnyJGu8LWo8YbrsqLj7GUzYp0uEhuRQlYbNQggBXTfdZRtZCYbMX2ZVlNpNG7V64lEezb31IHn4ZsnP3hoyqLwDP7-dFX6-5fEq3DjY-H3o-fjzC5Wr0sPG5JjVqT_eE-sKEnPVKe7p6SBzgKe" method="POST">
-                <!-- SETUP: Brevo "employer inquiry" form. EMAIL always maps; COMPANY/PROJECT_TYPE/
-                     TIMELINE/BUDGET/MESSAGE need matching Brevo contact attributes + form fields,
-                     otherwise Brevo keeps only EMAIL. Unrecognised fields are ignored, not errored. -->
+                <!-- Field names match the Brevo "employer inquiry" form exactly:
+                     COMPANY:name, EMAIL, COMPANY:industry (all required), OPTIONAL_MESSAGE. -->
                 <div class="form-group">
                     <label for="company">Company Name *</label>
-                    <input type="text" id="company" name="COMPANY" required>
+                    <input type="text" id="company" name="COMPANY:name" maxlength="200" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email">Your Email *</label>
                     <input type="email" id="email" name="EMAIL" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="project_type">Project Type *</label>
-                    <select id="project_type" name="PROJECT_TYPE" required>
+                    <select id="project_type" name="COMPANY:industry" required>
                         <option value="">Select...</option>
-                        <option value="poc">Proof of Concept</option>
-                        <option value="deployment">Production Deployment</option>
-                        <option value="fine-tuning">Fine-Tuning</option>
-                        <option value="optimization">Cost Optimization</option>
-                        <option value="migration">Migration from Other ASR</option>
-                        <option value="other">Other</option>
+                        <option value="Proof of Concept">Proof of Concept</option>
+                        <option value="Production Deployment">Production Deployment</option>
+                        <option value="Fine-Tuning">Fine-Tuning</option>
+                        <option value="Cost Optimization">Cost Optimization</option>
+                        <option value="Migration from other ASR">Migration from other ASR</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="timeline">Desired Start Date *</label>
-                    <select id="timeline" name="TIMELINE" required>
-                        <option value="">Select...</option>
-                        <option value="asap">ASAP (This Week)</option>
-                        <option value="1-2weeks">1-2 Weeks</option>
-                        <option value="2-4weeks">2-4 Weeks</option>
-                        <option value="flexible">Flexible</option>
-                    </select>
+                    <label for="details">Project details (optional)</label>
+                    <textarea id="details" name="OPTIONAL_MESSAGE" maxlength="200" rows="3" placeholder="Timeline, budget range, current setup, volume (200 chars)."></textarea>
                 </div>
-                
-                <div class="form-group">
-                    <label for="budget">Budget Range *</label>
-                    <select id="budget" name="BUDGET" required>
-                        <option value="">Select...</option>
-                        <option value="5-10k">$5K-$10K</option>
-                        <option value="10-25k">$10K-$25K</option>
-                        <option value="25-50k">$25K-$50K</option>
-                        <option value="50k+">$50K+</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="details">Project Details</label>
-                    <textarea id="details" name="MESSAGE" rows="4" placeholder="e.g., Need to deploy Whisper for real-time customer call transcription. Currently using Google STT. Processing ~100K minutes/month."></textarea>
-                </div>
-                
+
                 <input type="hidden" name="locale" value="en">
                 <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
                 <button type="submit" class="submit-btn">Send request</button>
