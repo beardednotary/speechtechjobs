@@ -701,6 +701,17 @@ make -j 4</code></pre>
                     <div class="related-article-excerpt">Complete framework comparison so you can focus your learning on what matters</div>
                 </a>
             </div>
+            <div style="background:#171717; color:#fff; padding:40px; border-radius:8px; margin:40px 0; text-align:center;">
+                <h3 style="font-size:24px; margin:0 0 12px;">Get the weekly Speech AI jobs digest</h3>
+                <p style="font-size:16px; opacity:.9; margin:0 0 24px;">New ASR, TTS, voice-AI and speech-analytics roles from ~30 companies, plus salary and hiring notes. One email a week, free.</p>
+                <form class="lead-form" data-redirect="/thanks-newsletter" method="POST" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                    <label for="nl-email" style="position:absolute; left:-9999px;">Email</label>
+                    <input type="email" id="nl-email" name="EMAIL" required placeholder="you@example.com" style="padding:13px 16px; border:0; border-radius:6px; font-size:15px; min-width:260px; color:#171717;">
+                    <input type="hidden" name="locale" value="en">
+                    <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                    <button type="submit" style="padding:13px 28px; background:#fff; color:#171717; border:0; border-radius:6px; font-weight:600; font-size:15px; cursor:pointer;">Subscribe &rarr;</button>
+                </form>
+            </div>
         </article>
     </div>
 
@@ -709,5 +720,32 @@ make -j 4</code></pre>
             <p>© 2026 SpeechTechJobs. <a href="/privacy" style="color: var(--muted); margin-left: 16px;">Privacy</a> <a href="/terms" style="color: var(--muted); margin-left: 16px;">Terms</a></p>
         </div>
     </footer>
+<!-- brevo-ajax -->
+<script>
+(function () {
+  document.querySelectorAll('form[action*="sibforms.com"]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = f.querySelector('[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+      function done(ok, msg) {
+        if (ok) {
+          var to = f.getAttribute('data-redirect');
+          if (to) { window.location.href = to; return; }
+          f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — check your inbox to confirm.</p>';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          window.alert(msg || 'Something went wrong. Please try again.');
+        }
+      }
+      fetch(f.action, { method: 'POST', body: new FormData(f) })
+        .then(function (r) { return r.json().catch(function () { return { success: true }; }); })
+        .then(function (d) { done(!d || d.success !== false, d && d.message); })
+        .catch(function () { done(true); });
+    });
+  });
+})();
+</script>
 </body>
 </html>
