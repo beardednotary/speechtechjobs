@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speaker Diarization: Technical Guide + 2026 Career Roadmap</title>
-    <meta name="description" content="How does Speaker Diarization actually work? A deep dive into the technology powering modern speech analytics, including top 2026 career paths and hiring companies.">
+    <title>Top Companies Hiring ASR &amp; Speech Engineers in 2026 | SpeechTechJobs</title>
+    <meta name="description" content="Where speech-recognition and speech engineers are hired in 2026: dedicated ASR-API companies, big labs, voice-agent startups and vertical players — what each builds, the roles they open, and where to apply.">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
@@ -20,23 +20,16 @@
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Speaker Diarization: How It Works + Career Guide (2026)",
-      "description": "Complete guide to speaker diarization technology, careers, and salaries",
-      "image": "https://speechtechjobs.com/images/diarization-guide.jpg",
-      "author": {
-        "@type": "Organization",
-        "name": "SpeechTechJobs"
-      },
+      "headline": "Top Companies Hiring ASR & Speech Engineers in 2026",
+      "description": "A guide to the companies hiring speech-recognition engineers in 2026, grouped by type, with what they build and where to apply.",
+      "author": { "@type": "Organization", "name": "SpeechTechJobs" },
       "publisher": {
         "@type": "Organization",
         "name": "SpeechTechJobs",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://speechtechjobs.com/logo.png"
-        }
+        "logo": { "@type": "ImageObject", "url": "https://speechtechjobs.com/logo.png" }
       },
       "datePublished": "2026-01-17",
-      "dateModified": "2026-01-17"
+      "dateModified": "2026-09-01"
     }
     </script>
     
@@ -473,547 +466,181 @@
     <div class="container">
         <article>
             <div class="article-header">
-                <div class="article-category">Technical Guide</div>
-                <h1>Speaker Diarization: How It Works + Career Guide (2026)</h1>
+                <div class="article-category">Careers</div>
+                <h1>Top companies hiring ASR &amp; speech engineers in 2026</h1>
                 <div class="article-meta">
-                    <span>January 17, 2026</span>
-                    <span>•</span>
-                    <span>16 min read</span>
+                    <span>Updated September 2026</span>
+                    <span>&bull;</span>
+                    <span>9 min read</span>
                 </div>
             </div>
 
             <div class="article-content">
-                <p><strong>Speaker diarization answers the question "who spoke when?" in an audio recording.</strong> It's the technology that powers meeting transcription tools (Otter.ai, Fireflies), call center analytics, podcast timestamps, and courtroom documentation.</p>
+                <p><strong>Hiring for speech recognition in 2026 is concentrated in four places:</strong>
+                dedicated ASR-API companies, the big research labs, voice-agent startups that live or die
+                on transcription quality, and vertical players in health, legal and automotive. Most roles
+                are remote-friendly, and US total compensation typically runs from about $130K early-career
+                to $300K+ at staff and research level (see our
+                <a href="/blog/speech-recognition-engineer-salary-2026">ASR engineer salary guide</a> and
+                <a href="/blog/whisper-ai-jobs-salary-guide-2026">Whisper salary guide</a>).</p>
 
-                <p>If you're working with multi-speaker audio—whether building transcription services, voice AI products, or speech analytics platforms—understanding diarization is essential. In this guide, we'll cover the technical foundations, common approaches, career opportunities, and companies hiring in 2026.</p>
+                <p>This is a reference list, not a ranking &mdash; the "best" company depends on whether you
+                want to train models, ship them to production, or embed them in a product. Live openings from
+                most of these companies go into our <a href="#newsletter">weekly digest</a>.</p>
 
-                <div class="visual-example">
-                    <strong>Example: Meeting Transcription with Diarization</strong>
-                    <div class="speaker-segment speaker-a">
-                        <span class="timestamp">[00:00 - 00:12]</span> Speaker A<br>
-                        "Let's start with the Q4 metrics. Revenue grew 23% year-over-year."
-                    </div>
-                    <div class="speaker-segment speaker-b">
-                        <span class="timestamp">[00:13 - 00:28]</span> Speaker B<br>
-                        "That's great, but what's driving the growth? Is it new customers or expansion?"
-                    </div>
-                    <div class="speaker-segment speaker-a">
-                        <span class="timestamp">[00:29 - 00:45]</span> Speaker A<br>
-                        "About 60% new customers, 40% expansion. The enterprise segment is particularly strong."
-                    </div>
-                    <div class="speaker-segment speaker-c">
-                        <span class="timestamp">[00:46 - 01:02]</span> Speaker C<br>
-                        "Do we have churn data for the quarter?"
-                    </div>
-                </div>
-
-                <p>Without diarization, that conversation would be a wall of text with no way to know who said what. With diarization, you get structured, searchable, analyzable data.</p>
-
-                <h2>What is Speaker Diarization?</h2>
-
-                <p>Speaker diarization (from the Latin "diarium" meaning daily log) is the process of partitioning an audio stream into homogeneous segments according to speaker identity.</p>
-
-                <p>In simpler terms: it figures out <strong>who spoke</strong> and <strong>when they spoke</strong>, without necessarily knowing their names. The system outputs something like:</p>
-
-                <ul>
-                    <li>Speaker 1: 0:00 - 0:15</li>
-                    <li>Speaker 2: 0:15 - 0:32</li>
-                    <li>Speaker 1: 0:32 - 0:48</li>
-                    <li>Speaker 3: 0:48 - 1:05</li>
-                </ul>
-
-                <p>Later, you can combine this with speech recognition to get <strong>who said what</strong>.</p>
-
-                <h3>Diarization vs Speaker Recognition vs Speaker Identification</h3>
-
-                <p>These terms are often confused, so let's clarify:</p>
-
+                <h2>At a glance</h2>
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Technology</th>
-                            <th>Question It Answers</th>
-                            <th>Use Case</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Speaker Diarization</strong></td>
-                            <td>Who spoke when?</td>
-                            <td>Meeting transcription, call analytics</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Speaker Recognition</strong></td>
-                            <td>Is this person X?</td>
-                            <td>Voice authentication, security</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Speaker Identification</strong></td>
-                            <td>Which known person is speaking?</td>
-                            <td>Smart speakers, personalization</td>
-                        </tr>
-                    </tbody>
+                    <tr><th>Company</th><th>What they build</th><th>Typical speech roles</th><th>Base</th></tr>
+                    <tr><td>Deepgram</td><td>ASR + voice-agent API, own models</td><td>Speech research, inference, ML eng</td><td>US / remote</td></tr>
+                    <tr><td>AssemblyAI</td><td>Speech-to-text + audio-intelligence API</td><td>Applied ML, speech research</td><td>SF / remote</td></tr>
+                    <tr><td>Speechmatics</td><td>Multilingual ASR engine</td><td>Speech modeling, ML infra</td><td>Cambridge UK / remote</td></tr>
+                    <tr><td>OpenAI</td><td>Whisper, realtime speech API</td><td>Research, applied speech</td><td>SF</td></tr>
+                    <tr><td>Google / DeepMind</td><td>USM, Chirp, on-device ASR</td><td>Research, software eng</td><td>Global</td></tr>
+                    <tr><td>Amazon</td><td>Alexa, AWS Transcribe</td><td>Applied scientist, SDE</td><td>Multiple</td></tr>
+                    <tr><td>Meta AI (FAIR)</td><td>wav2vec, MMS, Seamless</td><td>Research scientist / engineer</td><td>Menlo Park / remote</td></tr>
+                    <tr><td>NVIDIA</td><td>NeMo, Riva, Parakeet/Canary models</td><td>Speech LLM eng, research</td><td>Global</td></tr>
+                    <tr><td>Otter.ai</td><td>Meeting transcription</td><td>Applied scientist, speech</td><td>Mountain View</td></tr>
+                    <tr><td>Suki / Abridge / DeepScribe</td><td>Ambient clinical documentation</td><td>ASR / ML eng</td><td>US / remote</td></tr>
                 </table>
 
-                <p><strong>Key difference:</strong> Diarization doesn't need to know WHO the speakers are (identity-agnostic), just that they're different people. Speaker recognition/identification requires knowing speaker identities in advance.</p>
-
-                <h2>Why Speaker Diarization Matters</h2>
-
-                <p>Diarization is critical for any application involving multi-speaker audio:</p>
-
-                <div class="use-cases">
-                    <div class="use-case">
-                        <h4>📞 Call Centers</h4>
-                        <p>Separate agent from customer for quality monitoring and sentiment analysis</p>
-                    </div>
-                    
-                    <div class="use-case">
-                        <h4>💼 Meeting Tools</h4>
-                        <p>Create speaker-attributed transcripts and searchable meeting databases</p>
-                    </div>
-                    
-                    <div class="use-case">
-                        <h4>🎙️ Podcasts & Media</h4>
-                        <p>Generate timestamps, speaker labels, and searchable archives</p>
-                    </div>
-                    
-                    <div class="use-case">
-                        <h4>⚖️ Legal & Compliance</h4>
-                        <p>Document courtroom proceedings and depositions with speaker attribution</p>
-                    </div>
-                    
-                    <div class="use-case">
-                        <h4>🏥 Healthcare</h4>
-                        <p>Separate doctor from patient in medical documentation</p>
-                    </div>
-                    
-                    <div class="use-case">
-                        <h4>🔬 Research</h4>
-                        <p>Analyze conversation dynamics, turn-taking, and group interactions</p>
-                    </div>
-                </div>
-
-                <div class="callout callout-success">
-                    <div class="callout-title">💡 Market Reality</div>
-                    <p>The global speech analytics market (heavily dependent on diarization) is projected to reach $6.8B by 2028. Companies that can accurately diarize audio have a significant competitive advantage in building speech products.</p>
-                </div>
-
-                <h2>How Speaker Diarization Works</h2>
-
-                <p>Modern diarization systems typically follow a multi-stage pipeline:</p>
-
-                <div class="process-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Voice Activity Detection (VAD)</h4>
-                            <p>Identify segments of audio that contain speech vs silence/noise. This reduces computation by only processing speech segments.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Speaker Embedding Extraction</h4>
-                            <p>Convert audio segments into high-dimensional vectors (embeddings) that capture speaker characteristics. Common approaches: i-vectors, x-vectors, or neural embeddings.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Clustering</h4>
-                            <p>Group similar embeddings together. Each cluster represents one speaker. Algorithms: K-means, spectral clustering, agglomerative clustering.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Resegmentation (Optional)</h4>
-                            <p>Refine speaker boundaries using the clustering results. This improves accuracy at speaker transition points.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h3>Technical Approaches</h3>
-
-                <p>There are three main paradigms for speaker diarization in 2026:</p>
-
-                <h4>1. Clustering-Based (Traditional)</h4>
-                <p>The most mature and widely deployed approach:</p>
+                <h2>Dedicated ASR / speech-to-text platforms</h2>
+                <p>These companies sell transcription as the product, so nearly every ML, research and
+                inference role touches speech directly.</p>
                 <ul>
-                    <li>Extract speaker embeddings (x-vectors, ECAPA-TDNN)</li>
-                    <li>Perform agglomerative hierarchical clustering</li>
-                    <li>Use probabilistic linear discriminant analysis (PLDA) for scoring</li>
-                </ul>
-                <p><strong>Pros:</strong> Proven accuracy, interpretable, works with unknown number of speakers</p>
-                <p><strong>Cons:</strong> Multi-stage pipeline, requires tuning</p>
-
-                <h4>2. End-to-End Neural (Modern)</h4>
-                <p>Neural networks trained to directly output diarization labels:</p>
-                <ul>
-                    <li>EEND (End-to-End Neural Diarization)</li>
-                    <li>Encoder-decoder architectures</li>
-                    <li>Self-attention mechanisms</li>
-                </ul>
-                <p><strong>Pros:</strong> Single model, potentially handles overlapping speech</p>
-                <p><strong>Cons:</strong> Requires large amounts of training data, fixed max speakers</p>
-
-                <h4>3. Hybrid Approaches</h4>
-                <p>Combining the best of both worlds:</p>
-                <ul>
-                    <li>Neural embeddings + traditional clustering</li>
-                    <li>End-to-end with clustering fallback</li>
-                    <li>Multi-stage refinement</li>
-                </ul>
-                <p><strong>Pros:</strong> Better accuracy, more robust</p>
-                <p><strong>Cons:</strong> More complex systems to maintain</p>
-
-                <h2>Popular Diarization Tools & Libraries</h2>
-
-                <h3>pyannote.audio (Most Popular)</h3>
-                <p>The de facto standard for speaker diarization in 2026. Open source, pre-trained models, production-ready.</p>
-
-                <pre><code>from pyannote.audio import Pipeline
-
-# Load pretrained pipeline
-pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1")
-
-# Apply to audio file
-diarization = pipeline("meeting.wav")
-
-# Print results
-for turn, _, speaker in diarization.itertracks(yield_label=True):
-    print(f"Speaker {speaker}: {turn.start:.1f}s - {turn.end:.1f}s")</code></pre>
-
-                <h3>NeMo (NVIDIA)</h3>
-                <p>Production-grade toolkit with state-of-the-art models. Excellent for GPU-accelerated inference.</p>
-
-                <h3>Kaldi</h3>
-                <p>Traditional approach, still used in many enterprise systems. More complex but highly customizable.</p>
-
-                <h3>Amazon Transcribe / Google STT</h3>
-                <p>Commercial APIs with built-in diarization. Easy to use but expensive at scale.</p>
-
-                <h3>Whisper + pyannote (Hybrid)</h3>
-                <p>Popular combination: Whisper for transcription, pyannote for diarization, merge the results.</p>
-
-                <h2>Common Challenges in Diarization</h2>
-
-                <h3>1. Overlapping Speech</h3>
-                <p>When multiple people talk simultaneously, traditional systems struggle. Solutions:</p>
-                <ul>
-                    <li>Use EEND models designed for overlap</li>
-                    <li>Multi-channel audio (separate microphones)</li>
-                    <li>Post-processing to detect overlaps</li>
+                    <li><strong><a href="https://deepgram.com/careers" target="_blank" rel="nofollow noopener">Deepgram</a></strong>
+                    &mdash; builds its own ASR and voice-agent models (the Nova family) and an API around them.
+                    Hires speech researchers, inference/optimization engineers, and ML engineers; strong on
+                    streaming and low latency.</li>
+                    <li><strong><a href="https://www.assemblyai.com/careers" target="_blank" rel="nofollow noopener">AssemblyAI</a></strong>
+                    &mdash; speech-to-text plus "audio intelligence" (summarization, topics, redaction). Applied-ML
+                    and research roles focused on model quality and new audio features.</li>
+                    <li><strong><a href="https://www.speechmatics.com/company/careers" target="_blank" rel="nofollow noopener">Speechmatics</a></strong>
+                    &mdash; a UK ASR company with a self-supervised engine covering a very wide language set.
+                    Speech-modeling and ML-infrastructure roles, often with UK visa sponsorship.</li>
+                    <li><strong><a href="https://www.rev.com/about/careers" target="_blank" rel="nofollow noopener">Rev</a></strong>
+                    &mdash; large-scale transcription and captioning plus an API. Roles lean toward model
+                    operations, evaluation, and production ASR at volume.</li>
+                    <li><strong><a href="https://www.gladia.io/careers" target="_blank" rel="nofollow noopener">Gladia</a></strong>
+                    &mdash; a European ASR API company; smaller ML team, generalist speech/ML engineering.</li>
+                    <li><strong><a href="https://otter.ai/careers" target="_blank" rel="nofollow noopener">Otter.ai</a></strong>
+                    &mdash; meeting transcription and summarization at consumer scale; senior applied-scientist
+                    roles owning ASR and TTS end to end.</li>
                 </ul>
 
-                <h3>2. Unknown Number of Speakers</h3>
-                <p>Most algorithms need to know how many speakers to expect. Workarounds:</p>
+                <h2>Big labs and platforms</h2>
+                <p>The largest speech teams in the world. Expect a research track (publications at Interspeech /
+                ICASSP / ASRU) and an engineering track shipping models into products used by hundreds of
+                millions.</p>
                 <ul>
-                    <li>Use hierarchical clustering with stopping criteria</li>
-                    <li>Online diarization that adapts to new speakers</li>
-                    <li>Over-cluster then merge similar speakers</li>
+                    <li><strong><a href="https://openai.com/careers" target="_blank" rel="nofollow noopener">OpenAI</a></strong>
+                    &mdash; Whisper and the realtime speech API; a small, senior speech team.</li>
+                    <li><strong><a href="https://careers.google.com/" target="_blank" rel="nofollow noopener">Google</a> / <a href="https://deepmind.google/about/careers/" target="_blank" rel="nofollow noopener">DeepMind</a></strong>
+                    &mdash; universal speech models (USM/Chirp), on-device recognition for Pixel and Android,
+                    and speech research across DeepMind.</li>
+                    <li><strong><a href="https://www.amazon.jobs/" target="_blank" rel="nofollow noopener">Amazon</a></strong>
+                    &mdash; Alexa and AWS Transcribe; one of the biggest ASR orgs, with applied-scientist and
+                    SDE roles across many sites.</li>
+                    <li><strong><a href="https://jobs.apple.com/" target="_blank" rel="nofollow noopener">Apple</a></strong>
+                    &mdash; on-device speech recognition for Siri and dictation; privacy-constrained, efficiency-focused work.</li>
+                    <li><strong><a href="https://careers.microsoft.com/" target="_blank" rel="nofollow noopener">Microsoft</a></strong>
+                    &mdash; Azure AI Speech and the Nuance clinical/enterprise ASR business.</li>
+                    <li><strong><a href="https://www.metacareers.com/" target="_blank" rel="nofollow noopener">Meta AI (FAIR)</a></strong>
+                    &mdash; wav2vec 2.0, MMS, and Seamless; foundational speech and speech-translation research.</li>
+                    <li><strong><a href="https://www.nvidia.com/en-us/about-nvidia/careers/" target="_blank" rel="nofollow noopener">NVIDIA</a></strong>
+                    &mdash; the NeMo toolkit, Riva deployment stack, and the Parakeet/Canary model families;
+                    also speech-LLM and voice-agent roles.</li>
                 </ul>
 
-                <h3>3. Short Speaker Turns</h3>
-                <p>Brief utterances ("yeah", "uh-huh") don't provide enough information for accurate speaker embedding.</p>
-
-                <h3>4. Far-Field Audio</h3>
-                <p>Recordings from room microphones (vs close-talk mics) are challenging due to reverberation and noise.</p>
-
-                <h3>5. Domain Adaptation</h3>
-                <p>Models trained on broadcast news may perform poorly on call center audio or medical conversations.</p>
-
-                <div class="callout callout-warning">
-                    <div class="callout-title">⚠️ Common Mistake</div>
-                    <p>Many developers assume diarization works perfectly and build products around that assumption. In reality, diarization error rate (DER) of 5-15% is common even with good systems. Always design UIs that allow users to correct speaker labels.</p>
-                </div>
-
-                <h2>Evaluation Metrics</h2>
-
-                <p>The standard metric for diarization is <strong>Diarization Error Rate (DER)</strong>, which includes:</p>
-
+                <h2>Voice-agent and conversational-AI companies</h2>
+                <p>ASR is upstream of everything these companies do, so speech-quality and latency work is
+                first-class even when the job title says "ML engineer."</p>
                 <ul>
-                    <li><strong>Speaker Error:</strong> Attributed to wrong speaker</li>
-                    <li><strong>False Alarm:</strong> Non-speech marked as speech</li>
-                    <li><strong>Missed Speech:</strong> Speech marked as non-speech</li>
+                    <li><strong><a href="https://cartesia.ai/careers" target="_blank" rel="nofollow noopener">Cartesia</a></strong> and
+                    <strong><a href="https://rime.ai/" target="_blank" rel="nofollow noopener">Rime</a></strong>
+                    &mdash; TTS-led, but both hire for full-duplex and streaming speech pipelines.</li>
+                    <li><strong><a href="https://poly.ai/careers/" target="_blank" rel="nofollow noopener">PolyAI</a></strong>,
+                    <strong><a href="https://www.vapi.ai/" target="_blank" rel="nofollow noopener">Vapi</a></strong>,
+                    <strong><a href="https://www.retellai.com/" target="_blank" rel="nofollow noopener">Retell AI</a></strong>
+                    &mdash; voice agents for customer service; roles tuning and integrating ASR for telephony audio.</li>
+                    <li><strong><a href="https://cresta.com/careers/" target="_blank" rel="nofollow noopener">Cresta</a></strong>,
+                    <strong><a href="https://www.observe.ai/careers" target="_blank" rel="nofollow noopener">Observe.AI</a></strong>,
+                    <strong><a href="https://www.gong.io/careers/" target="_blank" rel="nofollow noopener">Gong</a></strong>
+                    &mdash; contact-center and revenue intelligence; ASR plus diarization and analytics.
+                    (See also our <a href="/blog/top-speech-analytics-companies-hiring-2026">speech analytics companies guide</a>.)</li>
                 </ul>
 
-                <p><strong>Good DER values:</strong></p>
+                <h2>Vertical ASR: health, legal, automotive</h2>
                 <ul>
-                    <li><strong>&lt; 5%:</strong> Excellent (broadcast news, clean recordings)</li>
-                    <li><strong>5-10%:</strong> Good (meeting recordings)</li>
-                    <li><strong>10-20%:</strong> Acceptable (call center, far-field)</li>
-                    <li><strong>&gt; 20%:</strong> Poor (needs improvement)</li>
+                    <li><strong>Healthcare</strong> &mdash;
+                    <a href="https://www.suki.ai/careers/" target="_blank" rel="nofollow noopener">Suki</a>,
+                    <a href="https://www.abridge.com/careers" target="_blank" rel="nofollow noopener">Abridge</a>,
+                    <a href="https://careers.kula.ai/deepscribe" target="_blank" rel="nofollow noopener">DeepScribe</a>,
+                    and Microsoft/Nuance build ambient clinical documentation. The hard part is domain accuracy
+                    (drug names, abbreviations) and HIPAA-constrained pipelines. See
+                    <a href="/medical-asr-jobs">medical ASR jobs</a>.</li>
+                    <li><strong>Legal</strong> &mdash;
+                    <a href="https://verbit.ai/careers/" target="_blank" rel="nofollow noopener">Verbit</a> and
+                    <a href="https://www.rev.com/about/careers" target="_blank" rel="nofollow noopener">Rev</a>
+                    handle court and deposition transcription. See <a href="/legal-transcription-jobs">legal transcription jobs</a>.</li>
+                    <li><strong>Automotive</strong> &mdash;
+                    <a href="https://www.cerence.com/careers" target="_blank" rel="nofollow noopener">Cerence</a>,
+                    <a href="https://www.soundhound.com/careers/" target="_blank" rel="nofollow noopener">SoundHound</a>,
+                    and the automakers build in-car voice assistants with tight latency and noise constraints.
+                    See <a href="/automotive-voice-ai-jobs">automotive voice AI jobs</a>.</li>
                 </ul>
 
-                <p>Other metrics:</p>
-                <ul>
-                    <li><strong>Jaccard Error Rate (JER):</strong> Alternative to DER</li>
-                    <li><strong>Mutual Information:</strong> Measures clustering quality</li>
-                    <li><strong>Speaker Confusion Matrix:</strong> Who gets confused with whom</li>
-                </ul>
-
-                <h2>Career Opportunities in Speaker Diarization</h2>
-
-                <p>Diarization expertise is a specialized niche within speech technology, commanding premium salaries due to the complexity and business value.</p>
-
-                <h3>Salary Ranges</h3>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Experience</th>
-                            <th>Title</th>
-                            <th>Salary Range</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>0-2 years</td>
-                            <td>Speech Engineer</td>
-                            <td>$100K - $145K</td>
-                        </tr>
-                        <tr>
-                            <td>3-5 years</td>
-                            <td>Senior Speech Engineer</td>
-                            <td>$150K - $195K</td>
-                        </tr>
-                        <tr>
-                            <td>6-9 years</td>
-                            <td>Staff/Principal Engineer</td>
-                            <td>$190K - $240K</td>
-                        </tr>
-                        <tr>
-                            <td>10+ years</td>
-                            <td>Distinguished Engineer</td>
-                            <td>$240K - $350K+</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>Required Skills</h3>
-
-                <p><strong>Core Technical:</strong></p>
-                <ul>
-                    <li>Python programming (PyTorch, NumPy, scipy)</li>
-                    <li>Audio signal processing (spectrograms, MFCCs)</li>
-                    <li>Machine learning (clustering, neural networks)</li>
-                    <li>Speaker embeddings (x-vectors, i-vectors, ECAPA-TDNN)</li>
-                </ul>
-
-                <p><strong>Specialized Knowledge:</strong></p>
-                <ul>
-                    <li>pyannote.audio or NeMo frameworks</li>
-                    <li>PLDA scoring and calibration</li>
-                    <li>Agglomerative hierarchical clustering</li>
-                    <li>VAD (Voice Activity Detection)</li>
-                    <li>Overlap detection and handling</li>
-                </ul>
-
-                <p><strong>Bonus Skills:</strong></p>
-                <ul>
-                    <li>Kaldi diarization recipes</li>
-                    <li>Real-time streaming diarization</li>
-                    <li>Multi-channel audio processing</li>
-                    <li>Research publication experience</li>
-                </ul>
-
-                <h3>Typical Job Roles</h3>
-
-                <h4>1. Diarization Engineer</h4>
-                <p>Focus: Build and optimize diarization systems</p>
-                <ul>
-                    <li>Integrate pyannote.audio into production pipelines</li>
-                    <li>Fine-tune models on company-specific data</li>
-                    <li>Optimize inference for cost and latency</li>
-                    <li>Handle edge cases (overlaps, noisy audio)</li>
-                </ul>
-                <p><strong>Salary:</strong> $140K - $190K</p>
-
-                <h4>2. Speech Analytics Engineer</h4>
-                <p>Focus: Build speaker-aware analytics products</p>
-                <ul>
-                    <li>Combine diarization + ASR + NLU</li>
-                    <li>Extract speaker-specific insights (sentiment, topics)</li>
-                    <li>Build conversation intelligence features</li>
-                    <li>Design speaker-aware visualizations</li>
-                </ul>
-                <p><strong>Salary:</strong> $130K - $180K</p>
-
-                <h4>3. Voice Biometrics Engineer</h4>
-                <p>Focus: Speaker verification and identification</p>
-                <ul>
-                    <li>Build speaker recognition systems</li>
-                    <li>Implement anti-spoofing measures</li>
-                    <li>Work on voice authentication products</li>
-                    <li>Overlap heavily with diarization techniques</li>
-                </ul>
-                <p><strong>Salary:</strong> $165K - $230K</p>
-
-                <h4>4. Speech Research Scientist</h4>
-                <p>Focus: Advance state-of-the-art in diarization</p>
-                <ul>
-                    <li>Publish papers at ICASSP, Interspeech</li>
-                    <li>Develop novel architectures (e.g., transformer-based)</li>
-                    <li>Work on challenging scenarios (overlap, far-field)</li>
-                    <li>Collaborate with product teams</li>
-                </ul>
-                <p><strong>Salary:</strong> $180K - $300K+</p>
-
-                <h2>Companies Hiring for Diarization Roles</h2>
-
-                <h3>Meeting & Collaboration Tools</h3>
-                <ul>
-                    <li><strong>Otter.ai:</strong> AI meeting assistant (Series B, Remote)</li>
-                    <li><strong>Fireflies.ai:</strong> Meeting transcription (Series B, Remote)</li>
-                    <li><strong>Zoom:</strong> Video conferencing (Public, San Jose/Remote)</li>
-                    <li><strong>Microsoft Teams:</strong> Collaboration platform (FAANG, Redmond/Remote)</li>
-                    <li><strong>Google Meet:</strong> Video meetings (FAANG, MTV/Remote)</li>
-                </ul>
-
-                <h3>Call Center & Speech Analytics</h3>
-                <ul>
-                    <li><strong>Gong:</strong> Revenue intelligence (Unicorn, US/Israel)</li>
-                    <li><strong>Chorus.ai (ZoomInfo):</strong> Conversation analytics (Public, Remote)</li>
-                    <li><strong>CallMiner:</strong> Interaction analytics (Growth, MA)</li>
-                    <li><strong>Observe.AI:</strong> Contact center AI (Series C, SF/Remote)</li>
-                    <li><strong>Dialpad:</strong> Cloud phone system (Unicorn, SF/Remote)</li>
-                </ul>
-
-                <h3>Speech Technology Platforms</h3>
-                <ul>
-                    <li><strong>AssemblyAI:</strong> Speech AI API (Series B, SF/Remote)</li>
-                    <li><strong>Deepgram:</strong> ASR API (Series B, SF/Remote)</li>
-                    <li><strong>Rev.ai:</strong> Speech-to-text (Established, SF/Remote)</li>
-                    <li><strong>Speechmatics:</strong> Speech tech (Series B, UK/Remote)</li>
-                </ul>
-
-                <h3>Media & Content</h3>
-                <ul>
-                    <li><strong>Spotify:</strong> Podcast diarization (Public, Global)</li>
-                    <li><strong>Descript:</strong> Video editing (Series C, SF/Remote)</li>
-                    <li><strong>Riverside.fm:</strong> Podcast recording (Series B, Remote)</li>
-                </ul>
-
-                <h3>Research Labs</h3>
-                <ul>
-                    <li><strong>Amazon Science:</strong> Alexa research (FAANG, Multiple locations)</li>
-                    <li><strong>Google Research:</strong> Speech team (FAANG, MTV/Remote)</li>
-                    <li><strong>Microsoft Research:</strong> Audio group (FAANG, Redmond)</li>
-                    <li><strong>Meta AI (FAIR):</strong> Speech research (FAANG, Menlo Park)</li>
-                </ul>
-
-                <h2>How to Break Into Diarization Careers</h2>
-
-                <h3>Step 1: Master the Fundamentals</h3>
+                <h2>How to get hired</h2>
                 <ol>
-                    <li><strong>Learn audio signal processing:</strong> Understand spectrograms, MFCCs, audio features</li>
-                    <li><strong>Study clustering algorithms:</strong> K-means, hierarchical, spectral clustering</li>
-                    <li><strong>Understand speaker embeddings:</strong> Read papers on x-vectors, i-vectors</li>
-                    <li><strong>Get comfortable with PyTorch:</strong> Most modern systems use it</li>
+                    <li><strong>Pick a track.</strong> Research (novel models, publications), applied ML
+                    (fine-tuning, evaluation, data), or systems/inference (latency, cost, serving). The
+                    interview loops are different.</li>
+                    <li><strong>Ship something with real audio.</strong> A fine-tuned Whisper on a domain
+                    dataset, a streaming transcription demo, or a diarization + ASR pipeline with measured WER
+                    and DER beats a generic ML portfolio.</li>
+                    <li><strong>Know the metrics.</strong> WER, CER, RTF (real-time factor), DER, and how to
+                    read an evaluation that isn't leaking.</li>
+                    <li><strong>Contribute where the field lives.</strong> Whisper, faster-whisper, NeMo,
+                    icefall, SpeechBrain, pyannote &mdash; a merged PR gets noticed.</li>
+                    <li><strong>Show up.</strong> Interspeech and ICASSP are the recruiting venues; for 2026
+                    that also means <a href="/blog/asru-2026">SLT 2026 in Palermo</a>.</li>
                 </ol>
-
-                <h3>Step 2: Build Projects</h3>
-                <p>Hands-on experience is critical. Build:</p>
-                <ul>
-                    <li><strong>Meeting diarizer:</strong> Use pyannote.audio + Whisper to transcribe with speaker labels</li>
-                    <li><strong>Podcast timestamp generator:</strong> Automatically create chapter markers based on speakers</li>
-                    <li><strong>Call center analyzer:</strong> Separate agent from customer and analyze sentiment</li>
-                    <li><strong>Real-time diarization demo:</strong> Process audio streams with low latency</li>
-                </ul>
-
-                <h3>Step 3: Study Research Papers</h3>
-                <p>Key papers to read:</p>
-                <ul>
-                    <li>"X-vectors: Robust DNN Embeddings for Speaker Recognition" (Snyder et al., 2018)</li>
-                    <li>"End-to-End Neural Speaker Diarization" (Fujita et al., 2019)</li>
-                    <li>"pyannote.audio: Neural Building Blocks for Speaker Diarization" (Bredin et al., 2020)</li>
-                    <li>"ECAPA-TDNN: Emphasized Channel Attention" (Desplanques et al., 2020)</li>
-                </ul>
-
-                <h3>Step 4: Contribute to Open Source</h3>
-                <p>Contributions to pyannote.audio, NeMo, or speechbrain get noticed by hiring managers.</p>
-
-                <h3>Step 5: Network</h3>
-                <ul>
-                    <li>Join the pyannote Discord/Slack</li>
-                    <li>Attend Interspeech and ICASSP conferences</li>
-                    <li>Follow researchers on Twitter/LinkedIn</li>
-                    <li>Write blog posts about your diarization projects</li>
-                </ul>
-
-                <h2>Future of Speaker Diarization</h2>
-
-                <h3>Emerging Trends</h3>
-
-                <h4>1. Real-Time Streaming Diarization</h4>
-                <p>Low-latency diarization for live transcription is becoming standard. Expect more research on online diarization algorithms.</p>
-
-                <h4>2. Overlap Handling</h4>
-                <p>Better models for overlapping speech, which is common in natural conversations.</p>
-
-                <h4>3. Multi-Modal Diarization</h4>
-                <p>Combining audio with video (lip movement, face detection) for better accuracy in challenging scenarios.</p>
-
-                <h4>4. Few-Shot Speaker Adaptation</h4>
-                <p>Quickly adapting to new speakers with minimal enrollment data.</p>
-
-                <h4>5. Self-Supervised Learning</h4>
-                <p>Training on unlabeled audio to improve embeddings, reducing need for expensive annotated data.</p>
 
                 <div class="callout">
-                    <div class="callout-title">🔮 2027 Prediction</div>
-                    <p>By 2027, real-time diarization with &lt;3% DER will be standard in consumer products. The bottleneck will shift from accuracy to computing cost, making optimization engineers extremely valuable.</p>
+                    <div class="callout-title">If you don't have speech experience yet</div>
+                    <p>Companies whose whole product is speech (Deepgram, AssemblyAI, Speechmatics) will
+                    often take a strong general ML engineer who can show they've gone deep on one audio
+                    project. Read <a href="/blog/how-to-break-into-speech-tech-2026">how to break into speech tech</a>.</p>
                 </div>
-
-                <h2>Key Takeaways</h2>
-
-                <ul>
-                    <li>Speaker diarization is essential for any multi-speaker audio application</li>
-                    <li>Modern systems achieve 5-10% DER on clean audio, but real-world scenarios are harder</li>
-                    <li>pyannote.audio is the industry standard tool in 2026</li>
-                    <li>Diarization specialists earn $150K-$240K+ due to specialized expertise</li>
-                    <li>Combining diarization with ASR and NLU creates powerful analytics products</li>
-                    <li>The field is active with ongoing research on overlap, real-time, and multi-modal approaches</li>
-                </ul>
-
-                <h2>Getting Started Checklist</h2>
-
-                <ol>
-                    <li>Install pyannote.audio and run the tutorial</li>
-                    <li>Process a meeting recording and visualize speaker turns</li>
-                    <li>Read the x-vectors paper to understand embeddings</li>
-                    <li>Build a project combining Whisper + pyannote</li>
-                    <li>Measure DER on standard datasets (AMI, CALLHOME)</li>
-                    <li>Apply to diarization jobs (check our listings below)</li>
-                </ol>
             </div>
 
-            <div class="jobs-cta">
-                <h3>Find Speaker Diarization Jobs</h3>
-                <p>Browse roles requiring diarization expertise at top companies.</p>
-                <a href="/voice-biometrics-jobs" class="btn">View Diarization Jobs</a>
+            <div class="jobs-cta" id="newsletter">
+                <h3>Get these companies' openings weekly</h3>
+                <p>We track the careers pages above and put the real roles in one email a week &mdash; free.</p>
+                <form class="lead-form" data-redirect="/thanks-newsletter" method="POST" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                    <label for="tc-email" style="position:absolute; left:-9999px;">Email</label>
+                    <input type="email" id="tc-email" name="EMAIL" required placeholder="you@example.com" style="padding:13px 16px; border:0; border-radius:6px; font-size:15px; min-width:260px; color:#171717;">
+                    <input type="hidden" name="locale" value="en">
+                    <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                    <button type="submit" class="btn" style="border:0; cursor:pointer;">Subscribe &rarr;</button>
+                </form>
             </div>
 
             <div class="related-articles">
                 <h3>Related Articles</h3>
-                
-                <a href="/blog/what-is-kaldi-complete-guide-2026" class="related-article-card">
-                    <div class="related-article-title">What is Kaldi? Complete Guide for Speech Engineers (2026)</div>
-                    <div class="related-article-excerpt">Learn about the speech recognition toolkit that powers production ASR systems</div>
+
+                <a href="/blog/top-speech-analytics-companies-hiring-2026" class="related-article-card">
+                    <div class="related-article-title">Top Speech Analytics Companies Hiring in 2026</div>
+                    <div class="related-article-excerpt">Gong, Observe.AI, CallMiner and more &mdash; the conversation-intelligence side</div>
                 </a>
-                
+
                 <a href="/blog/whisper-ai-jobs-salary-guide-2026" class="related-article-card">
-                    <div class="related-article-title">Whisper AI Jobs: Salary, Skills & Companies Hiring (2026)</div>
-                    <div class="related-article-excerpt">Complete guide to Whisper AI career opportunities and $140K-$230K salaries</div>
+                    <div class="related-article-title">Whisper AI Jobs: Salary, Skills &amp; Companies Hiring (2026)</div>
+                    <div class="related-article-excerpt">Compensation and skills for Whisper-focused roles</div>
                 </a>
-                
-                <a href="/blog/speech-recognition-interview-questions-2026" class="related-article-card">
-                    <div class="related-article-title">30+ ASR Interview Questions with Answers (2026)</div>
-                    <div class="related-article-excerpt">Technical questions covering ASR, diarization, and speech processing</div>
+
+                <a href="/blog/asru-2026" class="related-article-card">
+                    <div class="related-article-title">ASRU 2026: the 2026 speech conference calendar</div>
+                    <div class="related-article-excerpt">Where speech-AI recruiting happens in person this year</div>
                 </a>
             </div>
         </article>
@@ -1024,5 +651,32 @@ for turn, _, speaker in diarization.itertracks(yield_label=True):
             <p>© 2026 SpeechTechJobs. <a href="/privacy" style="color: var(--muted); margin-left: 16px;">Privacy</a> <a href="/terms" style="color: var(--muted); margin-left: 16px;">Terms</a></p>
         </div>
     </footer>
+<!-- brevo-ajax -->
+<script>
+(function () {
+  document.querySelectorAll('form[action*="sibforms.com"]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = f.querySelector('[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting\u2026'; }
+      function done(ok, msg) {
+        if (ok) {
+          var to = f.getAttribute('data-redirect');
+          if (to) { window.location.href = to; return; }
+          f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks \u2014 check your inbox to confirm.</p>';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          window.alert(msg || 'Something went wrong. Please try again.');
+        }
+      }
+      fetch(f.action, { method: 'POST', body: new FormData(f) })
+        .then(function (r) { return r.json().catch(function () { return { success: true }; }); })
+        .then(function (d) { done(!d || d.success !== false, d && d.message); })
+        .catch(function () { done(true); });
+    });
+  });
+})();
+</script>
 </body>
 </html>
