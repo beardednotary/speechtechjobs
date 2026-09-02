@@ -14,7 +14,8 @@
     { "source": "/remote-speech-recognition-jobs", "destination": "/blog/remote-speech-recognition-jobs-2026", "permanent": true },
     { "source": "/remote-speech-recognition-jobs-2026", "destination": "/blog/remote-speech-recognition-jobs-2026", "permanent": true },
     { "source": "/remote-speech-recognition-jobs-2026.html", "destination": "/blog/remote-speech-recognition-jobs-2026", "permanent": true },
-    { "source": "/jobs/:path*", "destination": "/jobs", "permanent": true }
+    { "source": "/jobs/:path*", "destination": "/jobs", "permanent": true },
+    { "source": "/senior-asr-engineer-whisper-remote", "destination": "/whisper-jobs", "permanent": true }
   ],
   "headers": [
     {
