@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speech Technology Jobs | ASR, NLP & Audio ML Positions | SpeechTechJobs</title>
-    <meta name="description" content="Browse 100+ speech technology jobs in ASR, NLP, and audio ML. Filter by skills (Kaldi, Whisper, PyTorch), location (remote, SF, NYC), and experience level. Apply today.">
-    
+    <title>Speech Technology Jobs | ASR, TTS &amp; Voice AI | SpeechTechJobs</title>
+    <meta name="description" content="Speech technology jobs by specialty — ASR, TTS, speech analytics, voice biometrics, Whisper — plus a hand-curated weekly digest of who's hiring across the industry.">
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
     <script>
@@ -14,7 +14,7 @@
         gtag('js', new Date());
         gtag('config', 'G-ZKVZKXG57F');
     </script>
-    
+
     <style>
         :root {
             --bg: #fafafa;
@@ -24,284 +24,59 @@
             --muted: #737373;
             --success: #10b981;
         }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: var(--bg);
-            color: var(--fg);
-            line-height: 1.6;
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        header { border-bottom: 1px solid var(--border); padding: 20px 0; background: #fff; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 16px; font-weight: 600; color: var(--fg); text-decoration: none; }
+        nav a { color: var(--muted); text-decoration: none; font-size: 14px; margin-left: 24px; }
+        nav a:hover { color: var(--fg); }
+
+        .page-header { padding: 60px 0 32px; background: #fff; }
+        .page-title { font-size: 40px; font-weight: 700; margin-bottom: 12px; }
+        .page-subtitle { font-size: 18px; color: var(--muted); max-width: 640px; }
+
+        .section { padding: 48px 0; }
+        .section h2 { font-size: 24px; font-weight: 600; margin-bottom: 16px; }
+        .section p { font-size: 16px; color: var(--fg); margin-bottom: 16px; }
+        .section a.inline { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+        .signup { background: var(--fg); color: #fff; padding: 40px; border-radius: 8px; margin: 8px 0 0; text-align: center; }
+        .signup h2 { color: #fff; margin-bottom: 12px; }
+        .signup p { font-size: 16px; opacity: 0.9; margin-bottom: 24px; color: #fff; }
+        .signup form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .signup input[type=email] { padding: 13px 16px; border: 0; border-radius: 6px; font-size: 15px; min-width: 260px; color: var(--fg); }
+        .signup button { padding: 13px 28px; background: #fff; color: var(--fg); border: 0; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer; }
+
+        .latest-digest {
+            background: #fff; border: 1px solid var(--border); border-radius: 8px;
+            padding: 28px 32px; margin-top: 24px; display: flex; justify-content: space-between;
+            align-items: center; gap: 20px; flex-wrap: wrap;
         }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .latest-digest strong { font-size: 17px; }
+        .latest-digest span { color: var(--muted); font-size: 14px; }
+        .latest-digest a {
+            background: var(--accent); color: #fff; padding: 10px 20px; border-radius: 6px;
+            text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;
         }
-        
-        /* Header */
-        header {
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-            background: #fff;
-        }
-        
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--fg);
-            text-decoration: none;
-        }
-        
-        nav a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 14px;
-            margin-left: 24px;
-        }
-        
-        nav a:hover {
-            color: var(--fg);
-        }
-        
-        /* Page Header */
-        .page-header {
-            padding: 60px 0 40px;
-            background: #fff;
-        }
-        
-        .page-title {
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        
-        .page-subtitle {
-            font-size: 18px;
-            color: var(--muted);
-            margin-bottom: 32px;
-        }
-        
-        .job-count {
-            font-size: 14px;
-            color: var(--muted);
-        }
-        
-        /* Filters */
-        .filters-section {
-            background: #fff;
-            padding: 32px 0;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-        
-        .filters {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-group {
-            position: relative;
-        }
-        
-        .filter-btn {
-            padding: 10px 16px;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-        }
-        
-        .filter-btn:hover {
-            border-color: var(--accent);
-        }
-        
-        .filter-btn.active {
-            background: var(--fg);
-            color: #fff;
-            border-color: var(--fg);
-        }
-        
-        /* Search */
-        .search-box {
-            flex: 1;
-            max-width: 400px;
-        }
-        
-        .search-input {
-            width: 100%;
-            padding: 10px 16px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 15px;
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-        
-        /* Jobs Grid */
-        .jobs-section {
-            padding: 40px 0;
-        }
-        
-        .jobs-grid {
-            display: grid;
-            gap: 24px;
-        }
-        
-        .job-card {
-            background: #fff;
-            padding: 32px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            text-decoration: none;
-            color: var(--fg);
-            display: block;
-            transition: all 0.2s;
-        }
-        
-        .job-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        
-        .job-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 16px;
-        }
-        
-        .job-card-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .company-name {
-            font-size: 15px;
-            color: var(--muted);
-        }
-        
-        .job-card-meta {
-            display: flex;
-            gap: 24px;
-            font-size: 14px;
-            color: var(--muted);
-            margin-bottom: 16px;
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .job-description {
-            font-size: 15px;
-            color: var(--fg);
-            margin-bottom: 16px;
-            line-height: 1.5;
-        }
-        
-        .job-skills {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        
-        .skill-badge {
-            background: var(--bg);
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 13px;
-            color: var(--fg);
-        }
-        
-        .new-badge {
-            background: var(--success);
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        /* Categories Quick Links */
-        .categories-section {
-            background: #fff;
-            padding: 60px 0;
-            border-top: 1px solid var(--border);
-        }
-        
-        .section-title {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-        
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-        }
-        
+
+        .categories-section { background: #fff; padding: 56px 0; border-top: 1px solid var(--border); }
+        .section-title { font-size: 28px; font-weight: 600; margin-bottom: 32px; text-align: center; }
+        .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
         .category-link {
-            padding: 20px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            text-decoration: none;
-            color: var(--fg);
-            text-align: center;
-            font-weight: 500;
-            transition: all 0.2s;
+            padding: 20px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+            text-decoration: none; color: var(--fg); text-align: center; font-weight: 500; transition: all 0.2s;
         }
-        
-        .category-link:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-        
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 40px 0;
-            background: var(--bg);
-        }
-        
-        footer p {
-            font-size: 13px;
-            color: var(--muted);
-            text-align: center;
-        }
-        
+        .category-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+        footer { border-top: 1px solid var(--border); padding: 40px 0; background: var(--bg); }
+        footer p { font-size: 13px; color: var(--muted); text-align: center; }
+
         @media (max-width: 768px) {
             .page-title { font-size: 28px; }
-            .filters { flex-direction: column; }
-            .search-box { max-width: 100%; }
-            .job-card { padding: 24px; }
-            .job-card-meta { flex-wrap: wrap; gap: 12px; }
+            .latest-digest { flex-direction: column; align-items: flex-start; }
         }
     </style>
     <link rel="canonical" href="https://speechtechjobs.com/jobs">
@@ -319,218 +94,48 @@
 
     <section class="page-header">
         <div class="container">
-            <h1 class="page-title">Speech Technology Jobs</h1>
-            <p class="page-subtitle">Find your next role in ASR, NLP, audio ML, and voice technology</p>
-            <p class="job-count">Showing 15 jobs</p>
+            <h1 class="page-title">Speech technology jobs</h1>
+            <p class="page-subtitle">Roles in ASR, TTS, speech analytics, voice agents and audio ML &mdash;
+            curated by hand, not scraped.</p>
         </div>
     </section>
 
-    <section class="filters-section">
+    <section class="section">
         <div class="container">
-            <div class="filters">
-                <div class="search-box">
-                    <input type="text" class="search-input" placeholder="Search jobs by title, skill, or company...">
+            <h2>How this works</h2>
+            <p>Rather than run a stale listings feed, we track the career pages of ~30 speech-AI
+            companies and publish the real openings &mdash; usually 12&ndash;20 a week &mdash; in a
+            free weekly digest. Each role links straight to the company's own posting.</p>
+            <p>Browse the specialty pages below for the market picture in each area (salary bands,
+            in-demand skills, companies hiring), and subscribe to get the week's roles in your inbox.</p>
+
+            <div class="signup" id="newsletter">
+                <h2>Get the weekly Speech AI jobs digest</h2>
+                <p>New ASR, TTS, voice-AI and speech-analytics roles from ~30 companies, plus salary
+                and hiring notes. One email a week, free.</p>
+                <form class="lead-form" data-redirect="/thanks-newsletter" method="POST" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG">
+                    <label for="j-email" style="position:absolute; left:-9999px;">Email</label>
+                    <input type="email" id="j-email" name="EMAIL" required placeholder="you@example.com">
+                    <input type="hidden" name="locale" value="en">
+                    <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                    <button type="submit">Subscribe &rarr;</button>
+                </form>
+            </div>
+
+            <div class="latest-digest">
+                <div>
+                    <strong>Latest digest</strong><br>
+                    <span>Who's Hiring in Speech AI &mdash; September 1, 2026 &middot; 12 roles</span>
                 </div>
-                
-                <button class="filter-btn">
-                    Category ▾
-                </button>
-                
-                <button class="filter-btn">
-                    Location ▾
-                </button>
-                
-                <button class="filter-btn">
-                    Experience ▾
-                </button>
-                
-                <button class="filter-btn">
-                    Salary ▾
-                </button>
+                <a href="/blog/who-is-hiring-speech-ai-2026-09-01">Read it</a>
             </div>
-        </div>
-    </section>
-
-    <section class="jobs-section">
-        <div class="container">
-            <div class="jobs-grid">
-                <!-- Job Card 1 -->
-                <a href="/jobs/senior-asr-engineer-whisper-remote" class="job-card">
-                    <div class="job-card-header">
-                        <div>
-                            <h2 class="job-card-title">Senior ASR Engineer - Whisper Specialist</h2>
-                            <div class="company-name">VoiceFlow AI</div>
-                        </div>
-                        <span class="new-badge">New</span>
-                    </div>
-                    
-                    <div class="job-card-meta">
-                        <div class="meta-item">
-                            📍 Remote (US)
-                        </div>
-                        <div class="meta-item">
-                            💰 $160K - $210K
-                        </div>
-                        <div class="meta-item">
-                            📅 5+ years
-                        </div>
-                    </div>
-                    
-                    <p class="job-description">
-                        Build and optimize production ASR systems using OpenAI's Whisper model. Fine-tune for domain-specific applications and deploy at scale.
-                    </p>
-                    
-                    <div class="job-skills">
-                        <span class="skill-badge">Whisper AI</span>
-                        <span class="skill-badge">PyTorch</span>
-                        <span class="skill-badge">ASR</span>
-                        <span class="skill-badge">Python</span>
-                    </div>
-                </a>
-
-                <!-- Job Card 2 -->
-                <a href="/jobs/nlp-engineer-conversational-ai" class="job-card">
-                    <div class="job-card-header">
-                        <div>
-                            <h2 class="job-card-title">NLP Engineer - Conversational AI</h2>
-                            <div class="company-name">DialogAI</div>
-                        </div>
-                        <span class="new-badge">New</span>
-                    </div>
-                    
-                    <div class="job-card-meta">
-                        <div class="meta-item">
-                            📍 Remote
-                        </div>
-                        <div class="meta-item">
-                            💰 $150K - $200K
-                        </div>
-                        <div class="meta-item">
-                            📅 3-5 years
-                        </div>
-                    </div>
-                    
-                    <p class="job-description">
-                        Design and implement NLU systems for voice assistants. Work with BERT, GPT, and transformer models to understand user intent.
-                    </p>
-                    
-                    <div class="job-skills">
-                        <span class="skill-badge">BERT</span>
-                        <span class="skill-badge">Transformers</span>
-                        <span class="skill-badge">NLP</span>
-                        <span class="skill-badge">Python</span>
-                    </div>
-                </a>
-
-                <!-- Job Card 3 -->
-                <a href="/jobs/ml-engineer-audio-classification" class="job-card">
-                    <div class="job-card-header">
-                        <div>
-                            <h2 class="job-card-title">ML Engineer - Audio Classification</h2>
-                            <div class="company-name">SoundSense</div>
-                        </div>
-                    </div>
-                    
-                    <div class="job-card-meta">
-                        <div class="meta-item">
-                            📍 San Francisco
-                        </div>
-                        <div class="meta-item">
-                            💰 $140K - $190K
-                        </div>
-                        <div class="meta-item">
-                            📅 4+ years
-                        </div>
-                    </div>
-                    
-                    <p class="job-description">
-                        Build audio classification models for smart home devices. Work with spectral analysis, CNNs, and real-time audio processing.
-                    </p>
-                    
-                    <div class="job-skills">
-                        <span class="skill-badge">Audio ML</span>
-                        <span class="skill-badge">TensorFlow</span>
-                        <span class="skill-badge">Signal Processing</span>
-                        <span class="skill-badge">Python</span>
-                    </div>
-                </a>
-
-                <!-- Job Card 4 -->
-                <a href="/jobs/speech-scientist-accent-recognition" class="job-card">
-                    <div class="job-card-header">
-                        <div>
-                            <h2 class="job-card-title">Speech Scientist - Accent Recognition</h2>
-                            <div class="company-name">AccentAI Labs</div>
-                        </div>
-                    </div>
-                    
-                    <div class="job-card-meta">
-                        <div class="meta-item">
-                            📍 Remote
-                        </div>
-                        <div class="meta-item">
-                            💰 $170K - $230K
-                        </div>
-                        <div class="meta-item">
-                            📅 6+ years
-                        </div>
-                    </div>
-                    
-                    <p class="job-description">
-                        Research and develop accent-robust ASR systems. Work on phonetic analysis, dialect classification, and speaker adaptation.
-                    </p>
-                    
-                    <div class="job-skills">
-                        <span class="skill-badge">Phonetics</span>
-                        <span class="skill-badge">Kaldi</span>
-                        <span class="skill-badge">Research</span>
-                        <span class="skill-badge">Python</span>
-                    </div>
-                </a>
-
-                <!-- Job Card 5 -->
-                <a href="/jobs/voice-ui-designer-alexa" class="job-card">
-                    <div class="job-card-header">
-                        <div>
-                            <h2 class="job-card-title">Voice UI Designer - Alexa Skills</h2>
-                            <div class="company-name">VoiceDesign Co</div>
-                        </div>
-                    </div>
-                    
-                    <div class="job-card-meta">
-                        <div class="meta-item">
-                            📍 Seattle
-                        </div>
-                        <div class="meta-item">
-                            💰 $120K - $160K
-                        </div>
-                        <div class="meta-item">
-                            📅 3+ years
-                        </div>
-                    </div>
-                    
-                    <p class="job-description">
-                        Design conversational experiences for Alexa skills. Create voice personas, write SSML, and conduct user testing.
-                    </p>
-                    
-                    <div class="job-skills">
-                        <span class="skill-badge">VUI Design</span>
-                        <span class="skill-badge">Alexa</span>
-                        <span class="skill-badge">SSML</span>
-                        <span class="skill-badge">UX Research</span>
-                    </div>
-                </a>
-
-                <!-- Add more job cards here following the same pattern -->
-                
-            </div>
+            <p style="margin-top:16px;"><a class="inline" href="/blog">Browse the full archive &rarr;</a></p>
         </div>
     </section>
 
     <section class="categories-section">
         <div class="container">
-            <h2 class="section-title">Browse by Specialty</h2>
-            
+            <h2 class="section-title">Browse by specialty</h2>
             <div class="categories-grid">
                 <a href="/voice-biometrics-jobs" class="category-link">Voice Biometrics</a>
                 <a href="/spoken-nlp-jobs" class="category-link">Spoken NLP</a>
@@ -543,10 +148,46 @@
         </div>
     </section>
 
+    <section class="section">
+        <div class="container">
+            <h2>Hiring?</h2>
+            <p>If you're recruiting for a speech-tech role, <a class="inline" href="/hire-talent">tell us about it</a>
+            and we'll include it in the digest and on the relevant specialty page.</p>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <p>© 2026 SpeechTechJobs. <a href="/privacy" style="color: var(--muted); margin-left: 16px;">Privacy</a> <a href="/terms" style="color: var(--muted); margin-left: 16px;">Terms</a></p>
         </div>
     </footer>
+
+<!-- brevo-ajax -->
+<script>
+(function () {
+  document.querySelectorAll('form[action*="sibforms.com"]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = f.querySelector('[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+      function done(ok, msg) {
+        if (ok) {
+          var to = f.getAttribute('data-redirect');
+          if (to) { window.location.href = to; return; }
+          f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — check your inbox to confirm.</p>';
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          window.alert(msg || 'Something went wrong. Please try again.');
+        }
+      }
+      fetch(f.action, { method: 'POST', body: new FormData(f) })
+        .then(function (r) { return r.json().catch(function () { return { success: true }; }); })
+        .then(function (d) { done(!d || d.success !== false, d && d.message); })
+        .catch(function () { done(true); });
+    });
+  });
+})();
+</script>
 </body>
 </html>
