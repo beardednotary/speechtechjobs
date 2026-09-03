@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SpeechTechJobs Blog</title>
+    <link>https://speechtechjobs.com/blog</link>
+    <description>Guides on speech-technology careers, salaries, interviews, tools, and hiring.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Sep 2026 16:36:53 +0000</lastBuildDate>
+    <atom:link href="https://speechtechjobs.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>How to Hire a Whisper Engineer in 2026 (Contract vs In-House vs Agency)</title>
+      <link>https://speechtechjobs.com/blog/how-to-hire-a-whisper-engineer-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/how-to-hire-a-whisper-engineer-2026</guid>
+      <pubDate>Wed, 02 Sep 2026 12:00:00 +0000</pubDate>
+      <description>How to hire for OpenAI Whisper work in 2026: whether you need a person at all, contractor vs in-house vs agency, what to screen for, five interview questions, and where to find candidates.</description>
+      <category>Hiring</category>
+    </item>
+
+    <item>
+      <title>ASRU 2026: There Isn't One — the 2026 Speech Conference Calendar</title>
+      <link>https://speechtechjobs.com/blog/asru-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/asru-2026</guid>
+      <pubDate>Tue, 01 Sep 2026 12:00:00 +0000</pubDate>
+      <description>ASRU runs in odd years, so there is no ASRU 2026. ASRU 2025 was in Honolulu; the next is ASRU 2027. The 2026 IEEE speech workshop is SLT 2026 in Palermo (Dec 13–16). Full 2026 calendar inside.</description>
+      <category>Conferences</category>
+    </item>
+
+    <item>
+      <title>Is Kaldi Still Used in 2026? An Honest Look</title>
+      <link>https://speechtechjobs.com/blog/is-kaldi-still-used-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/is-kaldi-still-used-2026</guid>
+      <pubDate>Tue, 01 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Is Kaldi still used in 2026? Yes — but 'Kaldi' now means two things. Where classic Kaldi and next-gen Kaldi (k2, icefall, sherpa) still beat Whisper, and what it means for your career.</description>
+      <category>Technical Guide</category>
+    </item>
+
+    <item>
+      <title>Who's Hiring in Speech AI — September 1, 2026</title>
+      <link>https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-09-01</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-09-01</guid>
+      <pubDate>Tue, 01 Sep 2026 12:00:00 +0000</pubDate>
+      <description>12 speech-tech roles hiring the week of September 1, 2026: ASR, TTS, voice-agent, embedded and research positions at Deepgram, ElevenLabs, NVIDIA, Otter, Cartesia, Sanas and more.</description>
+      <category>Weekly Digest</category>
+    </item>
+
+    <item>
+      <title>ASR Benchmarks 2026 | Word Error Rates for Whisper, Conformer, Wav2Vec</title>
+      <link>https://speechtechjobs.com/blog/asr-benchmarks-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/asr-benchmarks-2026</guid>
+      <pubDate>Sun, 18 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Comprehensive ASR benchmark comparison for 2026. WER results for Whisper, Conformer-CTC, Wav2Vec 2.0, Kaldi on LibriSpeech, Common Voice, and production datasets.</description>
+    </item>
+
+    <item>
+      <title>Gong vs Chorus for Speech Engineers: How to Compare (2026)</title>
+      <link>https://speechtechjobs.com/blog/gong-vs-chorus-engineer-comparison-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/gong-vs-chorus-engineer-comparison-2026</guid>
+      <pubDate>Sun, 18 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Gong vs Chorus for speech and ML engineers in 2026: how the two revenue-intelligence companies differ in structure, product and engineering work — and how to get real compensation numbers before you decide.</description>
+      <category>Careers</category>
+    </item>
+
+    <item>
+      <title>Top 14 Speech Analytics Interview Questions &amp; Answers (2026 Guide)</title>
+      <link>https://speechtechjobs.com/blog/speech-analytics-interview-questions-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/speech-analytics-interview-questions-2026</guid>
+      <pubDate>Sun, 18 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Master your Speech Analytics interview at Gong, Chorus, or CallMiner. 50+ real technical questions covering ASR, Diarization, Sentiment Analysis, and System Design.</description>
+      <category>Interview Prep</category>
+    </item>
+
+    <item>
+      <title>Top 10 Speech Analytics Companies Hiring in 2026 | Salaries &amp; Culture</title>
+      <link>https://speechtechjobs.com/blog/top-speech-analytics-companies-hiring-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/top-speech-analytics-companies-hiring-2026</guid>
+      <pubDate>Sun, 18 Jan 2026 12:00:00 +0000</pubDate>
+      <description>The companies hiring speech and ML engineers for conversation intelligence, contact-center analytics and meeting AI in 2026 — what each builds, the roles they open, and where to apply.</description>
+      <category>Careers</category>
+    </item>
+
+    <item>
+      <title>Speaker Diarization: How It Works + Career Guide (2026)</title>
+      <link>https://speechtechjobs.com/blog/speaker-diarization-guide-career-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/speaker-diarization-guide-career-2026</guid>
+      <pubDate>Sat, 17 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Complete guide to speaker diarization technology and careers. Learn how 'who spoke when' systems work, required skills, salaries ($150K-$240K), and companies hiring in 2026.</description>
+      <category>Technical Guide</category>
+    </item>
+
+    <item>
+      <title>Top Companies Hiring ASR &amp; Speech Engineers in 2026</title>
+      <link>https://speechtechjobs.com/blog/top-companies-hiring-asr-engineers-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/top-companies-hiring-asr-engineers-2026</guid>
+      <pubDate>Sat, 17 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Where speech-recognition and speech engineers are hired in 2026: dedicated ASR-API companies, big labs, voice-agent startups and vertical players — what each builds, the roles they open, and where to apply.</description>
+      <category>Careers</category>
+    </item>
+
+    <item>
+      <title>What is Kaldi? Complete Guide for Speech Engineers (2026)</title>
+      <link>https://speechtechjobs.com/blog/what-is-kaldi-complete-guide-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/what-is-kaldi-complete-guide-2026</guid>
+      <pubDate>Sat, 17 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Complete guide to Kaldi speech recognition toolkit. Learn what Kaldi is, how it works, when to use it vs Whisper, and career opportunities for Kaldi engineers in 2026.</description>
+      <category>Technical Guide</category>
+    </item>
+
+    <item>
+      <title>Whisper AI Jobs: Salary, Skills &amp; Companies Hiring (2026)</title>
+      <link>https://speechtechjobs.com/blog/whisper-ai-jobs-salary-guide-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/whisper-ai-jobs-salary-guide-2026</guid>
+      <pubDate>Sat, 17 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Complete guide to Whisper AI career opportunities. Discover salaries ($140K-$230K), required skills, companies hiring, and how to land a Whisper specialist role in 2026.</description>
+      <category>Career Guide</category>
+    </item>
+
+    <item>
+      <title>Kaldi vs Whisper vs Wav2Vec: Which ASR Framework to Learn in 2026</title>
+      <link>https://speechtechjobs.com/blog/kaldi-vs-whisper-vs-wav2vec-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/kaldi-vs-whisper-vs-wav2vec-2026</guid>
+      <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Complete comparison of Kaldi, Whisper, and Wav2Vec 2.0 for speech recognition. Learn which framework to focus on for your career in 2026.</description>
+    </item>
+
+    <item>
+      <title>Remote ASR &amp; Speech AI Jobs (2026): Find Work-from-Home Research Roles</title>
+      <link>https://speechtechjobs.com/blog/remote-speech-recognition-jobs-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/remote-speech-recognition-jobs-2026</guid>
+      <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Looking for remote ASR jobs? Explore 2026's top work-from-home roles in Speech AI and Research Engineering. Salary guides for Whisper &amp; Kaldi experts + private talent network access.</description>
+    </item>
+
+    <item>
+      <title>[2026] 30+ ASR Interview Questions &amp; Answers (Master the Research Interview)</title>
+      <link>https://speechtechjobs.com/blog/speech-recognition-interview-questions-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/speech-recognition-interview-questions-2026</guid>
+      <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Updated for Feb 2026. Master your ASR Research interview with 30+ real technical questions from Meta, Google, and OpenAI. Includes system design secrets and the STJ private talent network.</description>
+    </item>
+
+    <item>
+      <title>Speech Tech Conferences 2026 | ICASSP, Interspeech, ASRU Dates &amp; Deadlines</title>
+      <link>https://speechtechjobs.com/blog/speech-tech-conferences-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/speech-tech-conferences-2026</guid>
+      <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Complete calendar of speech technology conferences in 2026. ICASSP, Interspeech, ASRU dates, paper deadlines, locations, and networking opportunities for ASR researchers.</description>
+    </item>
+
+    <item>
+      <title>How to Become a Speech AI Engineer (2026 Roadmap): PhD to Industry</title>
+      <link>https://speechtechjobs.com/blog/how-to-break-into-speech-tech-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/how-to-break-into-speech-tech-2026</guid>
+      <pubDate>Wed, 14 Jan 2026 12:00:00 +0000</pubDate>
+      <description>The definitive 2026 guide to breaking into ASR Research. Master the transition from academia to Industry: required skills, Whisper/Kaldi projects, and private network access.</description>
+    </item>
+
+    <item>
+      <title>Speech Recognition Engineer Salary Guide 2026</title>
+      <link>https://speechtechjobs.com/blog/speech-recognition-engineer-salary-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/speech-recognition-engineer-salary-2026</guid>
+      <pubDate>Wed, 14 Jan 2026 12:00:00 +0000</pubDate>
+      <description>Complete salary guide for speech recognition engineers in 2026. Real compensation data from FAANG, startups, and enterprise companies. Entry to staff level salaries.</description>
+    </item>
+
+  </channel>
+</rss>

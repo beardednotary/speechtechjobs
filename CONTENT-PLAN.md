@@ -40,11 +40,13 @@ guide backlog  ◄── topic ideas ◄──  weekly "who's hiring" digest
 
 Confirmed realistic: **one digest + one guide per week.**
 
-Every publish ends with the same three steps:
+Every publish ends with the same steps:
 
 1. Add the URL to `sitemap.xml` (extensionless form, e.g. `/blog/my-post`).
-2. `python indexnow.py https://speechtechjobs.com/blog/my-post`
-3. Digest only: send the Brevo campaign to the newsletter list.
+2. Add a card to `blog/index.html`.
+3. `python gen_feed.py` to regenerate `feed.xml`.
+4. `python indexnow.py https://speechtechjobs.com/blog/my-post`
+5. Digest only: send the Brevo campaign to the newsletter list.
 
 ---
 
