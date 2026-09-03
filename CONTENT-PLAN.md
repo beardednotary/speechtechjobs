@@ -256,6 +256,57 @@ that intent and route it to `/hire-whisper-engineers`.
 
 ---
 
+## Repurposing
+
+One guide should produce a fixed set of derivatives with almost no net-new
+writing. Run this checklist every time a guide or digest ships.
+
+### Per SEO guide
+
+- [ ] **LinkedIn text post** — hook + 3–4 lines, link in the *first comment* (not
+      the body). Post from the STJ page, then reshare from your personal profile.
+- [ ] **LinkedIn carousel** — 10 slides: title / 8 slides straight off the guide's
+      H2s / CTA. Carousels out-reach text posts on LinkedIn. (~20 min in Canva.)
+- [ ] **2–3 organic answers** — link the guide in a genuinely useful reply on
+      r/speechtech, r/MachineLearning "who's hiring"/career threads, HN comments,
+      the Hugging Face forums. Never a drive-by link.
+- [ ] **Digest blurb** — one line + link in the next weekly issue.
+- [ ] **Internal links** — add the guide to 2–3 related pages.
+
+### Per weekly digest
+
+- [ ] **LinkedIn teaser** — 3–4 headline roles as plain text, link in first comment,
+      tag the featured companies.
+- [ ] The email itself (that's the digest).
+
+### Lead magnet — the Speech AI Starter Kit
+
+The single highest-leverage repurpose: a gated PDF stitched entirely from content
+that already exists. Turns readers into subscribers instead of pageviews.
+
+- **Landing page:** `/speech-ai-starter-kit` — headline, "what's inside" bullets,
+  the Brevo form (`data-redirect="/speech-ai-starter-kit-download"`).
+- **Download page:** `/speech-ai-starter-kit-download` — the PDF link + a nudge to
+  confirm the double opt-in email.
+- **The PDF** (~10 pages), sourced from:
+  - The job map + rough pay by specialty → the `*-jobs` pages + salary guides
+  - How to break in → `how-to-break-into-speech-tech-2026`
+  - Top 10 ASR interview questions → `speech-recognition-interview-questions-2026`
+  - The tools that matter (Whisper / classic + next-gen Kaldi / NeMo) →
+    `is-kaldi-still-used-2026`, `kaldi-vs-whisper-vs-wav2vec-2026`
+  - Where the jobs are (tracked companies) → `top-companies-hiring-asr-engineers-2026`
+  - The 2026 conference calendar → `asru-2026` / `speech-tech-conferences-2026`
+- Rebuild the PDF once a quarter from the latest versions of those pages.
+- Promote it from: the homepage, the end of the "break in" and interview guides,
+  and one LinkedIn post.
+
+### Distribution log
+
+Keep a simple running note (sheet or a section here) of where each piece was
+posted and what drove traffic, so you can see what's working.
+
+---
+
 ## Measurement
 
 ### Monthly review (GSC + Bing Webmaster + Brevo)
