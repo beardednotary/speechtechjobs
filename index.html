@@ -67,51 +67,8 @@
             padding: 0 20px;
         }
         
-        /* Header */
-        header {
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-            background: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--fg);
-            text-decoration: none;
-        }
-        
-        nav a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 14px;
-            margin-left: 24px;
-        }
-        
-        nav a:hover {
-            color: var(--fg);
-        }
-        
-        .nav-cta {
-            background: var(--fg);
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 6px;
-        }
-        
-        .nav-cta:hover {
-            opacity: 0.85;
-        }
-        
+        /* Header: styled by the #stj-nav block below */
+
         /* Hero */
         .hero {
             padding: 80px 0 60px;
@@ -520,37 +477,7 @@
             .trust-indicators { flex-direction: column; gap: 16px; }
             nav a { margin-left: 16px; font-size: 13px; }
         }
-        /* Mobile menu toggle button */
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-}
-
-.mobile-menu-toggle span {
-    width: 24px;
-    height: 2px;
-    background: var(--fg);
-    transition: all 0.3s;
-}
-
-.mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-}
-
-/* Categories section - MOVE THIS BEFORE THE MEDIA QUERY */
+        /* Categories section - MOVE THIS BEFORE THE MEDIA QUERY */
 .categories-section {
     padding: 60px 0;
     background: #fff;
@@ -606,44 +533,7 @@
     .stats, .skills-grid, .data-grid, .testimonials { grid-template-columns: 1fr; }
     .checkbox-grid { grid-template-columns: 1fr; }
     .trust-indicators { flex-direction: column; gap: 16px; }
-    nav a { margin-left: 16px; font-size: 13px; }
-    
-    .mobile-menu-toggle {
-        display: flex;
-    }
-    
-    nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #fff;
-        border-top: 1px solid var(--border);
-        flex-direction: column;
-        padding: 20px;
-        display: none;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    
-    nav.active {
-        display: flex;
-    }
-    
-    nav a {
-        margin: 0;
-        padding: 12px 0;
-        border-bottom: 1px solid var(--border);
-    }
-    
-    nav a:last-child {
-        border-bottom: none;
-    }
-    
-    .nav-cta {
-        text-align: center;
-        margin-top: 12px;
-    }
-    
+
     .categories-grid {
         grid-template-columns: 1fr;
     }
@@ -654,24 +544,31 @@
     <link rel="icon" type="image/png" href="/favicon.png" sizes="any">
     <link rel="apple-touch-icon" href="/favicon.png">
     <meta name="theme-color" content="#ffffff">
+<style id="stj-nav">
+.stj-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e5e5;margin:0;padding:0}
+.stj-nav *{box-sizing:border-box}
+.stj-nav__in{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.stj-nav a{text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.stj-nav__logo{font-size:16px;font-weight:700;color:#171717;letter-spacing:-.01em;margin:0}
+.stj-nav__links{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.stj-nav__links a{color:#737373;font-size:14px;margin:0;padding:0;border:0}
+.stj-nav__links a:hover{color:#171717}
+.stj-nav__cta{background:#171717;color:#fff!important;padding:8px 14px!important;border-radius:6px;font-weight:600;margin:0}
+.stj-nav__cta:hover{opacity:.88}
+@media(max-width:520px){.stj-nav__links{gap:14px;font-size:13px}}
+</style>
 </head>
 <body>
-    <header>
-    <div class="container">
-        <a href="/" class="logo">SpeechTechJobs</a>
-        <button class="mobile-menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-<nav id="mainNav">
-    <a href="/blog">Blog</a>
-    <a href="/blog/speech-tech-conferences-2026">Conferences</a>
-    <a href="/hire-talent" style="color: var(--accent); font-weight: 600;">For Employers</a>
-    <a href="#newsletter" class="nav-cta">Get the digest</a>
-</nav>
-
-    </div>
+    <header class="stj-nav">
+  <div class="stj-nav__in">
+    <a href="/" class="stj-nav__logo">SpeechTechJobs</a>
+    <nav class="stj-nav__links">
+      <a href="/jobs">Jobs</a>
+      <a href="/blog">Blog</a>
+      <a href="/hire-talent">For employers</a>
+      <a href="/#newsletter" class="stj-nav__cta">Get the digest</a>
+    </nav>
+  </div>
 </header>
 
     <section class="hero">
@@ -1045,20 +942,6 @@
                 }
             });
         });
-        
-        // Mobile menu toggle
-document.getElementById('menuToggle').addEventListener('click', function() {
-    this.classList.toggle('active');
-    document.getElementById('mainNav').classList.toggle('active');
-});
-
-// Close menu when clicking a link
-document.querySelectorAll('#mainNav a').forEach(link => {
-    link.addEventListener('click', function() {
-        document.getElementById('menuToggle').classList.remove('active');
-        document.getElementById('mainNav').classList.remove('active');
-    });
-});
     </script>
 <!-- brevo-ajax -->
 <script>

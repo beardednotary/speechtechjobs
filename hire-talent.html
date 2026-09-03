@@ -49,17 +49,40 @@
     <link rel="icon" type="image/png" href="/favicon.png" sizes="any">
     <link rel="apple-touch-icon" href="/favicon.png">
     <meta name="theme-color" content="#ffffff">
+<style id="stj-nav">
+.stj-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e5e5;margin:0;padding:0}
+.stj-nav *{box-sizing:border-box}
+.stj-nav__in{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.stj-nav a{text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.stj-nav__logo{font-size:16px;font-weight:700;color:#171717;letter-spacing:-.01em;margin:0}
+.stj-nav__links{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.stj-nav__links a{color:#737373;font-size:14px;margin:0;padding:0;border:0}
+.stj-nav__links a:hover{color:#171717}
+.stj-nav__cta{background:#171717;color:#fff!important;padding:8px 14px!important;border-radius:6px;font-weight:600;margin:0}
+.stj-nav__cta:hover{opacity:.88}
+@media(max-width:520px){.stj-nav__links{gap:14px;font-size:13px}}
+</style>
 </head>
 <body>
+<header class="stj-nav">
+  <div class="stj-nav__in">
+    <a href="/" class="stj-nav__logo">SpeechTechJobs</a>
+    <nav class="stj-nav__links">
+      <a href="/jobs">Jobs</a>
+      <a href="/blog">Blog</a>
+      <a href="/hire-talent">For employers</a>
+      <a href="/#newsletter" class="stj-nav__cta">Get the digest</a>
+    </nav>
+  </div>
+</header>
 
-    <header class="b2b-hero">
+    <section class="b2b-hero">
         <div class="container">
-            <a href="/" style="text-decoration: none; color: var(--muted); font-weight: 600; font-size: 14px;">← SPEECH TECH JOBS</a>
             <h1>Hire speech AI &amp;<br>ASR engineers</h1>
             <p>Tell us what you're building and the kind of engineer you need. We'll put the role in front of the speech-tech specialists who read SpeechTechJobs and point qualified people your way.</p>
             <a href="#hire-form" class="btn-primary">Tell us who you need</a>
         </div>
-    </header>
+    </section>
 
     <div class="container talent-section">
         <h2 style="font-size: 20px; margin-bottom: 24px;">How it works</h2>
