@@ -111,6 +111,26 @@
         .hero {
             padding: 80px 0 60px;
             background: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero-bg { display: none; }
         }
         
         h1 {
@@ -647,6 +667,74 @@
 </header>
 
     <section class="hero">
+        <svg class="hero-bg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" preserveAspectRatio="xMidYMid slice" fill="none">
+          <defs>
+            <radialGradient id="veil" cx="0.5" cy="0.48" r="0.58">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
+              <stop offset="52%" stop-color="#ffffff" stop-opacity="0.72"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+              <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#171717" flood-opacity="0.05"/>
+            </filter>
+            <filter id="soft-card" x="-60%" y="-60%" width="220%" height="220%">
+              <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#171717" flood-opacity="0.055"/>
+            </filter>
+            <g id="ico-wave" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"><path d="M2 12h2M6 8v8M10 5v14M14 9v6M18 7v10"/></g>
+            <g id="ico-wave2" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"><path d="M3 12h2.5M8 8.5v7M12 4.5v15M16 9.5v5M20.5 12H22"/></g>
+            <g id="ico-spectro" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="10" width="3" height="8" rx="1"/><rect x="8" y="6" width="3" height="12" rx="1"/><rect x="13" y="12" width="3" height="6" rx="1"/><rect x="18" y="8" width="3" height="10" rx="1"/></g>
+            <g id="ico-spectro2" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="10" width="3" height="8" rx="1"/><rect x="8" y="5" width="3" height="13" rx="1"/><rect x="13" y="11" width="3" height="7" rx="1"/><rect x="18" y="7" width="3" height="11" rx="1"/></g>
+            <g id="ico-mic" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 1 4 4v4a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4Z"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></g>
+            <g id="ico-bubble" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-4 4v-4H4z"/><path d="M9.5 9.2c0-1 .7-1.7 1.6-1.7M14 9.2c0-1 .7-1.7 1.6-1.7"/></g>
+            <g id="ico-play" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6.5 17 12l-8 5.5z"/></g>
+            <g id="ico-code" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 8.5-3 3.5 3 3.5M14.5 8.5l3 3.5-3 3.5"/></g>
+            <g id="ico-rings" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="1.5"/><path d="M8.5 9.2a5 5 0 0 0 0 5.6M15.5 9.2a5 5 0 0 1 0 5.6"/><path d="M5.8 6.6a8.5 8.5 0 0 0 0 10.8M18.2 6.6a8.5 8.5 0 0 1 0 10.8"/></g>
+            <g id="ico-globe" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.4 2.6 15.6 0 18M12 3c-2.6 2.4-2.6 15.6 0 18"/></g>
+            <g id="ico-headphones" fill="none" stroke="#0066ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="2.5" y="13" width="4.5" height="7" rx="2"/><rect x="17" y="13" width="4.5" height="7" rx="2"/></g>
+          </defs>
+          <rect width="1600" height="640" fill="#ffffff"/>
+          <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+            <g filter="url(#soft)"><rect x="96" y="64" width="80" height="80" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-wave" transform="translate(119,87) scale(1.4167)"/>
+            <g filter="url(#soft)"><rect x="212" y="150" width="72" height="72" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-spectro" transform="translate(233,171) scale(1.25)"/>
+            <g filter="url(#soft)"><rect x="60" y="214" width="64" height="64" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-mic" transform="translate(79,233) scale(1.0833)"/>
+            <g filter="url(#soft)"><rect x="318" y="54" width="68" height="68" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-bubble" transform="translate(338,74) scale(1.1667)"/>
+            <g filter="url(#soft)"><rect x="150" y="330" width="64" height="64" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-play" transform="translate(169,349) scale(1.0833)"/>
+            <g filter="url(#soft)"><rect x="36" y="414" width="72" height="72" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-code" transform="translate(57,435) scale(1.25)"/>
+            <g opacity="0.8"><g filter="url(#soft)"><rect x="270" y="452" width="64" height="64" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g><use href="#ico-rings" transform="translate(289,471) scale(1.0833)"/></g>
+            <g transform="rotate(-2.5 328 296)">
+              <g filter="url(#soft-card)"><rect x="196" y="246" width="264" height="100" rx="14" fill="#ffffff" stroke="#e5e5e5"/></g>
+              <circle cx="217" cy="269" r="3" fill="#0066ff"/>
+              <text x="232" y="272.5" font-size="9" letter-spacing="1.08" fill="#b4b4b4">NEW ROLE</text>
+              <text x="214" y="299" font-size="13" font-weight="500" letter-spacing="-0.13" fill="#171717">Senior ASR Engineer</text>
+              <rect x="214" y="311" width="228" height="1" fill="#e5e5e5"/>
+              <text x="214" y="332" font-size="10" fill="#c0c0c0">Speech · Full-time</text>
+            </g>
+            <g filter="url(#soft)"><rect x="1416" y="58" width="80" height="80" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-globe" transform="translate(1439,81) scale(1.4167)"/>
+            <g filter="url(#soft)"><rect x="1304" y="142" width="72" height="72" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-headphones" transform="translate(1325,163) scale(1.25)"/>
+            <g filter="url(#soft)"><rect x="1492" y="206" width="64" height="64" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-wave2" transform="translate(1511,225) scale(1.0833)"/>
+            <g opacity="0.85"><g filter="url(#soft)"><rect x="1206" y="48" width="64" height="64" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g><use href="#ico-rings" transform="translate(1225,67) scale(1.0833)"/></g>
+            <g filter="url(#soft)"><rect x="1374" y="340" width="68" height="68" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-spectro2" transform="translate(1394,360) scale(1.1667)"/>
+            <g filter="url(#soft)"><rect x="1472" y="436" width="72" height="72" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g>
+            <use href="#ico-mic" transform="translate(1493,457) scale(1.25)"/>
+            <g opacity="0.8"><g filter="url(#soft)"><rect x="1250" y="458" width="64" height="64" rx="16" fill="#ffffff" stroke="#e5e5e5"/></g><use href="#ico-bubble" transform="translate(1269,477) scale(1.0833)"/></g>
+            <g transform="rotate(2 1326.5 253.5)">
+              <g filter="url(#soft-card)"><rect x="1267" y="236" width="119" height="35" rx="17.5" fill="#ffffff" stroke="#e5e5e5"/></g>
+              <circle cx="1286" cy="253.5" r="3" fill="#0066ff"/>
+              <text x="1298" y="257.5" font-size="11" font-weight="500" fill="#171717">Remote-first</text>
+            </g>
+          </g>
+          <rect width="1600" height="640" fill="url(#veil)"/>
+        </svg>
         <div class="container">
             <h1>Jobs in speech technology &amp; voice&nbsp;AI</h1>
             <p class="lead">Browse open ASR, TTS, speech-analytics and voice-AI roles by specialty. Get a weekly digest of who's hiring, and read the guides on salaries, interviews, and breaking in.</p>
