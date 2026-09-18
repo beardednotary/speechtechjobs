@@ -374,7 +374,8 @@
 
 <p>Speech Analytics has evolved from simple keyword spotting to sophisticated "Conversation Intelligence"—extracting sentiment, speaker emotion, competitive mentions, and sales insights from massive call center datasets. These roles blend ASR expertise with data engineering and business intelligence, helping enterprises turn millions of customer conversations into actionable insights.</p>
 
-<p><strong>Live openings:</strong> we don't keep a running list on this page &mdash; current roles go out in the <a href="#newsletter">weekly digest</a>. Below is the market picture: demand, skills, and compensation.</p>
+<div style="margin-bottom:8px;"><!-- STJ:SPECIALTY_JOBS:speech-analytics-jobs --><p style="margin-bottom:16px;"><strong>Live openings:</strong> 1 Speech Analytics role from the last 2 digests &mdash; <a href="/jobs">see all open roles</a>.</p>
+<a href="https://job-boards.greenhouse.io/gongio/jobs/4395203006" target="_blank" rel="noopener" style="display:block;background:#fff;border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--fg);"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;"><span style="font-size:16px;font-weight:600;">Backend Engineer, Communications Capture</span><span style="font-size:12px;color:var(--muted);white-space:nowrap;">Posted Sep 15</span></div><div style="font-size:14px;color:var(--muted);margin-top:2px;">Gong &middot; Dublin, Ireland (hybrid, 3 office days/week) &middot; compensation not listed</div><div style="font-size:13px;color:var(--fg);margin-top:8px;">Builds and scales the pipelines that capture customer calls, emails and video-conferencing audio into Gong's Revenue Intelligence platform &mdash; the raw data underneath its speech-based analytics. Java/Spring Boot, Kafka/SQS, AWS/GCP/Azure. 5+ years backend engineering; no speech-specific background required.</div><div style="font-size:12px;color:var(--accent);font-weight:600;margin-top:10px;">View posting &rarr;</div></a><!-- /STJ:SPECIALTY_JOBS --></div>
 
 <div class="market-stats">
     <div class="stat-card">
@@ -549,6 +550,7 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
       function done(ok, msg) {
         if (ok) {
+          gtag('event', 'sign_up', { method: 'newsletter_or_lead_form' });
           var to = f.getAttribute('data-redirect');
           if (to) { window.location.href = to; return; }
           f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — we’ll be in touch by email.</p>';
@@ -563,6 +565,19 @@
         .catch(function () { done(true); });
     });
   });
+})();
+</script>
+<!-- outbound-click-tracking -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="http"]') : null;
+    if (!a) return;
+    if (a.href.indexOf('speechtechjobs.com') !== -1) return;
+    if (typeof gtag === 'function') {
+      gtag('event', 'outbound_click', { link_url: a.href, link_text: (a.textContent || '').trim().slice(0, 100) });
+    }
+  }, true);
 })();
 </script>
 </body>

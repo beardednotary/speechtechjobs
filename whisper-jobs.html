@@ -16,6 +16,15 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://speechtechjobs.com/og-default.png">
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+
     <style>
         :root {
             --bg: #fafafa;
@@ -374,6 +383,8 @@
 
 <p>Since OpenAI released Whisper in 2022 it has become a default choice for speech recognition at startups and scale-ups. Companies increasingly hire for <strong>Whisper</strong> specifically &mdash; not just general ASR &mdash; to fine-tune, optimize, and run it in production. This page covers what those roles pay, the skills they screen for, and where they're posted.</p>
 
+<div style="margin-bottom:16px;"><!-- STJ:SPECIALTY_JOBS:whisper-jobs --><p><strong>Live openings:</strong> no Whisper roles in this week’s digest &mdash; <a href="/jobs">see all open roles</a> or <a href="#newsletter">get the next digest</a>.</p><!-- /STJ:SPECIALTY_JOBS --></div>
+
 <div class="market-stats">
     <div class="stat-card">
         <div class="stat-label">Typical comp</div>
@@ -589,6 +600,7 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
       function done(ok, msg) {
         if (ok) {
+          gtag('event', 'sign_up', { method: 'newsletter_or_lead_form' });
           var to = f.getAttribute('data-redirect');
           if (to) { window.location.href = to; return; }
           f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — we’ll be in touch by email.</p>';
@@ -603,6 +615,19 @@
         .catch(function () { done(true); });
     });
   });
+})();
+</script>
+<!-- outbound-click-tracking -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="http"]') : null;
+    if (!a) return;
+    if (a.href.indexOf('speechtechjobs.com') !== -1) return;
+    if (typeof gtag === 'function') {
+      gtag('event', 'outbound_click', { link_url: a.href, link_text: (a.textContent || '').trim().slice(0, 100) });
+    }
+  }, true);
 })();
 </script>
 </body>

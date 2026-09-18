@@ -684,6 +684,7 @@ Speechify does not discriminate on the basis of race, national origin, gender, g
       if (btn) { btn.disabled = true; btn.textContent = 'Submitting\u2026'; }
       function done(ok, msg) {
         if (ok) {
+          gtag('event', 'sign_up', { method: 'newsletter_or_lead_form' });
           var to = f.getAttribute('data-redirect');
           if (to) { window.location.href = to; return; }
           f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks \u2014 check your inbox to confirm.</p>';
@@ -698,6 +699,19 @@ Speechify does not discriminate on the basis of race, national origin, gender, g
         .catch(function () { done(true); });
     });
   });
+})();
+</script>
+<!-- outbound-click-tracking -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="http"]') : null;
+    if (!a) return;
+    if (a.href.indexOf('speechtechjobs.com') !== -1) return;
+    if (typeof gtag === 'function') {
+      gtag('event', 'outbound_click', { link_url: a.href, link_text: (a.textContent || '').trim().slice(0, 100) });
+    }
+  }, true);
 })();
 </script>
 </body>

@@ -15,6 +15,16 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://speechtechjobs.com/og-default.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKVZKXG57F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZKVZKXG57F');
+    </script>
+
     <meta name="keywords" content="embedded voice AI jobs, edge AI jobs, on-device ASR, TensorFlow Lite jobs, embedded speech recognition, IoT voice engineer">
 
 <script type="application/ld+json">
@@ -550,7 +560,10 @@
 
 <p>The "Edge AI" revolution is pushing voice recognition onto appliances, wearables, automotive systems, and IoT devices—anywhere privacy, latency, or connectivity matter. Embedded Voice AI engineers sit at the intersection of hardware and software, building ASR systems that run on resource-constrained devices without cloud connectivity.</p>
 
-<p><strong>Live openings:</strong> we don't keep a running list on this page &mdash; current roles go out in the <a href="#newsletter">weekly digest</a>. Below is the market picture: demand, skills, and compensation.</p>
+<div style="margin-bottom:8px;"><!-- STJ:SPECIALTY_JOBS:embedded-voice-ai-jobs --><p style="margin-bottom:16px;"><strong>Live openings:</strong> 3 Embedded Voice AI roles from the last 2 digests &mdash; <a href="/jobs">see all open roles</a>.</p>
+<a href="https://jobs.ashbyhq.com/Deepgram/94ae2781-a85f-493a-86c1-ff85a9289355?employmentType=FullTime" target="_blank" rel="noopener" style="display:block;background:#fff;border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--fg);"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;"><span style="font-size:16px;font-weight:600;">Applied ML Engineer, Edge Devices</span><span style="font-size:12px;color:var(--muted);white-space:nowrap;">Posted Sep 15</span></div><div style="font-size:14px;color:var(--muted);margin-top:2px;">Deepgram &middot; Remote (US) &middot; $155K&ndash;$245K + equity + bonus</div><div style="font-size:13px;color:var(--fg);margin-top:8px;">Ports Deepgram's speech models to non-NVIDIA and edge hardware &mdash; quantization, operator swaps, graph rewrites &mdash; and validates accuracy and latency on real devices. Required: hands-on production experience deploying models to edge or non-NVIDIA hardware; strong Python and PyTorch. Speech or streaming-model experience is a plus, not required.</div><div style="font-size:12px;color:var(--accent);font-weight:600;margin-top:10px;">View posting &rarr;</div></a>
+<a href="https://wellfound.com/jobs/2421931-software-engineer" target="_blank" rel="noopener" style="display:block;background:#fff;border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--fg);"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;"><span style="font-size:16px;font-weight:600;">Software Engineer</span><span style="font-size:12px;color:var(--muted);white-space:nowrap;">Posted Sep 15</span></div><div style="font-size:14px;color:var(--muted);margin-top:2px;">Picovoice &middot; Vancouver, Canada (onsite; no visa sponsorship) &middot; $75K&ndash;$150K CAD + equity</div><div style="font-size:13px;color:var(--fg);margin-top:8px;">General software engineering (C, Python, TypeScript) at an on-device voice, language and vision AI company. A background in speech recognition, synthesis or speaker recognition is called out as a plus, not required. 2+ years experience.</div><div style="font-size:12px;color:var(--accent);font-weight:600;margin-top:10px;">View posting &rarr;</div></a>
+<a href="https://www.metacareers.com/profile/job_details/1587760759663502/" target="_blank" rel="noopener" style="display:block;background:#fff;border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--fg);"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;"><span style="font-size:16px;font-weight:600;">Audio Systems Engineer</span><span style="font-size:12px;color:var(--muted);white-space:nowrap;">Posted Sep 8</span></div><div style="font-size:14px;color:var(--muted);margin-top:2px;">Meta &middot; Sunnyvale, CA or Redmond, WA &middot; $144K&ndash;$204K + bonus + equity</div><div style="font-size:13px;color:var(--fg);margin-top:8px;">Audio system design, acoustic simulation and DSP for next-generation wearables: tuning and debugging real-time audio capture, with beamforming, echo cancellation and noise suppression on the preferred list. 6+ years; MATLAB and Python. This is a hardware-audio role, not ASR.</div><div style="font-size:12px;color:var(--accent);font-weight:600;margin-top:10px;">View posting &rarr;</div></a><!-- /STJ:SPECIALTY_JOBS --></div>
 
 <div class="market-stats">
     <div class="stat-card">
@@ -721,6 +734,7 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
       function done(ok, msg) {
         if (ok) {
+          gtag('event', 'sign_up', { method: 'newsletter_or_lead_form' });
           var to = f.getAttribute('data-redirect');
           if (to) { window.location.href = to; return; }
           f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — we’ll be in touch by email.</p>';
@@ -735,6 +749,19 @@
         .catch(function () { done(true); });
     });
   });
+})();
+</script>
+<!-- outbound-click-tracking -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="http"]') : null;
+    if (!a) return;
+    if (a.href.indexOf('speechtechjobs.com') !== -1) return;
+    if (typeof gtag === 'function') {
+      gtag('event', 'outbound_click', { link_url: a.href, link_text: (a.textContent || '').trim().slice(0, 100) });
+    }
+  }, true);
 })();
 </script>
 </body>

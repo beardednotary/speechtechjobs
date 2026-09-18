@@ -11,8 +11,15 @@
        <url><loc>https://speechtechjobs.com/blog/who-is-hiring-speech-ai-YYYY-MM-DD</loc>
             <lastmod>YYYY-MM-DD</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   4. Also add a card to blog/index.html (copy an existing <a class="article-card"> block).
-  5. Deploy, then:  python indexnow.py https://speechtechjobs.com/blog/who-is-hiring-speech-ai-YYYY-MM-DD
-  6. In Brevo: new campaign -> paste the intro + role lists -> subject line = the hook
+  5. Run:  python build_jobs.py
+     This regenerates the "latest digest" blurb + open-roles cards on /jobs, the
+     homepage, all 7 specialty pages, and the two blog "next steps" mini-lists,
+     from this post and the one before it. Do this EVERY time or those sections
+     go stale. Skipping it is exactly how /jobs ended up pointing at a two-week-old
+     digest before.
+  6. Run:  python gen_feed.py
+  7. Deploy, then:  python indexnow.py https://speechtechjobs.com/blog/who-is-hiring-speech-ai-YYYY-MM-DD
+  8. In Brevo: new campaign -> paste the intro + role lists -> subject line = the hook
      -> send to the NEWSLETTER list only (not employer contacts).
   ============================================================================
 -->
@@ -201,6 +208,7 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
       function done(ok, msg) {
         if (ok) {
+          gtag('event', 'sign_up', { method: 'newsletter_or_lead_form' });
           var to = f.getAttribute('data-redirect');
           if (to) { window.location.href = to; return; }
           f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — check your inbox to confirm.</p>';
@@ -215,6 +223,19 @@
         .catch(function () { done(true); });
     });
   });
+})();
+</script>
+<!-- outbound-click-tracking -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="http"]') : null;
+    if (!a) return;
+    if (a.href.indexOf('speechtechjobs.com') !== -1) return;
+    if (typeof gtag === 'function') {
+      gtag('event', 'outbound_click', { link_url: a.href, link_text: (a.textContent || '').trim().slice(0, 100) });
+    }
+  }, true);
 })();
 </script>
 </body>
