@@ -155,8 +155,8 @@ ICASSP 2027 and Interspeech 2027 calls opening).
 |---|---|---|
 | ASRU 2026: dates, deadlines, what to expect | `asru 2026`, `ieee asru 2026`, `asru 2026 call for paper` | `/asr-research-jobs` |
 | Speech-AI conference deadline tracker 2026–2027 (living table) | `speech conferences 2026`, `upcoming speech/audio conference deadlines` | conferences post |
-| Interspeech 2027: dates, deadlines, venue, cost (living page) | `interspeech 2027`, `interspeech deadline`, `interspeech dates` | `/asr-research-jobs` |
-| ICASSP 2027: dates, acceptance rate, deadlines | `icassp deadline`, `icassp acceptance rate`, `is icassp tier 1` | `/asr-research-jobs` |
+| ~~Interspeech 2026: dates, venue, programme (living page)~~ **Shipped 2026-09-23** — `/blog/interspeech-2026` | `interspeech 2026`, `interspeech dates`, `interspeech 2026 venue` | `/asr-research-jobs` |
+| ~~ICASSP 2027: dates, acceptance rate, deadlines~~ **Shipped 2026-09-23** — `/blog/icassp-2027` | `icassp deadline`, `icassp acceptance rate`, `is icassp tier 1` | `/asr-research-jobs` |
 
 **Now:** add an email-capture block to the existing `speech-tech-conferences-2026`
 post — it's the top entry point and currently has none.
@@ -207,9 +207,9 @@ that intent and route it to `/hire-whisper-engineers`.
 | **Sep 1** | Issue #1 | Is Kaldi still used in 2026? | Finalize tracked-company list; add email capture to conferences post |
 | **Sep 8** | Issue #2 | ASRU 2026: dates, deadlines, what to expect | Build the Brevo digest template |
 | **Sep 15** | Issue #3 | How to hire a Whisper engineer in 2026 | — |
-| **Sep 22** | Issue #4 | Kaldi vs Whisper for self-hosted / enterprise ASR | Internal-link audit pass 1 |
+| **Sep 22** | Issue #4 | Kaldi vs Whisper for self-hosted / enterprise ASR | ~~Internal-link audit pass 1~~ **Done 2026-09-23** |
 | **Sep 29** | Issue #5 | TTS / voice synthesis interview questions | **Month 1 review** (GSC + Bing + Brevo) |
-| **Oct 6** | Issue #6 | Speech-AI conference deadline tracker 2026–2027 | Refresh existing `speech-tech-conferences-2026` post |
+| **Oct 6** | Issue #6 | _(freed — Interspeech + ICASSP shipped early)_ | Refresh existing `speech-tech-conferences-2026` post |
 | **Oct 13** | Issue #7 | Voice AI engineer salary & skills 2026 | — |
 | **Oct 20** | Issue #8 | Next-gen Kaldi: k2, icefall, sherpa explained | Check which new URLs are indexed |
 | **Oct 27** | Issue #9 | Self-hosted Whisper vs commercial ASR API cost breakdown | **Month 2 review** |
