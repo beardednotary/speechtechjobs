@@ -7,6 +7,8 @@
     { "source": "/collections/:path*", "destination": "/", "permanent": true },
     { "source": "/submit-profile", "destination": "/", "permanent": true },
     { "source": "/submit-profile/:path*", "destination": "/", "permanent": true },
+    { "source": "/whisper-consultants", "destination": "/hire-whisper-engineers", "permanent": true },
+    { "source": "/whisper-consultants.html", "destination": "/hire-whisper-engineers", "permanent": true },
     { "source": "/speech-tech-conferences-2026", "destination": "/blog/speech-tech-conferences-2026", "permanent": true },
     { "source": "/speech-tech-conferences-2026.html", "destination": "/blog/speech-tech-conferences-2026", "permanent": true },
     { "source": "/asr-benchmarks-2026", "destination": "/blog/asr-benchmarks-2026", "permanent": true },
