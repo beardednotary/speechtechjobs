@@ -5,8 +5,26 @@
     <link>https://speechtechjobs.com/blog</link>
     <description>Guides on speech-technology careers, salaries, interviews, tools, and hiring.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2026 07:34:37 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 09:02:57 +0000</lastBuildDate>
     <atom:link href="https://speechtechjobs.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>ICASSP 2027: Deadline, Dates and Acceptance Rate</title>
+      <link>https://speechtechjobs.com/blog/icassp-2027</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/icassp-2027</guid>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
+      <description>ICASSP 2027 is 16-21 May 2027 in Toronto. Papers due 23 September 2026, notification 13 January 2027. Acceptance rate, tier, and how it compares to Interspeech.</description>
+      <category>Conferences</category>
+    </item>
+
+    <item>
+      <title>Interspeech 2026: Dates, Venue and Programme (Sydney)</title>
+      <link>https://speechtechjobs.com/blog/interspeech-2026</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/interspeech-2026</guid>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Interspeech 2026 is the 27th edition, 28 September to 1 October 2026 at ICC Sydney. Papers closed 25 February. Programme, registration, and the 2027 deadline.</description>
+      <category>Conferences</category>
+    </item>
 
     <item>
       <title>Who's Hiring in Speech AI — September 22, 2026</title>
@@ -72,11 +90,11 @@
     </item>
 
     <item>
-      <title>ASR Benchmarks 2026 | Word Error Rates for Whisper, Conformer, Wav2Vec</title>
+      <title>ASR Benchmarks 2026: Whisper Large-v3 Hits 1.4% WER</title>
       <link>https://speechtechjobs.com/blog/asr-benchmarks-2026</link>
       <guid isPermaLink="true">https://speechtechjobs.com/blog/asr-benchmarks-2026</guid>
       <pubDate>Sun, 18 Jan 2026 12:00:00 +0000</pubDate>
-      <description>Comprehensive ASR benchmark comparison for 2026. WER results for Whisper, Conformer-CTC, Wav2Vec 2.0, Kaldi on LibriSpeech, Common Voice, and production datasets.</description>
+      <description>LibriSpeech, Common Voice and TED-LIUM word error rates for Whisper Large-v3, Conformer-CTC, Wav2Vec 2.0 and HuBERT, with parameter counts and production notes.</description>
     </item>
 
     <item>
@@ -125,29 +143,29 @@
     </item>
 
     <item>
-      <title>What is Kaldi? Complete Guide for Speech Engineers (2026)</title>
+      <title>What Is Kaldi? The Speech Recognition Toolkit, Explained</title>
       <link>https://speechtechjobs.com/blog/what-is-kaldi-complete-guide-2026</link>
       <guid isPermaLink="true">https://speechtechjobs.com/blog/what-is-kaldi-complete-guide-2026</guid>
       <pubDate>Sat, 17 Jan 2026 12:00:00 +0000</pubDate>
-      <description>Complete guide to Kaldi speech recognition toolkit. Learn what Kaldi is, how it works, when to use it vs Whisper, and career opportunities for Kaldi engineers in 2026.</description>
+      <description>Kaldi is an open-source C++ speech recognition toolkit. What it does, how it works, whether it still beats Whisper in 2026, and who is hiring Kaldi engineers.</description>
       <category>Technical Guide</category>
     </item>
 
     <item>
-      <title>Whisper AI Jobs: Salary, Skills &amp; Companies Hiring (2026)</title>
+      <title>Whisper AI Engineer Salary 2026: $140K-$230K</title>
       <link>https://speechtechjobs.com/blog/whisper-ai-jobs-salary-guide-2026</link>
       <guid isPermaLink="true">https://speechtechjobs.com/blog/whisper-ai-jobs-salary-guide-2026</guid>
       <pubDate>Sat, 17 Jan 2026 12:00:00 +0000</pubDate>
-      <description>Complete guide to Whisper AI career opportunities. Discover salaries ($140K-$230K), required skills, companies hiring, and how to land a Whisper specialist role in 2026.</description>
+      <description>What Whisper engineers earn by level, the skills every posting asks for, and who is hiring, from $95K junior roles to $350K+ at staff and principal.</description>
       <category>Career Guide</category>
     </item>
 
     <item>
-      <title>Kaldi vs Whisper vs Wav2Vec: Which ASR Framework to Learn in 2026</title>
+      <title>Kaldi vs Whisper vs Wav2Vec: Which to Learn in 2026</title>
       <link>https://speechtechjobs.com/blog/kaldi-vs-whisper-vs-wav2vec-2026</link>
       <guid isPermaLink="true">https://speechtechjobs.com/blog/kaldi-vs-whisper-vs-wav2vec-2026</guid>
       <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
-      <description>Complete comparison of Kaldi, Whisper, and Wav2Vec 2.0 for speech recognition. Learn which framework to focus on for your career in 2026.</description>
+      <description>Head to head on accuracy, setup cost, deployment and hiring demand, plus which one to learn first depending on whether you want research or production work.</description>
     </item>
 
     <item>
@@ -159,19 +177,19 @@
     </item>
 
     <item>
-      <title>[2026] 30+ ASR Interview Questions &amp; Answers (Master the Research Interview)</title>
+      <title>31 ASR Interview Questions, Answered (2026 Prep Guide)</title>
       <link>https://speechtechjobs.com/blog/speech-recognition-interview-questions-2026</link>
       <guid isPermaLink="true">https://speechtechjobs.com/blog/speech-recognition-interview-questions-2026</guid>
       <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
-      <description>30+ ASR and speech-ML interview questions with answers: core concepts, coding, and system design, plus what a strong answer actually covers.</description>
+      <description>Thirty-one real speech-recognition interview questions with answers: core concepts, coding, system design, diarization, and production deployment.</description>
     </item>
 
     <item>
-      <title>Speech Tech Conferences 2026 | ICASSP, Interspeech, ASRU Dates &amp; Deadlines</title>
+      <title>Speech Tech Conferences 2026: Dates and Deadlines</title>
       <link>https://speechtechjobs.com/blog/speech-tech-conferences-2026</link>
       <guid isPermaLink="true">https://speechtechjobs.com/blog/speech-tech-conferences-2026</guid>
       <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
-      <description>Complete calendar of speech technology conferences in 2026. ICASSP, Interspeech, ASRU dates, paper deadlines, locations, and networking opportunities for ASR researchers.</description>
+      <description>ICASSP, Interspeech, SLT, Odyssey and the speech tracks at NeurIPS and ICML: submission deadlines, dates, locations, and why there is no ASRU in 2026.</description>
     </item>
 
     <item>
