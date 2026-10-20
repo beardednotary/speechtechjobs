@@ -5,8 +5,17 @@
     <link>https://speechtechjobs.com/blog</link>
     <description>Guides on speech-technology careers, salaries, interviews, tools, and hiring.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2026 08:50:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 06:28:12 +0000</lastBuildDate>
     <atom:link href="https://speechtechjobs.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Who's Hiring in Speech AI — October 20, 2026</title>
+      <link>https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-10-20</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-10-20</guid>
+      <pubDate>Tue, 20 Oct 2026 12:00:00 +0000</pubDate>
+      <description>9 speech-AI roles hiring the week of October 20, 2026: a founding speech LLM lab at Plaud at $195-365K; applied audio research at Cartesia up to $350K; speech-to-text science at Amazon Alexa Enterprise; audio AI research at Dolby; a speech linguist at ServiceNow; plus voice agents at TRANZACT, Sandbar, Blooming Health and DrFirst ambient listening.</description>
+      <category>Weekly Digest</category>
+    </item>
 
     <item>
       <title>Who's Hiring in Speech AI — October 13, 2026</title>
@@ -217,14 +226,6 @@
       <guid isPermaLink="true">https://speechtechjobs.com/blog/speech-tech-conferences-2026</guid>
       <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
       <description>ICASSP, Interspeech, SLT, Odyssey and the speech tracks at NeurIPS and ICML: submission deadlines, dates, locations, and why there is no ASRU in 2026.</description>
-    </item>
-
-    <item>
-      <title>How to Become a Speech AI Engineer (2026 Roadmap): PhD to Industry</title>
-      <link>https://speechtechjobs.com/blog/how-to-break-into-speech-tech-2026</link>
-      <guid isPermaLink="true">https://speechtechjobs.com/blog/how-to-break-into-speech-tech-2026</guid>
-      <pubDate>Wed, 14 Jan 2026 12:00:00 +0000</pubDate>
-      <description>The 2026 guide to breaking into speech recognition: the fastest paths in (with and without a PhD), the portfolio projects that land interviews, and where the roles are.</description>
     </item>
 
   </channel>

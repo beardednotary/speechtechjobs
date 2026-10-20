@@ -91,7 +91,7 @@ def parse_digest(ddate, path):
     for h2 in re.finditer(r"<h2>(.*?)</h2>\s*<ul>(.*?)</ul>", s, re.S):
         category = html.unescape(h2.group(1)).strip()
         ul = h2.group(2)
-        for li in re.finditer(r"<li>(.*?)</li>", ul, re.S):
+        for li in re.finditer(r"<li[^>]*>(.*?)</li>", ul, re.S):
             block = li.group(1)
             ms = re.search(r"<strong>(.*?)</strong>", block, re.S)
             if not ms:
