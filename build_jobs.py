@@ -14,6 +14,7 @@ comments in:
   - the 7 specialty pages (voice-biometrics-jobs.html, etc.)
   - blog/speech-recognition-engineer-salary-2026.html (general mini-list)
   - blog/what-is-kaldi-complete-guide-2026.html (open-source-asr mini-list)
+  - every digest's STJ:DIGEST_NAV block (previous/next week links)
 
 Nothing here touches the digest posts themselves — those are still written
 by hand from templates/digest-template.html.
@@ -294,6 +295,24 @@ def main():
         s = replace_marker_by_slug(s, "BLOG_JOBS", slug, "\n" + inner + "\n", path)
         path.write_text(s, encoding="utf-8")
         print(f"{path.name}: {len(roles)} roles listed")
+
+    # ---- digest prev/next nav ----
+    chrono = list(reversed(digests))
+    for i, (ddate, path) in enumerate(chrono):
+        s = path.read_text(encoding="utf-8")
+        if "STJ:DIGEST_NAV" not in s:
+            continue
+        links = []
+        if i > 0:
+            pd, pp = chrono[i - 1]
+            links.append(f'<a href="/blog/{pp.stem}">&larr; Previous week: {pd.strftime("%B")} {pd.day} digest</a>')
+        if i < len(chrono) - 1:
+            nd, np_ = chrono[i + 1]
+            links.append(f'<a href="/blog/{np_.stem}">Next week: {nd.strftime("%B")} {nd.day} digest &rarr;</a>')
+        inner = '<p style="margin-top:16px;">' + " &middot; ".join(links) + "</p>" if links else ""
+        s = replace_marker(s, "DIGEST_NAV", inner, path)
+        path.write_text(s, encoding="utf-8")
+    print(f"digest nav: linked {len(chrono)} digests")
 
     print(f"\nDone. Latest digest: {latest_label} ({len(latest_roles)} roles). Pool: {len(pool)} roles from {len(used)} digests.")
 

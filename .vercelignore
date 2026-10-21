@@ -4,3 +4,7 @@ indexnow.py
 templates/
 starter-kit-content.md
 gen_feed.py
+gsc_index_check.py
+gsc_client.json
+gsc_token.json
+gsc_reports/
