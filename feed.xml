@@ -5,8 +5,17 @@
     <link>https://speechtechjobs.com/blog</link>
     <description>Guides on speech-technology careers, salaries, interviews, tools, and hiring.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Oct 2026 06:28:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 06:58:07 +0000</lastBuildDate>
     <atom:link href="https://speechtechjobs.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Who's Hiring in Speech AI — October 27, 2026</title>
+      <link>https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-10-27</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-10-27</guid>
+      <pubDate>Tue, 27 Oct 2026 12:00:00 +0000</pubDate>
+      <description>11 speech-AI roles hiring the week of October 27, 2026: audio deepfake detection at Zoom (closes Oct 28); foundational audio research at Google; two real-time conversational AI roles at Amazon AGI; voice-agent speech generation at Microsoft; a director of Agentforce Voice Models at Salesforce up to $344.7K; plus Cresta, Deepgram, Liquid AI, Hippocratic AI and Technatomy.</description>
+      <category>Weekly Digest</category>
+    </item>
 
     <item>
       <title>Who's Hiring in Speech AI — October 20, 2026</title>
@@ -218,14 +227,6 @@
       <guid isPermaLink="true">https://speechtechjobs.com/blog/speech-recognition-interview-questions-2026</guid>
       <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
       <description>Thirty-one real speech-recognition interview questions with answers: core concepts, coding, system design, diarization, and production deployment.</description>
-    </item>
-
-    <item>
-      <title>Speech Tech Conferences 2026: Dates and Deadlines</title>
-      <link>https://speechtechjobs.com/blog/speech-tech-conferences-2026</link>
-      <guid isPermaLink="true">https://speechtechjobs.com/blog/speech-tech-conferences-2026</guid>
-      <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
-      <description>ICASSP, Interspeech, SLT, Odyssey and the speech tracks at NeurIPS and ICML: submission deadlines, dates, locations, and why there is no ASRU in 2026.</description>
     </item>
 
   </channel>
