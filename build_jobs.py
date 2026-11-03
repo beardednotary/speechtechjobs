@@ -12,8 +12,7 @@ comments in:
   - jobs.html            (latest-digest blurb + full open-roles list)
   - index.html           (homepage "Open roles this week")
   - the 7 specialty pages (voice-biometrics-jobs.html, etc.)
-  - blog/speech-recognition-engineer-salary-2026.html (general mini-list)
-  - blog/what-is-kaldi-complete-guide-2026.html (open-source-asr mini-list)
+  - the blog guides in BLOG_JOB_TARGETS (an "open roles" mini-list each)
   - every digest's STJ:DIGEST_NAV block (previous/next week links)
 
 Nothing here touches the digest posts themselves — those are still written
@@ -32,7 +31,20 @@ DIGESTS_TO_USE = 2          # how many recent weekly digests to pull roles from
 JOBS_PAGE_MAX = 20          # cap on /jobs
 HOME_MAX = 6                # cap on homepage
 SPECIALTY_MAX = 4           # cap per specialty page
-BLOG_MINI_MAX = 3           # cap on blog "next steps" mini-lists
+BLOG_MINI_MAX = 3           # cap on blog "open roles" mini-lists
+
+# Blog guide -> specialty its STJ:BLOG_JOBS:<slug> mini-list draws from ("general" = newest roles).
+# Guides are where most organic traffic lands, so each high-traffic guide gets a block near the top.
+BLOG_JOB_TARGETS = {
+    "speech-recognition-engineer-salary-2026": "general",
+    "what-is-kaldi-complete-guide-2026": "open-source-asr-jobs",
+    "speech-tech-conferences-2026": "asr-research-jobs",
+    "asr-benchmarks-2026": "general",
+    "icassp-2027": "asr-research-jobs",
+    "is-kaldi-still-used-2026": "open-source-asr-jobs",
+    "speech-recognition-interview-questions-2026": "general",
+    "asru-2026": "asr-research-jobs",
+}
 
 SPECIALTY_LABELS = {
     "whisper-jobs": "Whisper",
@@ -181,6 +193,20 @@ def render_card(role, note_chars=None):
     )
 
 
+def mini_list(primary, pool, n):
+    """Up to n roles, one per company: specialty matches first, topped up with the newest roles."""
+    picked, companies = [], set()
+    for role in list(primary) + list(pool):
+        company = re.sub(r"\s*\(.*?\)", "", role["company"])
+        if len(picked) == n:
+            break
+        if company in companies:
+            continue
+        picked.append(role)
+        companies.add(company)
+    return picked
+
+
 def render_list(roles, note_chars=None, empty_html=""):
     if not roles:
         return empty_html
@@ -280,13 +306,12 @@ def main():
         print(f"{slug}.html: {len(roles)} roles listed")
 
     # ---- blog mini-lists ----
-    blog_targets = [
-        (BLOG / "speech-recognition-engineer-salary-2026.html", "general", pool[:BLOG_MINI_MAX]),
-        (BLOG / "what-is-kaldi-complete-guide-2026.html", "open-source-asr-jobs", by_specialty["open-source-asr-jobs"][:BLOG_MINI_MAX]),
-    ]
-    for path, slug, roles in blog_targets:
+    for stem, slug in BLOG_JOB_TARGETS.items():
+        path = BLOG / f"{stem}.html"
         if not path.exists():
             continue
+        primary = pool if slug == "general" else by_specialty[slug]
+        roles = mini_list(primary, pool, BLOG_MINI_MAX)
         s = path.read_text(encoding="utf-8")
         if roles:
             inner = render_list(roles, note_chars=140)
