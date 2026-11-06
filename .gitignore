@@ -7,3 +7,8 @@ __pycache__/
 gsc_client.json
 gsc_token.json
 gsc_reports/
+
+# fetch_jobs.py output: the role archive is the site's proprietary data, so it
+# stays out of this public repo (back it up privately). Candidates are scratch.
+data/jobs-archive.json
+data/candidates/
