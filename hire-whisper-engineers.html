@@ -167,6 +167,46 @@
         })(window, document, "clarity", "script", "yl416x2gp1");
     </script>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to hire a Whisper developer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For contract work, a proof of concept typically runs $5K-$10K over 1-2 weeks, a production deployment $20K-$40K over 4-6 weeks, and domain fine-tuning $15K-$25K. For a full-time hire, posted base pay for ML and inference engineers at speech AI companies has a median range of about $180K-$250K as of November 2026, before equity and bonus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I hire a Whisper contractor or a full-time engineer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A contractor fits a defined project such as a proof of concept, a deployment or a cost-reduction pass. Hire full-time when speech is core to the product and the model will need ongoing tuning, monitoring and new languages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What skills should a Whisper developer have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Look for fast inference (faster-whisper or CTranslate2), fine-tuning with a held-out WER evaluation on your own audio, voice activity detection and chunking for long recordings, diarization, and GPU serving. For on-device work, whisper.cpp experience matters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to put Whisper into production?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A typical production deployment, with batched inference behind an API, monitoring and load testing, takes about 4-6 weeks. A proof of concept on your own audio takes 1-2 weeks."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="stj-nav">
@@ -273,6 +313,30 @@
             <p style="font-size: 15px; color: var(--muted); margin-top: 32px;">Not sure whether you need a contractor or a hire? Our guide on <a href="/blog/how-to-hire-a-whisper-engineer-2026" style="color: var(--accent);">how to hire a Whisper engineer</a> walks through contract versus in-house versus agency.</p>
         </section>
 
+
+        <section style="margin: 80px 0;">
+            <h2 style="margin-bottom: 8px;">What a full-time hire costs</h2>
+            <p style="font-size: 15px; color: var(--muted); margin-bottom: 32px;">Budgeting for an in-house engineer rather than a contract.</p>
+            <p style="font-size: 15px;">Full-time base pay for speech roles comes from the ranges employers post: as of November 2026 the median posted range is <strong>$180K&ndash;$250K</strong> for ML, inference and data engineering roles and <strong>$185K&ndash;$320K</strong> for research scientists and research engineers, before equity and bonus. See every role behind those numbers on the <a href="/speech-ai-salaries" style="color: var(--accent);">speech AI salaries</a> page.</p>
+        </section>
+
+        <section style="margin: 80px 0;">
+            <h2 style="margin-bottom: 8px;">What to look for in a Whisper engineer</h2>
+            <p style="font-size: 15px; color: var(--muted); margin-bottom: 32px;">What separates someone who has shipped this from someone who has read about it.</p>
+            <ul style="font-size: 15px; padding-left: 20px; margin: 0;"><li><strong>Fast inference:</strong> faster-whisper / CTranslate2, batching, INT8 or FP16 quantization</li><li><strong>On-device:</strong> whisper.cpp for laptops, phones and edge hardware</li><li><strong>Fine-tuning:</strong> Hugging Face Transformers, LoRA or full fine-tunes, and a held-out WER evaluation on your own audio</li><li><strong>Long audio:</strong> voice activity detection and chunking, which is where hallucinated text usually comes from</li><li><strong>Speaker labels:</strong> diarization (pyannote or similar) and word-level timestamps</li><li><strong>Real time:</strong> streaming partial results and latency budgets for voice agents</li><li><strong>Serving:</strong> GPU utilization, autoscaling and cost per audio hour</li></ul>
+        </section>
+
+        <section style="margin: 80px 0;">
+            <h2 style="margin-bottom: 8px;">Where to find them</h2>
+            <p style="font-size: 15px; color: var(--muted); margin-bottom: 32px;">Speech engineers are a small pool, and most of them aren&apos;t on general job boards.</p>
+            <ul style="font-size: 15px; padding-left: 20px; margin: 0;"><li>The readers of this site and the weekly <a href="/jobs" style="color: var(--accent);">Speech AI jobs digest</a>, who already work in ASR</li><li>Contributors to open-source Whisper tooling on GitHub, such as faster-whisper, whisper.cpp and WhisperX</li><li>People sharing Whisper fine-tunes and evaluation results on Hugging Face</li><li>Authors and attendees at speech conferences like Interspeech, ICASSP and ASRU</li><li>Engineers from speech API companies who have run ASR at production scale</li></ul>
+        </section>
+
+        <section style="margin: 80px 0;">
+            <h2 style="margin-bottom: 8px;">FAQ</h2>
+            <p style="font-size: 15px; color: var(--muted); margin-bottom: 32px;">Also hiring <a href="/hire-speech-recognition-engineers" style="color: var(--accent);">speech recognition engineers</a> or <a href="/hire-tts-engineers" style="color: var(--accent);">text-to-speech engineers</a>?</p>
+            <div style="margin-bottom: 24px;"><h3 style="font-size: 17px; margin-bottom: 6px;">How much does it cost to hire a Whisper developer?</h3><p style="font-size: 15px;">For contract work, a proof of concept typically runs $5K-$10K over 1-2 weeks, a production deployment $20K-$40K over 4-6 weeks, and domain fine-tuning $15K-$25K. For a full-time hire, posted base pay for ML and inference engineers at speech AI companies has a median range of about $180K-$250K as of November 2026, before equity and bonus.</p></div><div style="margin-bottom: 24px;"><h3 style="font-size: 17px; margin-bottom: 6px;">Should I hire a Whisper contractor or a full-time engineer?</h3><p style="font-size: 15px;">A contractor fits a defined project such as a proof of concept, a deployment or a cost-reduction pass. Hire full-time when speech is core to the product and the model will need ongoing tuning, monitoring and new languages.</p></div><div style="margin-bottom: 24px;"><h3 style="font-size: 17px; margin-bottom: 6px;">What skills should a Whisper developer have?</h3><p style="font-size: 15px;">Look for fast inference (faster-whisper or CTranslate2), fine-tuning with a held-out WER evaluation on your own audio, voice activity detection and chunking for long recordings, diarization, and GPU serving. For on-device work, whisper.cpp experience matters.</p></div><div style="margin-bottom: 24px;"><h3 style="font-size: 17px; margin-bottom: 6px;">How long does it take to put Whisper into production?</h3><p style="font-size: 15px;">A typical production deployment, with batched inference behind an API, monitoring and load testing, takes about 4-6 weeks. A proof of concept on your own audio takes 1-2 weeks.</p></div>
+        </section>
         <section id="contact">
             <div class="form-container">
                 <h2 style="margin-top: 0; margin-bottom: 8px;">Tell us what you need</h2>
