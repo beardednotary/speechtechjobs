@@ -85,6 +85,7 @@ Otter.ai, Fireflies.ai, Descript, Speechify, Wispr Flow
    last 10 days to `data/candidates/YYYY-MM-DD.html`. Then check the companies it
    can't reach (Workday / custom sites: Big Tech labs, Cerence, SoundHound, Krisp,
    Uniphore) by hand. 12–20 roles is the target.
+   Then run `python build_salaries.py` to refresh /speech-ai-salaries from the same data.
 2. For each: role title, company, location (or Remote + region), salary **if the posting states it**, one-line note, link to the **company's own posting**.
 3. Group into: ASR · TTS · Speech analytics · Voice agents · Research.
 4. Write a 2–3 sentence intro — this doubles as the email subject line hook.
