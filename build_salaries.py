@@ -121,6 +121,10 @@ def main():
             <p class="sal-note">Median range = the median of the posted minimums and the median of the
             posted maximums. Roles posted in several cities are counted once.</p>
 
+            <p>Hiring? See how to hire <a class="inline" href="/hire-speech-recognition-engineers">speech recognition</a>,
+            <a class="inline" href="/hire-whisper-engineers">Whisper</a> or
+            <a class="inline" href="/hire-tts-engineers">text-to-speech</a> engineers.</p>
+
             <p>Want an estimate for your own level and location? Try the
             <a class="inline" href="/salary-estimator">salary estimator</a>. For the roles behind these numbers,
             each week's openings are in the <a class="inline" href="/jobs">Speech AI jobs digest</a>.</p>
