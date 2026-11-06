@@ -79,7 +79,12 @@ Otter.ai, Fireflies.ai, Descript, Speechify, Wispr Flow
 
 ### Weekly workflow (~90 min)
 
-1. Open the tracked list, collect roles posted/updated in the last ~10 days (12–20 is the target).
+1. Run `python fetch_jobs.py`. It pulls the Greenhouse / Lever / Ashby boards in
+   `data/boards.json`, updates the role archive (`data/jobs-archive.json`, gitignored:
+   back it up privately) and writes paste-ready `<li>` drafts for roles posted in the
+   last 10 days to `data/candidates/YYYY-MM-DD.html`. Then check the companies it
+   can't reach (Workday / custom sites: Big Tech labs, Cerence, SoundHound, Krisp,
+   Uniphore) by hand. 12–20 roles is the target.
 2. For each: role title, company, location (or Remote + region), salary **if the posting states it**, one-line note, link to the **company's own posting**.
 3. Group into: ASR · TTS · Speech analytics · Voice agents · Research.
 4. Write a 2–3 sentence intro — this doubles as the email subject line hook.
