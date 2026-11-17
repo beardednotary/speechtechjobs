@@ -12,3 +12,6 @@ gsc_reports/
 # stays out of this public repo (back it up privately). Candidates are scratch.
 data/jobs-archive.json
 data/candidates/
+
+# make_email.py output: paste-ready Brevo bodies, regenerated from the digest page.
+data/email/

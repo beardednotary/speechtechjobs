@@ -46,7 +46,8 @@ Every publish ends with the same steps:
 2. Add a card to `blog/index.html`.
 3. `python gen_feed.py` to regenerate `feed.xml`.
 4. `python indexnow.py https://speechtechjobs.com/blog/my-post`
-5. Digest only: send the Brevo campaign to the newsletter list.
+5. Digest only: `python make_email.py`, paste `data/email/YYYY-MM-DD.html` into a
+   Brevo HTML block, and send the campaign to the newsletter list.
 
 ---
 

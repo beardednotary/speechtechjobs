@@ -22,7 +22,11 @@
      digest before.
   6. Run:  python gen_feed.py
   7. Deploy, then:  python indexnow.py https://speechtechjobs.com/blog/who-is-hiring-speech-ai-YYYY-MM-DD
-  8. In Brevo: new campaign -> paste the intro + role lists -> subject line = the hook
+  8. Run:  python make_email.py
+     Writes data/email/YYYY-MM-DD.html: the email body as HTML, every role linked
+     to its anchor here with utm_campaign=digest-YYYY-MM-DD.
+     In Brevo: new campaign -> HTML/code block -> paste that file -> subject line = the hook
+     (turn off Brevo's GA link tracking so it doesn't overwrite the UTMs)
      -> send to the NEWSLETTER list only (not employer contacts).
   ============================================================================
 -->
