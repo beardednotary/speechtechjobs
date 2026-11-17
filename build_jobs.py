@@ -101,7 +101,8 @@ def parse_digest(ddate, path):
     label = f"Who's Hiring in Speech AI — {ddate.strftime('%B')} {ddate.day}, {ddate.year}"
     digest_url = f"/blog/{path.stem}"
     roles = []
-    for h2 in re.finditer(r"<h2>(.*?)</h2>\s*<ul>(.*?)</ul>", s, re.S):
+    # A section may open with a one-line <p class="section-lead"> takeaway before its list.
+    for h2 in re.finditer(r"<h2>(.*?)</h2>\s*(?:<p[^>]*>.*?</p>\s*)?<ul>(.*?)</ul>", s, re.S):
         category = html.unescape(h2.group(1)).strip()
         ul = h2.group(2)
         for li in re.finditer(r"<li[^>]*>(.*?)</li>", ul, re.S):

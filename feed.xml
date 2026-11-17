@@ -5,8 +5,17 @@
     <link>https://speechtechjobs.com/blog</link>
     <description>Guides on speech-technology careers, salaries, interviews, tools, and hiring.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2026 00:17:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 09:39:09 +0000</lastBuildDate>
     <atom:link href="https://speechtechjobs.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Who's Hiring in Speech AI — November 17, 2026</title>
+      <link>https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-11-17</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-11-17</guid>
+      <pubDate>Tue, 17 Nov 2026 12:00:00 +0000</pubDate>
+      <description>22 speech and audio roles hiring the week of November 17, 2026: on-device speech at Deepgram, Amazon and Sonos; speech-data and linguist roles at Apple, David AI, ElevenLabs and Innodata; summer 2027 research internships at Amazon, Apple and Dolby; plus Cerence, Liquid AI, Motorola Solutions and Parloa.</description>
+      <category>Weekly Digest</category>
+    </item>
 
     <item>
       <title>Who's Hiring in Speech AI — November 10, 2026</title>
@@ -221,14 +230,6 @@
       <pubDate>Sat, 17 Jan 2026 12:00:00 +0000</pubDate>
       <description>What Whisper engineers earn by level, the skills every posting asks for, and who is hiring, from $95K junior roles to $350K+ at staff and principal.</description>
       <category>Career Guide</category>
-    </item>
-
-    <item>
-      <title>Kaldi vs Whisper vs Wav2Vec: Which to Learn in 2026</title>
-      <link>https://speechtechjobs.com/blog/kaldi-vs-whisper-vs-wav2vec-2026</link>
-      <guid isPermaLink="true">https://speechtechjobs.com/blog/kaldi-vs-whisper-vs-wav2vec-2026</guid>
-      <pubDate>Thu, 15 Jan 2026 12:00:00 +0000</pubDate>
-      <description>Head to head on accuracy, setup cost, deployment and hiring demand, plus which one to learn first depending on whether you want research or production work.</description>
     </item>
 
   </channel>
