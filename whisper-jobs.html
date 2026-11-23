@@ -395,6 +395,17 @@
 <div style="margin-bottom:16px;"><!-- STJ:SPECIALTY_JOBS:whisper-jobs --><p style="margin-bottom:16px;"><strong>Live openings:</strong> 1 Whisper role from the last 2 digests &mdash; <a href="/jobs">see all open roles</a>.</p>
 <a href="https://cerence.wd5.myworkdayjobs.com/Cerence/job/Tokyo/Principal-ASR-Engineer_R0005784" target="_blank" rel="noopener" style="display:block;background:#fff;border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--fg);"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;"><span style="font-size:16px;font-weight:600;">Research Scientist / Senior Research Scientist, Japanese ASR</span><span style="font-size:12px;color:var(--muted);white-space:nowrap;">Posted Nov 17</span></div><div style="font-size:14px;color:var(--muted);margin-top:2px;">Cerence &middot; Tokyo, Japan &middot; compensation not listed</div><div style="font-size:13px;color:var(--fg);margin-top:8px;">Develops and tunes Japanese speech recognition for in-car voice assistants: training and fine-tuning, WER/CER and bad-case analysis, and Japanese-specific work on tokenizers, lexicons, text normalization, names, points of interest and addresses. Requires native or near-native Japanese (JLPT N1), fluent English, hands-on ASR experience and a master's. Conformer or Whisper-style model experience is preferred.</div><div style="font-size:12px;color:var(--accent);font-weight:600;margin-top:10px;">View posting &rarr;</div></a><!-- /STJ:SPECIALTY_JOBS --></div>
 
+<div class="signup-inline" style="background:#f0f6ff;border:1px solid #d6e6ff;border-radius:8px;padding:18px 20px;margin:8px 0 32px;">
+    <p style="font-size:15px;margin:0 0 12px;"><strong>Get new Whisper roles in your inbox.</strong> The weekly digest lists every new speech AI opening we find, with pay. One email every Tuesday, free.</p>
+    <form class="lead-form" data-placement="specialty_top" data-redirect="/thanks-newsletter" method="POST" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG" style="display:flex;gap:8px;flex-wrap:wrap;margin:0;">
+        <label for="inline-email-top" style="position:absolute; left:-9999px;">Email</label>
+        <input type="email" id="inline-email-top" name="EMAIL" required placeholder="you@example.com" style="flex:1 1 220px;min-width:0;padding:11px 14px;border:1px solid #d4d4d4;border-radius:6px;font-size:15px;color:#171717;background:#fff;">
+        <input type="hidden" name="locale" value="en">
+        <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+        <button type="submit" style="padding:11px 20px;background:#171717;color:#fff;border:0;border-radius:6px;font-weight:600;font-size:15px;cursor:pointer;">Subscribe</button>
+    </form>
+</div>
+
 <div class="market-stats">
     <div class="stat-card">
         <div class="stat-label">Typical comp</div>
@@ -574,7 +585,7 @@
             <h2>Get the weekly Speech&nbsp;AI jobs digest</h2>
             <p>New ASR, TTS, voice-AI and speech-analytics roles from ~30 companies, plus salary and hiring notes &mdash; one email a week. Free, unsubscribe anytime.</p>
 
-            <form class="lead-form" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG" method="POST" data-redirect="/thanks-newsletter">
+            <form class="lead-form" data-placement="specialty_bottom" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG" method="POST" data-redirect="/thanks-newsletter">
                 <div class="form-group">
                     <label for="brevo-email">Email</label>
                     <input type="email" id="brevo-email" name="EMAIL" required placeholder="you@example.com">
@@ -616,7 +627,7 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
       function done(ok, msg) {
         if (ok) {
-          gtag('event', 'sign_up', { method: 'newsletter_or_lead_form' });
+          gtag('event', 'sign_up', { method: 'newsletter_or_lead_form', placement: f.getAttribute('data-placement') || 'other' });
           var to = f.getAttribute('data-redirect');
           if (to) { window.location.href = to; return; }
           f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — we’ll be in touch by email.</p>';
