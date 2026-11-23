@@ -70,6 +70,11 @@
         .signup form { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
         .signup input[type=email] { padding:13px 16px; border:0; border-radius:6px; font-size:15px; min-width:260px; color:var(--fg); }
         .signup button { padding:13px 28px; background:#fff; color:var(--fg); border:0; border-radius:6px; font-weight:600; font-size:15px; cursor:pointer; }
+        .signup-inline { background:#f0f6ff; border:1px solid #d6e6ff; border-radius:8px; padding:18px 20px; margin:0 0 32px; }
+        .article-content .signup-inline p { font-size:15px; margin:0 0 12px; }
+        .signup-inline form { display:flex; gap:8px; flex-wrap:wrap; }
+        .signup-inline input[type=email] { flex:1 1 220px; min-width:0; padding:11px 14px; border:1px solid #d4d4d4; border-radius:6px; font-size:15px; color:var(--fg); }
+        .signup-inline button { padding:11px 20px; background:var(--fg); color:#fff; border:0; border-radius:6px; font-weight:600; font-size:15px; cursor:pointer; }
         footer { border-top:1px solid var(--border); padding:40px 0; background:var(--bg); }
         footer p { font-size:13px; color:var(--muted); text-align:center; }
         @media (max-width:768px){ h1{font-size:30px;} .article-content{padding:32px 24px;} }
@@ -133,6 +138,17 @@
                 Deepgram, $230&ndash;265K at Otter, up to $250K at DeepScribe. Healthcare
                 documentation and in-car voice are both still hiring too. Twelve roles this week,
                 most of them remote-friendly.</p>
+
+                <div class="signup-inline">
+                    <p><strong>Get these roles every Tuesday.</strong> One email a week with new speech, voice and audio AI openings and their pay. Free.</p>
+                    <form class="lead-form" data-placement="digest_top" data-redirect="/thanks-newsletter" method="POST" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG">
+                        <label for="d-email-top" style="position:absolute; left:-9999px;">Email</label>
+                        <input type="email" id="d-email-top" name="EMAIL" required placeholder="you@example.com">
+                        <input type="hidden" name="locale" value="en">
+                        <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
 
                 <h2>ASR &amp; transcription</h2>
                 <ul>
@@ -235,7 +251,7 @@
                 <h3>Get this in your inbox every week</h3>
                 <p>New ASR, TTS, voice-AI and speech-analytics roles from ~30 companies, plus
                 salary and hiring notes. One email a week, free.</p>
-                <form class="lead-form" data-redirect="/thanks-newsletter" method="POST" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG">
+                <form class="lead-form" data-placement="digest_bottom" data-redirect="/thanks-newsletter" method="POST" action="https://a51e606b.sibforms.com/serve/MUIFAKRnOEm46OmYomYR54mHHLs4l3bz6eYFF9Nsy5WWwVByxmakPaVmdlIlqjMNxrfUgYTo-v8bjxV3Y6Jz9mZFEhNtMy6NPhfzcmTUAVYKg-3UNpcXIldnUhTZt8xV4r8dph6prKeBUZmvpYFs9hm2lt1th7m4Peoi6vRNIpX_hW3IZ8fD27-PTm5-ZUYOdWhj_zu5siRvqtpG">
                     <label for="d-email" style="position:absolute; left:-9999px;">Email</label>
                     <input type="email" id="d-email" name="EMAIL" required placeholder="you@example.com">
                     <input type="hidden" name="locale" value="en">
@@ -263,7 +279,7 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
       function done(ok, msg) {
         if (ok) {
-          gtag('event', 'sign_up', { method: 'newsletter_or_lead_form' });
+          gtag('event', 'sign_up', { method: 'newsletter_or_lead_form', placement: f.getAttribute('data-placement') || 'other' });
           var to = f.getAttribute('data-redirect');
           if (to) { window.location.href = to; return; }
           f.innerHTML = '<p style="margin:0;font-weight:600;">Thanks — check your inbox to confirm.</p>';
