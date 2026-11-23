@@ -14,6 +14,7 @@ comments in:
   - the 7 specialty pages (voice-biometrics-jobs.html, etc.)
   - the blog guides in BLOG_JOB_TARGETS (an "open roles" mini-list each)
   - every digest's STJ:DIGEST_NAV block (previous/next week links)
+  - every older digest's STJ:DIGEST_LATEST banner (points to the newest issue)
 
 Nothing here touches the digest posts themselves — those are still written
 by hand from templates/digest-template.html.
@@ -337,6 +338,20 @@ def main():
             links.append(f'<a href="/blog/{np_.stem}">Next week: {nd.strftime("%B")} {nd.day} digest &rarr;</a>')
         inner = '<p style="margin-top:16px;">' + " &middot; ".join(links) + "</p>" if links else ""
         s = replace_marker(s, "DIGEST_NAV", inner, path)
+        # Older issues point readers (and crawlers / AI assistants, which keep citing
+        # old issues) at the current one. Empty on the newest issue.
+        if path == latest_path:
+            banner = ""
+        else:
+            banner = (
+                '<div style="background:#fff8e6;border:1px solid #f5d98b;border-radius:8px;'
+                'padding:14px 18px;margin:0 0 24px;font-size:15px;line-height:1.5;">'
+                f'This is the {ddate.strftime("%B")} {ddate.day}, {ddate.year} issue, so some of these '
+                'roles may have closed. <strong>Latest:</strong> '
+                f'<a href="{latest_url}" style="color:var(--accent);font-weight:600;">{latest_label}</a> '
+                f'({len(latest_roles)} roles) &rarr;</div>'
+            )
+        s = replace_marker(s, "DIGEST_LATEST", banner, path, allow_missing=True)
         path.write_text(s, encoding="utf-8")
     print(f"digest nav: linked {len(chrono)} digests")
 
