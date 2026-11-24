@@ -5,8 +5,17 @@
     <link>https://speechtechjobs.com/blog</link>
     <description>Guides on speech-technology careers, salaries, interviews, tools, and hiring.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Nov 2026 09:39:09 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 06:12:10 +0000</lastBuildDate>
     <atom:link href="https://speechtechjobs.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Who's Hiring in Speech AI — November 24, 2026</title>
+      <link>https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-11-24</link>
+      <guid isPermaLink="true">https://speechtechjobs.com/blog/who-is-hiring-speech-ai-2026-11-24</guid>
+      <pubDate>Tue, 24 Nov 2026 12:00:00 +0000</pubDate>
+      <description>19 speech and audio roles hiring the week of November 24, 2026: voice-agent telephony and deployment roles at Sierra, Decagon, Salesforce and Motorola Solutions; audio software at Apple, Intel and Sesame; speech research at Speechmatics, ElevenLabs and Inflection AI; plus AssemblyAI, Retell AI, Deepgram, Bland AI and Plaud.</description>
+      <category>Weekly Digest</category>
+    </item>
 
     <item>
       <title>Who's Hiring in Speech AI — November 17, 2026</title>
@@ -221,15 +230,6 @@
       <pubDate>Sat, 17 Jan 2026 12:00:00 +0000</pubDate>
       <description>Kaldi is an open-source C++ speech recognition toolkit. What it does, how it works, whether it still beats Whisper in 2026, and who is hiring Kaldi engineers.</description>
       <category>Technical Guide</category>
-    </item>
-
-    <item>
-      <title>Whisper AI Engineer Salary 2026: $140K-$230K</title>
-      <link>https://speechtechjobs.com/blog/whisper-ai-jobs-salary-guide-2026</link>
-      <guid isPermaLink="true">https://speechtechjobs.com/blog/whisper-ai-jobs-salary-guide-2026</guid>
-      <pubDate>Sat, 17 Jan 2026 12:00:00 +0000</pubDate>
-      <description>What Whisper engineers earn by level, the skills every posting asks for, and who is hiring, from $95K junior roles to $350K+ at staff and principal.</description>
-      <category>Career Guide</category>
     </item>
 
   </channel>
